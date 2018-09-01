@@ -30,6 +30,8 @@ AS
 				  ,Ports.Updated
 				  ,Ports.IsActive
 				  ,Ports.UpdatedId
+				  ,Ports.Draft
+				  ,Ports.Dwt
 			  FROM dbo.Ports
 				 Inner Join Cities On Ports.City=Cities.CityId
 				 Inner Join Countries On Countries.CountryId=Cities.CountryId
@@ -53,6 +55,8 @@ AS
 				  ,Ports.Updated
 				  ,Ports.IsActive
 				  ,Ports.UpdatedId
+				  ,Ports.Draft
+				  ,Ports.Dwt
 			  FROM dbo.Ports
 				 Inner Join Cities On Ports.City=Cities.CityId
 				 Inner Join Countries On Countries.CountryId=Cities.CountryId

@@ -47,14 +47,14 @@ namespace Business.Api.Controllers
         [HttpPost]
         public HttpResponseMessage Post([FromBody]PortsModel item)
         {
-            _process.Save(item.Token, item.Name, item.Address, item.Phone, item.City, item.Ifo, item.Mgo, item.Terms, item.IsActive, UpdatedId);
+            _process.Save(item.Token, item.Name, item.Address, item.Phone, item.City, item.Ifo, item.Mgo, item.Terms, item.IsActive, UpdatedId, item.Draft, item.Dwt);
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         [HttpPut]
         public HttpResponseMessage Put(Guid id, [FromBody]PortsModel item)
         {
-            _process.Save(item.Token, item.Name, item.Address, item.Phone, item.City, item.Ifo, item.Mgo, item.Terms, item.IsActive, UpdatedId);
+            _process.Save(item.Token, item.Name, item.Address, item.Phone, item.City, item.Ifo, item.Mgo, item.Terms, item.IsActive, UpdatedId, item.Draft, item.Dwt);
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 

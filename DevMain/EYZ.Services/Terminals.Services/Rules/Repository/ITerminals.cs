@@ -17,7 +17,7 @@ namespace Terminals.Services.Rules.Interface
 
         void DB_Terminal_Delete(Guid Token);
 
-        void DB_Terminal_Save(Guid Token, int PortId, String Name, String Address, String Contants, String Phone, int CityId, String Xaxis, String Yaxis, String Email, int ConditionId, float ConditionValue, string Products, bool IsActive, int UpdatedId, string RankRate);
+        void DB_Terminal_Save(Guid Token, int PortId, String Name, String Address, String Contants, String Phone, int CityId, String Xaxis, String Yaxis, String Email, int ConditionId, float ConditionValue, string Products, bool IsActive, int UpdatedId, string RankRate, float draft, float dwt);
 
         void DB_Terminal_StatusUpdate(Guid Token, bool IsActive, int UpdatedId);
     }

@@ -8,10 +8,13 @@
     [Updated]               DATETIME         CONSTRAINT [DF__PropertyV__Updat__03F0984C] DEFAULT (NULL) NULL,
     [IsActive]              BIT              CONSTRAINT [DF__PropertyV__IsAct__04E4BC85] DEFAULT ((1)) NULL,
     [UpdatedId]             INT              CONSTRAINT [DF__PropertyV__Updat__05D8E0BE] DEFAULT (NULL) NOT NULL,
+    [unity]                 VARCHAR (25)     NULL,
     CONSTRAINT [PK__Property__3214EC07F6D2462D] PRIMARY KEY CLUSTERED ([PropertyValueVesselId] ASC),
     CONSTRAINT [FK_PropertyValueVessel_PropertyVessel] FOREIGN KEY ([PropertyVesselId]) REFERENCES [dbo].[PropertyVessel] ([PropertyVesselId]),
     CONSTRAINT [FK_PropertyValueVessel_Vessel] FOREIGN KEY ([VesselId]) REFERENCES [dbo].[Vessel] ([Id])
 );
+
+
 
 
 

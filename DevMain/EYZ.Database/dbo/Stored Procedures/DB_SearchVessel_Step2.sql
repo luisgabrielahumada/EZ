@@ -3,7 +3,7 @@
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
---[dbo].[DB_SearchVessel_Step2]  @token ='95aae792-36e3-405e-91d0-04fd93f21fac' ,@UpdatedId =33
+--[dbo].[DB_SearchVessel_Step2]  @token ='ab69984e-5570-4320-b65a-f7c1567785cd' ,@UpdatedId =33
 
 CREATE PROCEDURE [dbo].[DB_SearchVessel_Step2] 
 	-- Add the parameters for the stored procedure here
@@ -58,6 +58,11 @@ BEGIN
 	Declare @CurrentInterval float,@PortsNameLoading varchar(250),@PortsNameUnLoading varchar(250),@RateLoading money, @RateUnLoading money,@CurrentFirstInterval int
 	Declare @PortsFirstNameCurrent varchar(250),@PortsFirstNameLoading varchar(250),@IsCurrentPort bit,@PortRateLoading float ,@PortRateUnLoading float
 	Declare @DayCurrentPortAtLoadPort float,@DayLoadingPort float,@DayCanalPanama float,@DayLoadPortAtUnloadingPort float,@DayCanalPanamaDischarge float ,@DayUnLoadingPort float
+	Declare @CubitFeetCapacity varchar(250),@Draft varchar(250),@Dwt varchar(250)
+	Declare @DraftPortLoading money, @DraftPortDischarge money
+	Declare @DraftTerminalLoading money, @DraftTerminalDischarge money
+	Declare @DwtPortLoading money, @DwtPortDischarge money
+	Declare @DwtTerminalLoading money, @DwtTerminalDischarge money
 	-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	Begin Try
 	--------------------------------------------------------------------------------
@@ -89,6 +94,39 @@ BEGIN
 			FROM dbo.RequestForServices
 			Where token=@token
 	 
+			--Draft
+			Select @DraftPortLoading=Draft
+			From Ports
+			Where Id=@LoadPortId 
+
+			Select @DraftPortDischarge=Draft
+			From Ports
+			Where Id=@DischargePortId
+
+			Select @DraftTerminalLoading=Draft
+			From Ports
+			Where Id=@LoadTerminalId
+
+			Select @DraftTerminalDischarge=Draft
+			From Ports
+			Where Id=@DischargeTerminalId
+
+			--DWT
+			Select @DwtPortLoading=Draft
+			From Ports
+			Where Id=@LoadPortId 
+
+			Select @DwtPortDischarge=Draft
+			From Ports
+			Where Id=@DischargePortId
+
+			Select @DwtTerminalLoading=Draft
+			From Ports
+			Where Id=@LoadTerminalId
+
+			Select @DwtTerminalDischarge=Draft
+			From Ports
+			Where Id=@DischargeTerminalId
 
 			Select Top 1 @RateLoadTerminal=Rate 
 			From RankRateTerminals 
@@ -146,6 +184,8 @@ BEGIN
 				Where ProductByVessels.ProductId=@ProductId and Vessel.Capacity>=@Quantity
 						And Vessel.IsActive=1
 	
+				
+	
 				While(Select Count(1) from @VesselFound Where IsProcess=0)>0
 				Begin
 					Select Top 1 @CurrentId=Id
@@ -166,20 +206,80 @@ BEGIN
 					From @VesselFound
 					Where Id=@CurrentId
 
+					Set @CubitFeetCapacity=dbo.GetPropertyValueVessel(4,@VesselId)
+					Set @Draft=dbo.GetPropertyValueVessel(10,@VesselId)
+					Set @Dwt=dbo.GetPropertyValueVessel(2,@VesselId)
+
+					--Dwt Port
+					if(ISNUMERIC(@Dwt)=1)
+					Begin
+						if(convert(money,@DwtPortLoading)>=convert(money,@Dwt) or  convert(money,@DwtPortDischarge)>=convert(money,@Dwt))
+						Begin
+							Update @VesselFound
+							set IsProcess=1
+							Where Id=@CurrentId
+							CONTINUE
+						End
+					End
+					--Dwt Terminal
+					if(ISNUMERIC(@Dwt)=1)
+					Begin
+						if(convert(money,@DwtTerminalLoading)>=convert(money,@Dwt) or  convert(money,@DwtTerminalDischarge)>=convert(money,@Dwt))
+						Begin
+							Update @VesselFound
+							set IsProcess=1
+							Where Id=@CurrentId
+							CONTINUE
+						End
+					End
+					--Draft Port
+					if(ISNUMERIC(@Draft)=1)
+					Begin
+						if(convert(money,@DraftPortLoading)>=convert(money,@Draft) or  convert(money,@DraftPortDischarge)>=convert(money,@Draft))
+						Begin
+							Update @VesselFound
+							set IsProcess=1
+							Where Id=@CurrentId
+							CONTINUE
+						End
+					End
+					--Draft Terminal
+					if(ISNUMERIC(@Draft)=1)
+					Begin
+						if(convert(money,@DraftTerminalLoading)>=convert(money,@Draft) or  convert(money,@DraftTerminalDischarge)>=convert(money,@Draft))
+						Begin
+							Update @VesselFound
+							set IsProcess=1
+							Where Id=@CurrentId
+							CONTINUE
+						End
+					End
+					if(ISNUMERIC(@CubitFeetCapacity)=1)
+					Begin
+						if(convert(money,(@StowageFactor*@Quantity))>=convert(money,@CubitFeetCapacity))
+						Begin
+							Update @VesselFound
+							set IsProcess=1
+							Where Id=@CurrentId
+							CONTINUE
+						End
+					End
+
+					
 					INSERT INTO [dbo].[ServiceLiquidations]
-							   ([RequestForServiceId]
-							   ,[VesselId]
-							   ,[Status]
-							   ,[Creation]
-							   ,[UpdatedId]
-							   ,CurrentPortId)
-						 VALUES
-							   (@RequestForServiceId
-							   ,@VesselId
-							   ,'PENDING'
-							   ,getdate()
-							   ,@UpdatedId
-							   ,@CurrentPortId)
+								([RequestForServiceId]
+								,[VesselId]
+								,[Status]
+								,[Creation]
+								,[UpdatedId]
+								,CurrentPortId)
+							VALUES
+								(@RequestForServiceId
+								,@VesselId
+								,'PENDING'
+								,getdate()
+								,@UpdatedId
+								,@CurrentPortId)
 					Set @ServiceLiquidationId=SCOPE_IDENTITY()
 		
 					Declare @IfoLoadPort money,@MgoLoadPort money
@@ -291,8 +391,8 @@ BEGIN
 						Inner Join dbo.Products On Products.Id=@ProductId and Vessel.IsActive=1
 				where RequestForServices.token=@token
 			)
-			Select * from CTEResult
-			Order by TotalQuantityMT asc
+			Select Top 5 * from CTEResult
+			Order by Total asc, TotalQuantityMT asc
 	End
 	Else
 	BEgin

@@ -62,5 +62,11 @@ namespace Terminals.Services.Rules.Model
 
         [JsonProperty("rank")]
         public List<RankRate> RankRate { get; set; }
+
+        [JsonProperty("draft")]
+        public float Draft { get; set; }
+
+        [JsonProperty("dwt")]
+        public float Dwt { get; set; }
     }
 }

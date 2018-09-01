@@ -76,6 +76,18 @@
                                 <input type="text" class="form-control custom-control" disabled ng-class="(myForm.ConditionValue.$dirty || !isValid) && !myForm.ConditionValue.$valid?'is-invalid' : ''" name="ConditionValue" placeholder="Value" ng-model="item.conditionValue" ui-number-mask>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Draft</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" disabled ng-class="(myForm.Draft.$dirty || !isValid) && !myForm.Draft.$valid?'is-invalid' : ''" name="Draft" placeholder="Draft" ng-model="item.draft" ui-number-mask>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>DWT</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.dwt.$dirty || !isValid) && !myForm.dwt.$valid?'is-invalid' : ''" name="dwt" placeholder="dwt" ng-model="item.dwt" ui-number-mask>
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="switch switch-lg switch-3d switch-primary">

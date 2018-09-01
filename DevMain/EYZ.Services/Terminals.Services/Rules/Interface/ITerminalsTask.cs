@@ -7,7 +7,7 @@ namespace Terminals.Services.Rules.Interface
 {
     public interface ITerminalsTask
     {
-        void Save(Guid Token, int PortId, String Name, String Address, String Contants, String Phone, int CityId, String Xaxis, String Yaxis, String Email, int ConditionId, float Value, List<ProductByTerminalModel> Products, bool IsActive, int UpdatedId, List<RankRate> RankRate);
+        void Save(Guid Token, int PortId, String Name, String Address, String Contants, String Phone, int CityId, String Xaxis, String Yaxis, String Email, int ConditionId, float Value, List<ProductByTerminalModel> Products, bool IsActive, int UpdatedId, List<RankRate> RankRate, float Draft, float Dwt);
 
         IList<TerminalsModel> Get(int PageIndex, int PageSize, int PortId, int? ProductId, out int TotalRecords);
 

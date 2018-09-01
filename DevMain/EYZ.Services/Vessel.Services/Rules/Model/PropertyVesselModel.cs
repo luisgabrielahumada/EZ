@@ -19,5 +19,8 @@ namespace Vessel.Services.Rules.Model
 
         [JsonProperty("propertyVesselId")]
         public int PropertyVesselId { get; set; }
+
+        [JsonProperty("unity")]
+        public string Unity { get; set; }
     }
 }

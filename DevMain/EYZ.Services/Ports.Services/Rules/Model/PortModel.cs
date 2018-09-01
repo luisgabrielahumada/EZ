@@ -34,5 +34,11 @@ namespace Ports.Services.Rules.Model
 
         [JsonProperty("terms")]
         public string Terms { get; set; }
+
+        [JsonProperty("draft")]
+        public float Draft { get; set; }
+
+        [JsonProperty("dwt")]
+        public float Dwt { get; set; }
     }
 }

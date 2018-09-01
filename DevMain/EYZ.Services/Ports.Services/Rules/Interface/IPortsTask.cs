@@ -6,7 +6,7 @@ namespace Ports.Services.Rules.Interface
 {
     public interface IPortsTask
     {
-        void Save(Guid Token, String Name, String Address, String Phone, int City, float Ifo, float Mgo, String Terms, bool IsActive, int UpdatedId);
+        void Save(Guid Token, String Name, String Address, String Phone, int City, float Ifo, float Mgo, String Terms, bool IsActive, int UpdatedId, float Draft, float Dwt);
 
         IList<PortsModel> Get(int PageIndex, int PageSize, out int TotalRecords, int? isActive);
 

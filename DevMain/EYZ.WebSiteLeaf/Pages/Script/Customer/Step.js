@@ -395,13 +395,15 @@ App.controller('Step1Ctrl', ['$scope', 'serviceRest', 'breaDcrumb', '$routeParam
     breaDcrumb.breadcrumb();
     $scope.pageCurrent = breaDcrumb.pages.pageCurrent;
     $scope.isValid = true;
+    $scope.Id = 0;
     $scope.isSelected = false;
     $scope.titleSearch = "Freight Ideas";
     //Manejador de Errores
-    $scope.error = function (data) { $scope.toastr.error(data.Message, 'Error'); }
+    $scope.error = function (data) { $scope.toastr.error(data.Message, 'Error'); };
 
     //Detalle de la pagina
     $scope.Get = function () {
+        $scope.Id = $routeParams.Id;
         if ($routeParams.Id !== 0) {
             $scope.Rest.Get($scope.Settings.Uri, 'Request/Get/' + $routeParams.Id, function (response) {
                 $scope.item = response.data;

@@ -12,8 +12,14 @@
     [Updated]   DATETIME         CONSTRAINT [DF__Ports__Updated__5CD6CB2B] DEFAULT (NULL) NULL,
     [IsActive]  BIT              CONSTRAINT [DF__Ports__IsActive__5DCAEF64] DEFAULT ((1)) NULL,
     [UpdatedId] INT              CONSTRAINT [DF__Ports__UpdatedId__5EBF139D] DEFAULT (NULL) NOT NULL,
+    [Draft]     MONEY            NULL,
+    [Dwt]       MONEY            NULL,
     CONSTRAINT [PK__Ports__3214EC078307D29B] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
+
+
+
 
 
 

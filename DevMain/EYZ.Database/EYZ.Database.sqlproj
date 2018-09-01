@@ -283,5 +283,6 @@
     <Build Include="dbo\Tables\HistoryNegotiationsOfRequests.sql" />
     <Build Include="dbo\Stored Procedures\DB_NegotiationHistory_Get.sql" />
     <Build Include="dbo\Tables\SchedulerRequestByVesselForRecalculate.sql" />
+    <Build Include="dbo\Functions\GetPropertyValueVessel.sql" />
   </ItemGroup>
 </Project>

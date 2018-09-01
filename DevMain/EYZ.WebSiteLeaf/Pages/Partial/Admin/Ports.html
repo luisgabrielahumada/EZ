@@ -24,6 +24,8 @@
                             <th>IFO Cost</th>
                             <th>MGO Cost</th>
                             <th>Terms</th>
+                            <th>Draft</th>
+                            <th>DWT</th>
                             <th colspan="2">Options</th>
                         </tr>
                     </thead>
@@ -51,6 +53,12 @@
                             </td>
                             <td>
                                 {{item.terms}}
+                            </td>
+                            <td>
+                                {{item.draft | number }}
+                            </td>
+                            <td>
+                                {{item.dwt | number }}
                             </td>
                             <td ng-switch="item.IsActive">
                                 <div ng-switch-when="true">

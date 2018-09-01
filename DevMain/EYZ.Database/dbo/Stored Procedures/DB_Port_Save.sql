@@ -9,6 +9,8 @@
 	,@Terms varchar(max) 
 	,@IsActive bit 
 	,@UpdatedId [int] = Null
+	,@Draft money
+	,@Dwt money
 --WITH ENCRYPTION
 AS
 Begin
@@ -41,7 +43,7 @@ Begin
 					   ,[Creation]
 					   ,[Updated]
 					   ,[IsActive]
-					   ,[UpdatedId])
+					   ,[UpdatedId],Draft,Dwt)
 				 VALUES
 					   (NewId()
 					   ,@Name
@@ -54,7 +56,7 @@ Begin
 					   ,GETDATE()
 					   ,GETDATE()
 					   ,@IsActive
-					   ,@UpdatedId)
+					   ,@UpdatedId,@Draft,@Dwt)
 		Set @Id=SCOPE_IDENTITY()
 		INSERT INTO [dbo].[DistanceBetweenPorts]
            ([Token]
@@ -98,6 +100,8 @@ Begin
 			  ,[Updated] =GETDATE()
 			  ,[IsActive] =  @IsActive
 			  ,[UpdatedId] =  @UpdatedId
+			  ,Draft=@Draft
+			  ,Dwt=@Dwt
 		Where Token =  @Token
 		If @@rowcount= 0
 		Begin

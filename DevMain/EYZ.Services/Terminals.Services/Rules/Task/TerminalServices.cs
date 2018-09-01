@@ -31,10 +31,10 @@ namespace Terminals.Services.Rules.Task
             Database.CurrentCnn.As<ITerminals>().DB_Terminal_StatusUpdate(Token, IsActive, UpdatedId);
         }
 
-        public void Save(Guid Token, int PortId, String Name, String Address, String Contants, String Phone, int CityId, String Xaxis, String Yaxis, String Email, int ConditionId, float Value, List<ProductByTerminalModel> Products, bool IsActive, int UpdatedId,List<RankRate> RankRate)
+        public void Save(Guid Token, int PortId, String Name, String Address, String Contants, String Phone, int CityId, String Xaxis, String Yaxis, String Email, int ConditionId, float Value, List<ProductByTerminalModel> Products, bool IsActive, int UpdatedId,List<RankRate> RankRate, float Draft, float Dwt)
         {
             Database.CurrentCnn.As<ITerminals>().DB_Terminal_Save(Token, PortId, Name, Address, Contants, Phone, CityId, Xaxis, Yaxis, Email, ConditionId, Value, string.Join("X", Products.Select(item => $"{item.Id}|{item.LoadingRate}|{item.UnLoadingRate}|{item.IsActive}").ToArray()), IsActive, UpdatedId,
-                                                                  string.Join("X", RankRate.Select(item => $"{item.Minimum}|{item.Maximum}|{item.Rate}").ToArray()));
+                                                                  string.Join("X", RankRate.Select(item => $"{item.Minimum}|{item.Maximum}|{item.Rate}").ToArray()), Draft, Dwt);
         }
 
         public Tuple<IList<ProductModel>, IList<ProductModel>> GetTerminalProductAssigned(Guid Token)

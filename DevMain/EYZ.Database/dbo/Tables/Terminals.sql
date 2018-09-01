@@ -17,9 +17,15 @@
     [ConditionId]    INT              DEFAULT ((0)) NULL,
     [ConditionValue] FLOAT (53)       NULL,
     [_Order]         INT              DEFAULT ((0)) NULL,
+    [Draft]          MONEY            NULL,
+    [Dwt]            MONEY            NULL,
     CONSTRAINT [PK__Terminal__3214EC073BCB9D5A] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Terminals_Ports] FOREIGN KEY ([PortId]) REFERENCES [dbo].[Ports] ([Id])
 );
+
+
+
+
 
 
 

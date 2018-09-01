@@ -46,14 +46,14 @@ namespace Business.Api.Controllers
         [HttpPost]
         public HttpResponseMessage Post([FromBody]TerminalsModel item)
         {
-            _process.Save(item.Token, item.PortId, item.Name, item.Address, item.Contants, item.Phone, item.CityId, item.Xaxis, item.Yaxis, item.Email, item.ConditionId, item.ConditionValue, item.Products, item.IsActive, UpdatedId, item.RankRate);
+            _process.Save(item.Token, item.PortId, item.Name, item.Address, item.Contants, item.Phone, item.CityId, item.Xaxis, item.Yaxis, item.Email, item.ConditionId, item.ConditionValue, item.Products, item.IsActive, UpdatedId, item.RankRate, item.Draft, item.Dwt);
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         [HttpPut]
         public HttpResponseMessage Put(Guid id, [FromBody]TerminalsModel item)
         {
-            _process.Save(item.Token, item.PortId, item.Name, item.Address, item.Contants, item.Phone, item.CityId, item.Xaxis, item.Yaxis, item.Email, item.ConditionId, item.ConditionValue, item.Products, item.IsActive, UpdatedId,item.RankRate);
+            _process.Save(item.Token, item.PortId, item.Name, item.Address, item.Contants, item.Phone, item.CityId, item.Xaxis, item.Yaxis, item.Email, item.ConditionId, item.ConditionValue, item.Products, item.IsActive, UpdatedId,item.RankRate, item.Draft, item.Dwt);
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 

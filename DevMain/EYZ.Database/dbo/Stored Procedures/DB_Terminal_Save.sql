@@ -15,6 +15,8 @@
 	,@Products varchar(max)
 	,@UpdatedId [int] = Null
 	,@RankRate varchar(max)=''
+	,@Draft money
+	,@Dwt money
 --WITH ENCRYPTION
 AS
 Begin
@@ -58,7 +60,7 @@ Begin
 					   ,[IsActive]
 					   ,[UpdatedId]
 					   ,[ConditionId]
-					   ,[ConditionValue])
+					   ,[ConditionValue],Draft,Dwt)
 				 VALUES
 					   (NewId()
 					   ,@PortId   
@@ -75,7 +77,7 @@ Begin
 					   ,@IsActive   
 					   ,@UpdatedId   
 					   ,@ConditionId   
-					   ,@ConditionValue   )
+					   ,@ConditionValue ,@Draft,@Dwt  )
 			Set @Id= SCOPE_IDENTITY()
 
 			
@@ -98,6 +100,8 @@ Begin
 		  ,[UpdatedId] = @UpdatedId 
 		  ,[ConditionId] = @ConditionId 
 		  ,[ConditionValue] = @ConditionValue 
+		  ,Draft=@Draft
+		  ,Dwt=@Dwt
 		Where Token =  @Token
 
 		Select  @Id= Id

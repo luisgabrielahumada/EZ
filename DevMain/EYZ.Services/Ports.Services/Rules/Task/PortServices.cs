@@ -30,9 +30,9 @@ namespace Ports.Services.Rules.Task
             Database.CurrentCnn.As<IPorts>().DB_Port_StatusUpdate(Token, IsActive, UpdatedId);
         }
 
-        public void Save(Guid Token, String Name, String Address, String Phone, int City, float Ifo, float Mgo, String Terms, bool IsActive, int UpdatedId)
+        public void Save(Guid Token, String Name, String Address, String Phone, int City, float Ifo, float Mgo, String Terms, bool IsActive, int UpdatedId, float Draft, float Dwt)
         {
-            Database.CurrentCnn.As<IPorts>().DB_Port_Save(Token, Name, Address, Phone, City, Ifo, Mgo, Terms, IsActive, UpdatedId);
+            Database.CurrentCnn.As<IPorts>().DB_Port_Save(Token, Name, Address, Phone, City, Ifo, Mgo, Terms, IsActive, UpdatedId, Draft, Dwt);
         }
 
         public IList<DistanceBetweenPortsModel> GetDistanceBetweenPorts()
