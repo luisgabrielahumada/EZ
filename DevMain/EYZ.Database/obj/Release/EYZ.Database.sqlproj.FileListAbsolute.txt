@@ -1,0 +1,9 @@
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\bin\Release\EYZ.Database.dacpac
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\bin\Release\EYZ.Database.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\bin\Release\EYZ.Database.pdb
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\obj\Release\Model.xml
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\obj\Release\refactor.xml
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\obj\Release\postdeploy.sql
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\obj\Release\predeploy.sql
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\obj\Release\EYZ.Database.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\obj\Release\EYZ.Database.pdb

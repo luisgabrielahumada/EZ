@@ -1,0 +1,7 @@
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\bin\EYZ.WebSiteLeaf.dll.config
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\bin\EYZ.WebSiteLeaf.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\bin\EYZ.WebSiteLeaf.pdb
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\obj\Release\EYZ.WebSiteLeaf.csprojAssemblyReference.cache
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\obj\Release\EYZ.WebSiteLeaf.csproj.CoreCompileInputs.cache
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\obj\Release\EYZ.WebSiteLeaf.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\obj\Release\EYZ.WebSiteLeaf.pdb
