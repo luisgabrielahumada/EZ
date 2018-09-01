@@ -5,3 +5,10 @@ D:\_GESI\EYZ\Dev\DevMain\EYZ.WebSiteLeaf\obj\Debug\EYZ.WebSiteLeaf.csproj.CoreCo
 D:\_GESI\EYZ\Dev\DevMain\EYZ.WebSiteLeaf\obj\Debug\EYZ.WebSiteLeaf.dll
 D:\_GESI\EYZ\Dev\DevMain\EYZ.WebSiteLeaf\obj\Debug\EYZ.WebSiteLeaf.pdb
 D:\_GESI\EYZ\Dev\DevMain\EYZ.WebSiteLeaf\obj\Debug\EYZ.WebSiteLeaf.csprojAssemblyReference.cache
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\bin\EYZ.WebSiteLeaf.dll.config
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\bin\EYZ.WebSiteLeaf.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\bin\EYZ.WebSiteLeaf.pdb
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\obj\Debug\EYZ.WebSiteLeaf.csprojAssemblyReference.cache
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\obj\Debug\EYZ.WebSiteLeaf.csproj.CoreCompileInputs.cache
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\obj\Debug\EYZ.WebSiteLeaf.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.WebSiteLeaf\obj\Debug\EYZ.WebSiteLeaf.pdb

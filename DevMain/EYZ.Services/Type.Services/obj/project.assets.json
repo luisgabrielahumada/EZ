@@ -390,11 +390,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Type.Services\\Type.Services.csproj",
+      "projectUniqueName": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Type.Services\\Type.Services.csproj",
       "projectName": "Type.Services",
-      "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Type.Services\\Type.Services.csproj",
+      "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Type.Services\\Type.Services.csproj",
       "packagesPath": "C:\\Users\\MasterDev\\.nuget\\packages\\",
-      "outputPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Type.Services\\obj\\",
+      "outputPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Type.Services\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

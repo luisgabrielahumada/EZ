@@ -1319,11 +1319,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Infrastructure\\EYZ.Infrastructure.csproj",
+      "projectUniqueName": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Infrastructure\\EYZ.Infrastructure.csproj",
       "projectName": "EYZ.Infrastructure",
-      "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Infrastructure\\EYZ.Infrastructure.csproj",
+      "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Infrastructure\\EYZ.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\MasterDev\\.nuget\\packages\\",
-      "outputPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Infrastructure\\obj\\",
+      "outputPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -1340,41 +1340,41 @@
       "frameworks": {
         "net471": {
           "projectReferences": {
-            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Clauses.Services\\Clauses.Services.csproj": {
-              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Clauses.Services\\Clauses.Services.csproj"
+            "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Clauses.Services\\Clauses.Services.csproj": {
+              "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Clauses.Services\\Clauses.Services.csproj"
             },
-            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Conditions.Services\\Conditions.Services.csproj": {
-              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Conditions.Services\\Conditions.Services.csproj"
+            "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Conditions.Services\\Conditions.Services.csproj": {
+              "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Conditions.Services\\Conditions.Services.csproj"
             },
-            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Contract.Services\\Contract.Services.csproj": {
-              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Contract.Services\\Contract.Services.csproj"
+            "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Contract.Services\\Contract.Services.csproj": {
+              "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Contract.Services\\Contract.Services.csproj"
             },
-            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Ports.Services\\Ports.Services.csproj": {
-              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Ports.Services\\Ports.Services.csproj"
+            "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Ports.Services\\Ports.Services.csproj": {
+              "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Ports.Services\\Ports.Services.csproj"
             },
-            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Products.Services\\Products.Services.csproj": {
-              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Products.Services\\Products.Services.csproj"
+            "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Products.Services\\Products.Services.csproj": {
+              "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Products.Services\\Products.Services.csproj"
             },
-            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Quantity.Services\\Quantity.Services.csproj": {
-              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Quantity.Services\\Quantity.Services.csproj"
+            "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Quantity.Services\\Quantity.Services.csproj": {
+              "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Quantity.Services\\Quantity.Services.csproj"
             },
-            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Step.Services\\Step.Services.csproj": {
-              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Step.Services\\Step.Services.csproj"
+            "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Step.Services\\Step.Services.csproj": {
+              "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Step.Services\\Step.Services.csproj"
             },
-            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\StowageFactors.Services\\StowageFactors.Services.csproj": {
-              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\StowageFactors.Services\\StowageFactors.Services.csproj"
+            "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\StowageFactors.Services\\StowageFactors.Services.csproj": {
+              "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\StowageFactors.Services\\StowageFactors.Services.csproj"
             },
-            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Terminals.Services\\Terminals.Services.csproj": {
-              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Terminals.Services\\Terminals.Services.csproj"
+            "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Terminals.Services\\Terminals.Services.csproj": {
+              "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Terminals.Services\\Terminals.Services.csproj"
             },
-            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Tolerances.Services\\Tolerances.Services.csproj": {
-              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Tolerances.Services\\Tolerances.Services.csproj"
+            "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Tolerances.Services\\Tolerances.Services.csproj": {
+              "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Tolerances.Services\\Tolerances.Services.csproj"
             },
-            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Type.Services\\Type.Services.csproj": {
-              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Type.Services\\Type.Services.csproj"
+            "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Type.Services\\Type.Services.csproj": {
+              "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Type.Services\\Type.Services.csproj"
             },
-            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Vessel.Services\\Vessel.Services.csproj": {
-              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Vessel.Services\\Vessel.Services.csproj"
+            "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Vessel.Services\\Vessel.Services.csproj": {
+              "projectPath": "D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ.Services\\Vessel.Services\\Vessel.Services.csproj"
             }
           }
         }

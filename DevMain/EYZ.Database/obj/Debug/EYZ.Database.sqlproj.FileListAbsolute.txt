@@ -8,3 +8,9 @@ D:\_GESI\EYZ\Dev\DevMain\EYZ.Database\obj\Debug\Model.xml
 D:\_GESI\EYZ\Dev\DevMain\EYZ.Database\obj\Debug\refactor.xml
 D:\_GESI\EYZ\Dev\DevMain\EYZ.Database\obj\Debug\postdeploy.sql
 D:\_GESI\EYZ\Dev\DevMain\EYZ.Database\obj\Debug\predeploy.sql
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\bin\Debug\EYZ.Database.dacpac
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\bin\Debug\EYZ.Database.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\bin\Debug\EYZ.Database.pdb
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\obj\Debug\EYZ.Database.sqlprojAssemblyReference.cache
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\obj\Debug\EYZ.Database.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Database\obj\Debug\EYZ.Database.pdb
