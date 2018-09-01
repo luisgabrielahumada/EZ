@@ -1,0 +1,256 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<div class="container-fluid">
+    <form role="form" name="myForm" novalidate="novalidate">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card card-accent-warning">
+                        <div class="card-header">
+                            <h3> <strong>Welcome</strong></h3>
+                            <small></small>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Products</label>
+                                        <md-select name="productId" placeholder="Select one" ng-model="productId" ng-class="(myForm.productId.$dirty || !isValid) && !myForm.productId.$valid?'ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched' : ''" style="width:70%" ng-change="GetSelectedProducts()" ng-required="true">
+                                            <md-select-header layout="column" class="demo-select-header">
+                                                <section flex>
+                                                    <span></span>
+                                                </section>
+                                                <md-input-container>
+                                                    <input ng-model="searchProduct" type="search" placeholder="Search..." class="demo-header-searchbox md-text" />
+                                                </md-input-container>
+                                            </md-select-header>
+                                            <md-optgroup>
+                                                <md-option ng-value="data" ng-selected="data.id == productId.id" ng-repeat="data in itemsProduct | filter:searchProduct">
+                                                    {{data.name}}
+                                            </md-optgroup>
+                                        </md-select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <label>Stowage Factors</label>
+                                        <md-select name="stowageFactorId" placeholder="Select one" ng-model="stowageFactorId" ng-class="(myForm.stowageFactorId.$dirty || !isValid) && !myForm.stowageFactorId.$valid?'ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched' : ''" style="width:70%" data-md-container-class="selectdemoSelectHeader" ng-change="GetSelectedStowageFactors()" required>
+                                            <md-optgroup>
+                                                <md-option ng-value="data" ng-selected="data.id == stowageFactorId.id" ng-repeat="data in itemsStowageFactor | filter:search">
+                                                    {{data.name}}
+                                            </md-optgroup>
+                                        </md-select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group" ng-show="isStowageFactor">
+                                        <br />
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" ng-class="(myForm.stowageFactor.$dirty || !isValid) && !myForm.stowageFactor.$valid && isStowageFactor ?'is-invalid' : ''" style="width:50%" id="stowageFactor" name="stowageFactor" ng-model="stowageFactor" ui-number-mask>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><b>{{measure}}</b></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <label>Quantity</label>
+                                        <md-select name="quantityId" ng-model="quantityId" placeholder="Select one" ng-class="(myForm.quantityId.$dirty || !isValid) && !myForm.quantityId.$valid?'ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched' : ''" style="width:70%" ng-change="GetSelectedQuantity()" required>
+                                            <md-optgroup>
+                                                <md-option ng-value="data" ng-selected="data.id == quantityId.id" ng-repeat="data in itemsQuantity | filter:search">
+                                                    {{data.name}}
+                                            </md-optgroup>
+                                        </md-select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group" ng-show="isQuantity">
+                                        <br />
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" ng-class="(myForm.quantity.$dirty || !isValid) && !myForm.quantity.$valid && isQuantity ?'is-invalid' : ''" style="width:50%" id="quantity" name="quantity" ng-model="quantity" ui-number-mask>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><b>{{measureQuantity}}</b></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Loading Port</label>
+                                        <md-select name="loadPortId" ng-model="loadPortId" placeholder="Select one" ng-class="(myForm.loadPortId.$dirty || !isValid) && !myForm.loadPortId.$valid?'ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched' : ''" style="width:70%" ng-change="GetLoadTerminal()" required>
+                                            <md-select-header layout="column" class="demo-select-header">
+                                                <section flex>
+                                                    <span></span>
+                                                </section>
+                                                <md-input-container>
+                                                    <input ng-model="searchPortLoad" style="width:80%" type="search" placeholder="Search..." class="demo-header-searchbox md-text" />
+                                                </md-input-container>
+                                            </md-select-header>
+                                            <md-optgroup>
+                                                <md-option ng-value="data" ng-selected="data.id == loadPortId.id" ng-repeat="data in itemsPort | filter:searchPortLoad">
+                                                    {{data.name}}
+                                            </md-optgroup>
+                                        </md-select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Loading Terminal</label>
+                                        <md-select name="loadTerminalId" ng-model="loadTerminalId" placeholder="Select one" ng-class="(myForm.loadTerminalId.$dirty || !isValid) && !myForm.loadTerminalId.$valid?'ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched' : ''" style="width:70%" ng-change="GetLoadingRate()" required>
+                                            <md-optgroup>
+                                                <md-option ng-value="data" ng-selected="data.id == loadTerminalId.id" ng-repeat="data in itemsLoadTerminal | filter:search">
+                                                    {{data.name}}
+                                            </md-optgroup>
+                                        </md-select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Loading Rate</label>
+                                        <br />
+                                        <br />
+                                        <div class="input-group">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><b> MT/Day</b></span>
+                                            </div>
+                                            <input type="text" class="form-control" ng-class="(myForm.loadingRate.$dirty || !isValid) && !myForm.loadingRate.$valid?'is-invalid' : ''" name="loadingRate" placeholder="0" ng-model="loadingRate" ui-number-mask required>
+                                            <div class="input-group-append">
+                                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                                                    {{ConditionsLoading}}
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" ng-repeat="data in loadingCondition" ng-click="GetSelectedLoadingCondition(data)">
+                                                        {{data.name}}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Discharge Port</label>
+                                        <md-select name="dischargePortId" ng-model="dischargePortId" placeholder="Select one" ng-class="(myForm.dischargePortId.$dirty || !isValid) && !myForm.dischargePortId.$valid?'ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched' : ''" style="width:70%" ng-change="GetDischargeTerminal()" required>
+                                            <md-select-header layout="column" class="demo-select-header">
+                                                <section flex>
+                                                    <span></span>
+                                                </section>
+                                                <md-input-container>
+                                                    <input ng-model="searchPortDischarge" type="search" placeholder="Search..." class="demo-header-searchbox md-text" />
+                                                </md-input-container>
+                                            </md-select-header>
+                                            <md-optgroup>
+                                                <md-option ng-value="data" ng-selected="data.id == dischargePortId.id" ng-repeat="data in itemsPort | filter:searchPortDischarge">
+                                                    {{data.name}}
+                                            </md-optgroup>
+                                        </md-select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Discharge Terminal</label>
+                                        <md-select name="dischargeTerminalId" ng-model="dischargeTerminalId" placeholder="Select one" ng-class="(myForm.dischargeTerminalId.$dirty || !isValid) && !myForm.dischargeTerminalId.$valid?'ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched' : ''" style="width:70%" data-md-container-class="selectdemoSelectHeader" ng-change="GetUnLoadingRate()" required>
+                                            <md-optgroup>
+                                                <md-option ng-value="data" ng-selected="data.id == dischargeTerminalId.id" ng-repeat="data in itemsDischargeTerminal | filter:search">
+                                                    {{data.name}}
+                                            </md-optgroup>
+                                        </md-select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Unloading Rate</label>
+                                        <br />
+                                        <br />
+                                        <div class="input-group">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><b> MT/Day</b></span>
+                                            </div>
+                                            <input type="text" class="form-control" ng-class="(myForm.unLoadingRate.$dirty || !isValid) && !myForm.unLoadingRate.$valid?'is-invalid' : ''" name="unLoadingRate" placeholder="0" ng-model="unLoadingRate" ui-number-mask required>
+                                            <div class="input-group-append">
+                                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                                                    {{ConditionsUnLoading}}
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" ng-repeat="data in unLoadingCondition" ng-click="GetSelectedUnLoadingCondition(data)">
+                                                        {{data.name}}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 col-lg-4 col-sd-4">
+                                    <div class="form-group">
+                                        <label>Tolerance</label>
+                                        <md-select name="toleranceId" ng-model="toleranceId" ng-class="(myForm.toleranceId.$dirty || !isValid) && !myForm.toleranceId.$valid?'ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched' : ''" style="width:70%" required>
+                                            <md-optgroup>
+                                                <md-option ng-value="data" ng-selected="data.id == toleranceId.id" ng-repeat="data in itemsTolerance | filter:search">
+                                                    {{data.name}}
+                                            </md-optgroup>
+                                        </md-select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Terms</label>
+                                        <md-select name="terms" ng-model="terms" ng-class="(myForm.terms.$dirty || !isValid) && !myForm.terms.$valid?'ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched' : ''" style="width:70%" required>
+                                            <md-optgroup>
+                                                <md-option ng-value="data" selected="true" ng-repeat="data in itemsTerms | filter:search">
+                                                    {{data.Key}}
+                                            </md-optgroup>
+                                        </md-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label>Start Laycan</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control datepicker" ng-class="(myForm.startLaycan.$dirty || !isValid) && !myForm.startLaycan.$valid?'is-invalid' : ' '" id="startLaycan" name="startLaycan" ng-model="startLaycan">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>End Laycan</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control datepicker" ng-class="(myForm.endLaycan.$dirty || !isValid) && !myForm.endLaycan.$valid?'is-invalid' : ' '" id="endLaycan" name="endLaycan" ng-model="endLaycan">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group float-right">
+                                        <button type="submit" class="btn btn-primary btn-lg" ng-click="Request()"><i class="fa fa-search"></i> Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

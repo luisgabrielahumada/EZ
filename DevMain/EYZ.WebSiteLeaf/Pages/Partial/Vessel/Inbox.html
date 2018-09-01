@@ -1,0 +1,167 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="breadcrumb-item active">Inbox Vessel</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<h3>List Of Request for Freight Indications</h3>
+<hr class="card card-accent-warning" />
+<div class="email-app mb-4">
+    <nav>
+        <ul class="nav">
+            <li class="nav-item" ng-class="status=='REQUEST' ? 'active' : ''">
+                <a class="nav-link" href="" ng-click="GetStatus('REQUEST')"><i class="fa fa-inbox"></i> Requests</a>
+            </li>
+        </ul>
+        <ul class="nav">
+            <li>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </li>
+            <li class="divider m-2"></li>
+            <li class="nav-title">
+                <b>Status</b>
+            </li>
+            <li class="nav-item px-3 hidden-cn d-down-none">
+                <div class="mb-1">
+                    <i class="fa fa-battery-empty fa-lg mt-4 text-warning"></i> Requests
+                </div>
+                <div class="mb-1">
+                    <i class="fa fa-bell-slash fa-lg mt-4 text-danger"></i>  Declined
+                </div>
+                <div class="nav-label mb-1">
+                    <i class="fa fa-battery-2 fa-lg mt-4 text-info"></i>  Acceptance under Conditions
+                </div>
+                <div class="mb-1">
+                    <i class="fa fa-battery-4 fa-lg mt-4 text-success"></i>   Acceptance
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <main class="inbox">
+        <div class="toolbar">
+            <div class="btn-group">
+                <button type="button" class="btn btn-light" ng-click="List(pagination.pageIndex)">
+                    <span class="fa fa-refresh"></span>
+                </button>
+                <!--<button type="button" class="btn btn-light">
+                    <span class="fa fa-star"></span>
+                </button>
+                <button type="button" class="btn btn-light">
+                    <span class="fa fa-star-o"></span>
+                </button>
+                <button type="button" class="btn btn-light">
+                    <span class="fa fa-bookmark-o"></span>
+                </button>-->
+            </div>
+            <!--<div class="btn-group">
+                <button type="button" class="btn btn-light">
+                    <span class="fa fa-mail-reply"></span>
+                </button>
+                <button type="button" class="btn btn-light">
+                    <span class="fa fa-mail-reply-all"></span>
+                </button>
+                <button type="button" class="btn btn-light">
+                    <span class="fa fa-mail-forward"></span>
+                </button>
+            </div>-->
+            <!--<button type="button" class="btn btn-light">
+                <span class="fa fa-trash-o"></span>
+            </button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                    <span class="fa fa-tags"></span>
+                    <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">add label <span class="badge badge-danger"> Home</span></a>
+                    <a class="dropdown-item" href="#">add label <span class="badge badge-info"> Job</span></a>
+                    <a class="dropdown-item" href="#">add label <span class="badge badge-success"> Clients</span></a>
+                    <a class="dropdown-item" href="#">add label <span class="badge badge-warning"> News</span></a>
+                </div>
+            </div>-->
+            <div class="btn-group float-right">
+                <button type="button" class="btn btn-light" ng-click="Last(pagination.pageIndex)">
+                    <span class="fa fa-chevron-left"></span>
+                </button>
+                <button type="button" class="btn btn-light" ng-click="Next(pagination.pageIndex)">
+                    <span class="fa fa-chevron-right"></span>
+                </button>
+            </div>
+        </div>
+
+        <ul class="messages">
+            <li class="message" ng-repeat="item in items | filter:Filter" ng-class="item.NewStatus=='REQUEST' || item.NewStatus=='PENDING'  ? 'unread' : ''">
+                <a href="#/Liquidation/{{item.Token}}/{{item.VesselId}}">
+                    <div class="actions">
+                        <span title="{{item.Status}}" ng-show="item.Status=='ACCEPTUNDER'"><i class="fa fa-battery-2 fa-lg mt-4 text-info"></i></span>
+                        <span title="{{item.Status}}" ng-show="item.Status=='DECLINE'"><i class="fa fa-bell-slash fa-lg mt-4 text-danger"></i></span>
+                        <span title="{{item.Status}}" ng-show="item.Status=='ACCEPT' || item.Status=='OK'"><i class="fa fa-battery-4 fa-lg mt-4 text-success"></i></span>
+                        <span title="{{item.Status}}" ng-show="item.Status=='REQUEST'"><i class="fa fa-battery-empty fa-lg mt-4 text-warning"></i></span>
+                    </div>
+                    <div class="header">
+                        <span class="from">Reference {{item.Id}} {{item.Vessel}}</span>
+                        <span class="date">
+                            <span class="fa fa-paper-clip"></span> {{item.Updated | date : 'yyyy/MM/dd'}}
+                        </span>
+                    </div>
+                    <div class="title">
+                        {{item.Quantity | number}} {{item.MeasureQuantity}}  - {{item.Product}} from {{item.LoadPort}} to {{item.UnLoadPort}}
+                    </div>
+                    <div class="title">
+                        Date Lycan: {{item.StartLaycan | date : 'yyyy/MM/dd' }} - {{item.EndLaycan | date : 'yyyy/MM/dd'}}
+                        <span ng-if="item.NewStatus=='REQUEST'" class="badge badge-danger">New</span>
+                        <span>
+                            <a ng-if="item.hasNegotiationsOfRequests!='0'" href="#/RegisterContract/{{item.Token}}/{{item.VesselToken}}"><i class="fa fa-commenting"></i></a>
+                        </span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>

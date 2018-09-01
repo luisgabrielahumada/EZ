@@ -1,0 +1,92 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item">Home</li>
+    <li class="breadcrumb-item"><a href="#/Contract">Contracts</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+
+<form role="form" name="myForm">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Detail</strong>
+                    <small><b>{{item.code}}</b></small>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Code</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.code.$dirty || !isValid) && !myForm.code.$valid?'is-invalid' : ''" name="code" placeholder="Code" ng-model="item.code" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Name</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.name.$dirty || !isValid) && !myForm.name.$valid?'is-invalid' : ''" name="name" placeholder="Name" ng-model="item.name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Avaliable From</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control datepicker" ng-class="(myForm.availableFrom.$dirty || !isValid) && !myForm.availableFrom.$valid?'is-invalid' : ''" id="availableFrom" name="availableFrom"  placeholder="Available From" ng-model="item.availableFrom">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Observation</label> <label class="text-danger">*</label>
+                                <textarea rows="4" cols="50" class="form-control custom-control" placeholder="Observation" ng-model="item.observation"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Clauses</label> <label class="text-danger">*</label>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class="fa fa-align-justify"></i> List group
+                                        <div class="card-actions">
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group" ng-repeat="item in clauses">
+                                            <li class="list-group-item">
+                                                <input type="checkbox"
+                                                       name="selectedClauses[]"
+                                                       value="{{item.Token}}"
+                                                       ng-checked="item.isSelected===true"
+                                                       ng-click="toggleSelection(item)">
+                                                {{item.code}} - IsModify: {{item.isModify}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="switch switch-lg switch-3d switch-primary">
+                                    <input type="checkbox" class="switch-input" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.IsActive===true" ng-model="item.IsActive">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>  Inactive
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group float-right">
+                                <a class="btn btn-outline-danger" href="#/Contract">Cancel</a>
+                                <button type="submit" class="btn btn-outline-success" ng-click="Save(item.Token)">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

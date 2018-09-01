@@ -1,0 +1,174 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item">Home</li>
+    <li class="breadcrumb-item"><a href="#/Vessel">Vessel</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<form role="form" name="myForm">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Detail</strong>
+                    <small><b>{{item.name}}</b></small>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.name.$dirty || !isValid) && !myForm.name.$valid?'is-invalid' : ''" name="name" placeholder="Name" ng-model="item.name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Description</label>
+                                <input type="text" class="form-control custom-control" name="Description" placeholder="description" ng-model="item.description">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.phone.$dirty || !isValid) && !myForm.phone.$valid?'is-invalid' : ''" name="phone" placeholder="Phone" ng-model="item.phone">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.email.$dirty || !isValid) && !myForm.email.$valid?'is-invalid' : ''" name="email" placeholder="Email" ng-model="item.email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Contact</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.contact.$dirty || !isValid) && !myForm.contact.$valid?'is-invalid' : ''" name="contact" placeholder="Contact" ng-model="item.contact">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Country</label>
+                                <select class="form-control select2 custom-control" ng-options="data.CountryId as data.Country for data in Countryitems" ng-class="(myForm.CountryId.$dirty || !isValid) && !myForm.CountryId.$valid?'is-invalid' : ''" ng-change="City()" style="width: 100%;" id="CountryId" name="CountryId" ng-model="item.countryId" required>
+                                    <option selected value="0">Selected Type</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>City</label>
+                                <select class="form-control select2 custom-control" ng-options="data.CityId as data.City for data in Cityitems" ng-class="(myForm.City.$dirty || !isValid) && !myForm.City.$valid?'is-invalid' : ''" style="width: 100%;" id="City" name="City" ng-model="item.cityId" required>
+                                    <option selected value="0">Select City</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Speed</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.speed.$dirty || !isValid) && !myForm.speed.$valid?'is-invalid' : ''" name="speed" placeholder="Speed" ng-model="item.speed" ui-number-mask required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Type</label>
+                                <select class="form-control select2 custom-control" ng-options="data.Id as data.Name for data in Typeitems" ng-class="(myForm.typeId.$dirty || !isValid) && !myForm.typeId.$valid?'is-invalid' : ''" style="width: 100%;" id="typeId" name="typeId" ng-model="item.typeId" required>
+                                    <option selected value="0">Selected Type</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Capacity</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.capacity.$dirty || !isValid) && !myForm.capacity.$valid?'is-invalid' : ''" name="capacity" placeholder="Capacity" ng-model="item.capacity" ui-number-mask required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Demurrage</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.demurrage.$dirty || !isValid) && !myForm.demurrage.$valid?'is-invalid' : ''" name="demurrage" placeholder="Demurrage" ng-model="item.demurrage" ui-number-mask required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Rate</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.rate.$dirty || !isValid) && !myForm.rate.$valid?'is-invalid' : ''" name="rate" placeholder="Rate" ng-model="item.rateLoading" ui-number-mask required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Ifo Consumed MT per day</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.ifoConsumed.$dirty || !isValid) && !myForm.ifoConsumed.$valid?'is-invalid' : ''" name="ifoConsumed" placeholder="Ifo Consumed" ng-model="item.ifoConsumed" ui-number-mask required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Mgo Consumed MT per day</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.mgoConsumed.$dirty || !isValid) && !myForm.mgoConsumed.$valid?'is-invalid' : ''" name="mgoConsumed" placeholder="Mgo Consumed" ng-model="item.mgoConsumed" ui-number-mask required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Owner</label>
+                                <input type="text" class="form-control custom-control" disabled ng-class="(myForm.owner.$dirty || !isValid) && !myForm.owner.$valid?'is-invalid' : ''" name="owner" placeholder="Owner" ng-model="item.ownerName">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="switch switch-lg switch-3d switch-primary">
+                                    <input type="checkbox" class="switch-input" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.IsActive===true" ng-model="item.IsActive">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>  Inactive
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item" ng-class="{ active: isSet(1) }">
+                                <a class="nav-link" ng-class="{ active: isSet(1) }" data-toggle="tab" href="" ng-click="setTab(1)" role="tab" aria-controls="home"><i class="icon-calculator"></i> Configuration Property</a>
+                            </li>
+                            <li class="nav-item" ng-class="{ active: isSet(2) }">
+                                <a class="nav-link" ng-class="{ active: isSet(2) }" data-toggle="tab" href="" ng-click="setTab(2)" role="tab" aria-controls="profile"><i class="icon-basket-loaded"></i> Configuration Product</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="home3" ng-class="{ active: isSet(1) }" role="tabpanel" ng-show="isSet(1)">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Property</strong>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row" ng-repeat="prop in propertys">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label>{{prop.name}}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control custom-control" name="{{prop.name}}" ng-model="prop.value">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" ng-class="{ active: isSet(2) }" id="profile3" role="tabpanel" ng-show="isSet(2)">
+                                <div ng-include="'Partial/Common/ByAssignedProduct.html'"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group float-right">
+                                <a class="btn btn-outline-danger" href="#/Vessel">Cancel</a>
+                                <button type="submit" class="btn btn-outline-success" ng-click="Save(item.Token)">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

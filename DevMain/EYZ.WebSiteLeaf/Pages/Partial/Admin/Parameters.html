@@ -1,0 +1,73 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<form role="form" name="myForm">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group float-right">
+                                <button type="submit" class="btn btn-outline-info" ng-click="Save()">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-responsive-sm table-sm">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-if="items.length===0">
+                                <td colspan="20">No Records</td>
+                            </tr>
+                            <tr ng-repeat="item in items| filter:Filter">
+                                <td style="width:75%">
+                                    <div class="box-body">
+                                        <b>{{item.Title}}</b>  "{{item.Parameter}}"
+                                        <small>{{item.Observation}}</small>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <div class="box-body" ng-if="item.Type==='CONTROL'">
+                                            <input type="{{item.Control}}" name="{{item.CodeParameter}}" ng-class="(myForm.{{item.CodeParameter}}.$dirty || !isValid) && !myForm.{{item.CodeParameter}}.$valid?'is-invalid' : ''" ng-true-value="1" ng-false-value="0" ng-class="item.Control==='TEXT' ? 'form-control': ''" ng-model="item.ValueId" />
+                                        </div>
+                                        <div class="box-body" ng-if="item.Control==='PROFILES'">
+                                            <select class="form-control select2" style="width: 100%;" id="{{item.CodeParameter}}" name="{{item.CodeParameter}}" ng-model="item.ValueId" ng-options="data.ValueId as data.Value for data in profilesItems" required></select>
+                                        </div>
+                                        <div class="box-body" ng-if="item.Control==='CD_CITIES'">
+                                            <select class="form-control select2" style="width: 100%;" id="{{item.CodeParameter}}" name="{{item.CodeParameter}}" ng-model="item.ValueId" ng-options="data.ValueId as data.Value for data in citiesItems" required></select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                    </table>
+                    <nav>
+                        <paging class="small"
+                                ul-class="pagination"
+                                active-class="active"
+                                disabled-class="disabled"
+                                page="pagination.pageIndex"
+                                page-size="pagination.pageSize"
+                                total="pagination.totalItemCount"
+                                paging-action="List(page)"
+                                show-prev-next="true"
+                                show-first-last="true">
+                        </paging>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,86 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item">Home</li>
+    <li class="breadcrumb-item"><a href="#/Users">Usuarios</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<form role="form" name="myForm">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Detail</strong>
+                    <small><b>{{item.Name}}--{{item.Login}}</b></small>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>Nombre</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.Name.$dirty || !isValid) && !myForm.Name.$valid?'is-invalid' : ''" name="Name" placeholder="Name" ng-model="item.Name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Email</label> <label class="text-danger">*</label>
+                                <input type="email" class="form-control custom-control" ng-class="(myForm.Email.$dirty || !isValid) && !myForm.Email.$valid?'is-invalid' : ''" name="Email" placeholder="Email" ng-model="item.Email" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>Login</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.Login.$dirty || !isValid) && !myForm.Login.$valid?'is-invalid' : ''" name="Login" placeholder="Login" ng-disabled="Id!=0" ng-minlength="6" ng-model="item.Login" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group" ng-show="Id==0">
+                                <label>Password</label> <label class="text-danger">*</label>
+                                <input type="password" class="form-control" ng-class="(myForm.Password.$dirty || !isValid) && !myForm.Password.$valid?'is-invalid' : ''" name="Password" placeholder="" ng-minlength="6" ng-maxlength="15" Password" ng-model="item.Password" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Profile</label> <label class="text-danger">*</label>
+                                <select class="form-control select2 custom-control" ng-class="(myForm.Profile.$dirty || !isValid) && !myForm.Profile.$valid?'is-invalid' : ''" style="width: 100%;" id="ProfileId" name="ProfileId" ng-model="item.ProfileId" required>
+                                    <option selected value="0">Select one</option>
+                                    <option ng-repeat="data in items" ng-selected="item.ProfileId==data.ProfileId" value="{{data.ProfileId}}">{{data.ProfileId}}-{{data.Profile}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="switch switch-lg switch-3d switch-primary">
+                                    <input type="checkbox" class="switch-input" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.IsActive===true" ng-model="item.IsActive">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>  Inactive
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="switch switch-lg switch-3d switch-primary">
+                                    <input type="checkbox" class="switch-input" name="IsSysadmin" ng-true-value="true" ng-false-value="false" ng-checked="item.IsSysadmin===true" ng-model="item.IsSysadmin">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>  Super Administrator
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group float-right">
+                                <a class="btn btn-outline-danger" href="#/Users">Cancel</a>
+                                <button type="submit" class="btn btn-outline-success" ng-click="Save(item.Token)">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

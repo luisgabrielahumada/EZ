@@ -1,0 +1,282 @@
+﻿<!--
+ * GenesisUI - Bootstrap 4 Admin Template
+ * @version v1.8.14
+ * @link https://genesisui.com
+ * Copyright (c) 2018 creativeLabs Łukasz Holeczek
+ * @license https://genesisui.com/license.html
+ -->
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Leaf - Bootstrap 4 Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard,Vue,Vue.js,React,React.js">
+    <link rel="shortcut icon" href="../img/favicon.png">
+    <title>EZ</title>
+
+    <!-- Icons -->
+    <link href="../vendors/css/flag-icon.min.css" rel="stylesheet">
+    <link href="../vendors/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../vendors/css/simple-line-icons.min.css" rel="stylesheet">
+    <link href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css" rel="stylesheet" />
+    <link href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/angular-toastr@2/dist/angular-toastr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.12.1/select.min.css">
+    <!-- Main styles for this application -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- Styles required by this views -->
+    <link href="../vendors/css/daterangepicker.min.css" rel="stylesheet">
+    <link href="../vendors/css/gauge.min.css" rel="stylesheet">
+    <link href="../vendors/css/toastr.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ag-grid/12.0.2/styles/ag-grid.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ag-grid/12.0.2/styles/theme-blue.css" />
+    <script src="../vendors/js/jquery.min.js"></script>
+    <script src="../vendors/js/popper.min.js"></script>
+    <script src="../vendors/js/bootstrap.min.js"></script>
+    <script src="../Includes/js/FnGlobal.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-sanitize.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-animate.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-resource.js"></script>-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-sanitize.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-animate.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-resource.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="../Includes/libs/angular-plugin/angular-local-storage.js"></script>
+    <script src="../Includes/libs/angular-plugin/loading-bar.js"></script>
+    <script src="../Includes/js/ng-notify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-input-masks/4.1.0/angular-input-masks-standalone.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ag-grid/12.0.2/ag-grid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/angular-toastr@2/dist/angular-toastr.tpls.js"></script>
+
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>-->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>-->
+    <script src="http://matteosuppo.github.io/angular-diff/angular-diff.min.js"></script>
+
+    <script src="../Includes/js/select2/selectAll.js?v=2"></script>
+    <link href="../Includes/js/select2/select2.css" rel="stylesheet">
+    <!--<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+    <script src="../Pages/Script/App.js"></script>
+    <!-- Select2 theme -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+    <script src="../Includes/js/authInterceptorService.js?v=2"></script>
+    <script src="../Includes/js/authService.js?v=2"></script>
+    <script src="../Includes/js/breaDcrumb.js?v=2"></script>
+    <script src="../Includes/js/serviceRest.js?v=2"></script>
+    <script src="../Includes/js/serviceLocalized.js?v=2"></script>
+    <script src="../Includes/js/SettingLocation.js?v=2"></script>
+    <script src="../Includes/js/ngMask.js?v=2"></script>
+
+    <!-- Load controllers Commons -->
+    <script src="../Pages/Common/Sessions.js"></script>
+    <script src="../Pages/Common/ProfileUser.js"></script>
+    <script src="../Pages/Common/Unauthorized.js"></script>
+    <script src="../Pages/Script/Common/Home.js"></script>
+
+    <script src="../Pages/Script/Admin/Menus.js?v=2"></script>
+    <script src="../Pages/Script/Admin/Profiles.js?v=2"></script>
+    <script src="../Pages/Script/Admin/Users.js?v=2"></script>
+    <script src="../Pages/Script/Admin/Customers.js?v=2"></script>
+    <script src="../Pages/Script/Admin/MessagesLog.js?v=2"></script>
+    <script src="../Pages/Script/Admin/Parameters.js?v=2"></script>
+    <script src="../Pages/Script/Admin/Permissions.js?v=2"></script>
+    <script src="../Pages/Script/Admin/Inbox.js?v=2"></script>
+    <script src="../Pages/Script/Admin/Conditions.js?v=2"></script>
+    <script src="../Pages/Script/Admin/Products.js"></script>
+    <script src="../Pages/Script/Admin/QuantityMT.js"></script>
+    <script src="../Pages/Script/Admin/StowageFactor.js"></script>
+    <script src="../Pages/Script/Admin/Ports.js"></script>
+    <script src="../Pages/Script/Admin/Terminals.js"></script>
+    <script src="../Pages/Script/Admin/DistanceBetweenPorts.js"></script>
+    <script src="../Pages/Script/Admin/PropertyVessel.js"></script>
+    <script src="../Pages/Script/Admin/Clauses.js"></script>
+    <script src="../Pages/Script/Admin/Contracts.js"></script>
+
+    <script src="../Pages/Script/Common/Cities.js?v=2"></script>
+    <script src="../Pages/Script/Common/Countries.js?v=2"></script>
+    <script src="../Pages/Script/Common/Liquidation.js?v=2"></script>
+    <script src="../Pages/Script/Common/RegisterContract.js?v=2"></script>
+
+    <script src="../Pages/Script/Customer/Step.js?v=2"></script>
+    <script src="../Pages/Script/Customer/Inbox.js?v=2"></script>
+
+    <script src="../Pages/Script/Vessel/Inbox.js?v=2"></script>
+    <script src="../Pages/Script/Vessel/Vessel.js?v=2"></script>
+</head>
+<body ng-controller="MenuCrtl" ng-class="authentication.Section=='SYSAD' ? 'app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden pace-done ' : 'app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden pace-done sidebar-hidden' ">
+    <header class="app-header navbar">
+        <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="#"><span class="logo-lg"><img src="../img/Logo3.png" alt="E*Z Freight" /></span></a>
+        <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <nav aria-label="breadcrumb" role="navigation" ng-show="authentication.Section!='SYSAD'">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-menu" ng-repeat="parent in menus"><a style="text-decoration-line:none" class="no-border" href="#/{{parent.link}}">{{parent.alias}}&#160;&#160;&#160;&#160;</a></li>
+                <li class="breadcrumb-menu" ng-if="authentication.Section=='CUSTOMERS'"><a href="#/Step" class="btn btn-danger active" style="text-decoration-line:none">SEARCH THE RIGHT VESSEL FOR YOUR CARGO</a></li>
+            </ol>
+        </nav>
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item dropdown d-md-down-none">
+                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="icon-bell"></i><span class="badge badge-pill badge-danger">{{countMessages}}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
+                    <div class="dropdown-header text-center">
+                        <strong>You have {{countMessages}} notifications</strong>
+                    </div>
+                    <a href="#" ng-click="clearMessages()" class="dropdown-item text-center">
+                        <strong>Clear all</strong>
+                    </a>
+                    <a href="#" class="dropdown-item" ng-repeat="item in itemMessages">
+                        <i class="icon-user-follow text-success">  {{item.status}}</i> {{item.message}}
+                    </a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown d-md-down-none">
+                <a class="nav-link" ng-click="initNotifications()" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="icon-envelope-letter"></i><span class="badge badge-pill badge-info">{{countNotification}}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
+                    <div class="dropdown-header text-center">
+                        <strong>You have {{countNotification}} messages</strong>
+                    </div>
+                    <a href="" ng-click="clearNotifications()" class="dropdown-item text-center">
+                        <strong>Clear all</strong>
+                    </a>
+                    <div style="height:400px !important;overflow-y:scroll" ng-if="itemNotification.length>0">
+                        <div ng-repeat="item in itemNotification">
+                            <a href="#" class="dropdown-item" title="{{item.message}}">
+                                <div ng-switch="item.code">
+                                    <div ng-switch-when="Other">
+                                        <div class="message">
+                                            <div>
+                                                <small class="text-muted">{{item.date | date:'yyyy/MM/dd hh:mm:ss'}}</small>
+                                            </div>
+                                            <div class="text-truncate font-weight-bold">
+                                                <div class="title">
+                                                    <span class="fa fa-comment-o text-danger"></span> <b>Notification</b>
+                                                </div>
+                                                <div class="small text-muted text-truncate">
+                                                    {{item.message}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div ng-switch-default>
+                                        <div class="message">
+                                            <div>
+                                                <small class="text-muted">{{item.date | date:'yyyy/MM/dd hh:mm:ss'}}</small>
+                                                <small class="text-muted float-right mt-1">{{item.result.NewStatus}}</small>
+                                            </div>
+                                            <div class="text-truncate font-weight-bold">
+                                                <span class="fa fa-check-square-o text-info" ng-show="item.result.NewStatus=='PARTIAL_ACCEPT'"></span>
+                                                <span class="fa fa-exclamation text-danger" ng-show="item.result.NewStatus=='DECLINE'"></span>
+                                                <span class="fa fa-close text-info" ng-show="item.result.NewStatus=='CANCEL'"></span>
+                                                <span class="fa fa-cogs text-success" ng-show="item.result.NewStatus=='FULL_ACCEPT'  || item.NewStatus=='OK'"></span>
+                                                <span class="fa fa-comment-o text-warning" ng-show="item.result.NewStatus!='REQUEST'"></span>
+                                                Reference {{item.result.Id}} TBN
+                                            </div>
+                                            <div class="small text-muted text-truncate">
+                                                <div class="title">
+                                                    <b>{{item.result.QuantityMTName}}</b>  - {{item.result.ProductName}}
+                                                </div>
+                                                <div class="title">
+                                                    From {{item.result.LoadPortName}} to {{item.result.LoadTerminalName}}
+                                                </div>
+                                                <div class="title">
+                                                    Date Lycan: {{item.result.StartLaycan | date : 'yyyy/MM/dd' }} - {{item.result.EndLaycan | date : 'yyyy/MM/dd'}}
+                                                </div>
+                                                <div class="title">
+                                                    Number Vessel Send Request <b>{{item.result.CountVessel}}</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img src="../img/avatars/avatar00.png" class="img-avatar" alt="admin@bootstrapmaster.com">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-header text-center">
+                        <strong>Settings</strong>
+                    </div>
+                    <a class="dropdown-item" href="#/ProfileUser"><i class="fa fa-user"></i> Profile</a>
+                    <a class="dropdown-item" href="#/Parameters"><i class="fa fa-wrench"></i> Settings</a>
+                    <div class="divider"></div>
+                    <a class="dropdown-item" href="" ng-click="logOut()"><i class="fa fa-lock"></i> Logout</a>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <div class="app-body">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-item nav-dropdown" ng-hide="!authentication.IsAuth" ng-repeat="parent in menus">
+                        <a class="nav-link nav-dropdown-toggle" href="#/{{parent.link}}"><i class="{{parent.class}}"></i> {{parent.name}}</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item" ng-repeat="item in parent.items">
+                                <a class="nav-link" href="#/{{item.link}}"><i class="{{item.class}}"></i> &nbsp;{{item.name}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Main content -->
+        <div growl></div>
+        <main class="main">
+            <div class="container-fluid">
+                <div data-ng-view>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="app-footer">
+        <div class="row">
+            <div class="footer-fixed"><span>E-Z Freight © 2018</span></div>
+        </div>
+    </footer>
+    <!-- Bootstrap and necessary plugins -->
+
+    <script src="../vendors/js/pace.min.js?v=2"></script>
+    <!-- Leaf main scripts -->
+    <script src="../js/app.js?v=2"></script>
+    <!-- Plugins and scripts required by this views -->
+    <script src="../vendors/js/toastr.min.js?v=2"></script>
+    <script src="../vendors/js/gauge.min.js?v=2"></script>
+    <script src="../vendors/js/moment.min.js?v=2"></script>
+
+    <script src="../Includes/jQuery/jquery-2.2.3.min.js?v=2"></script>
+    <script src="../Includes/jQuery/jquery-ui.js?v=2"></script>
+    <script src="../Includes/jQuery/date.format.js"></script>
+    <script src="../vendors/js/daterangepicker.min.js?v=2"></script>
+    <script src="../Includes/js/jquery.signalR-2.2.0.min.js?v=2"></script>
+    <script src="../Includes/js/angular-SignalR-NotificationClient.js?v=2"></script>
+    <script src="../Includes/libs/angular-plugin/angular-modal-service.js?v=2"></script>
+    <script src="../Includes/js/angular-directive.js?v=2"></script>
+    <script src="../Includes/js/angular-paging.js?v=2"></script>
+    <script src="../Includes/js/angular-notify.js?v=2"></script>
+    <script src="../Includes/js/angular-growl.js?v=2"></script>
+    <script src="../Includes/js/angular-confirm-click.js?v=2"></script>
+</body>
+</html>

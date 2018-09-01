@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="Auth">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Leaf Bootstrap 4 Admin Template">
+    <meta name="author" content="Lukasz Holeczek">
+    <meta name="keyword" content="Leaf Bootstrap 4 Admin Template">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/angular-toastr@2/dist/angular-toastr.css">
+    <!-- Icons -->
+    <link href="../vendors/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../vendors/css/simple-line-icons.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../Includes/js/css/ng-notify.css" rel="stylesheet">
+    <!-- 3rd party libraries -->
+    <script src="../Includes/libs/angular/angular1.5.9.min.js"></script>
+    <script src="../Includes/libs/angular/angular-route1.5.9.js"></script>
+    <script src="../Includes/libs/angular-plugin/angular-local-storage.js"></script>
+    <script src="../Includes/js/angular-animate.js"></script>
+    <script src="../Includes/libs/angular-plugin/loading-bar.js"></script>
+    <script src="../Includes/js/ng-notify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/angular-toastr@2/dist/angular-toastr.tpls.js"></script>
+    <!-- Load app main script -->
+    <script src="Script/Auth.js"></script>
+    <!-- Load services -->
+    <script src="../Includes/js/authInterceptorService.js?v=2"></script>
+    <script src="../Includes/js/authService.js?v=2"></script>
+    <script src="../Includes/js/serviceRest.js?v=2"></script>
+    <!-- Load controllers -->
+    <script src="Script/Login.js?v=2"></script>
+</head>
+
+<body class="app flex-row align-items-center">
+    <div class="container">
+        <div data-ng-view="">
+        </div>
+    </div>
+    <!-- Bootstrap and necessary plugins -->
+    <script src="../vendors/js/jquery.min.js"></script>
+    <script src="../vendors/js/popper.min.js"></script>
+    <script src="../vendors/js/bootstrap.min.js"></script>
+    <script src="../Includes/js/angular-directive.js"></script>
+</body>
+</html>

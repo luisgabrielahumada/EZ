@@ -1,0 +1,24 @@
+﻿<div class="col-xs-12 text-warning text-right">
+    <b>Items/Page:</b>&#160;&#160;
+    <input type="text" class="custom-control" style="width:40px" id="ItemsPage" name="ItemsPage" ng-blur="pagingBlur(pageSize)" value="{{pageSize}}" ng-model="pageSize">
+    <b>Page:</b>
+    <select class="custom-control " style="width:40px" ng-init="pageIndex='1'" ng-change="pagingAction(pageIndex)" id="pageIndex" name="pageIndex" ng-model="pageIndex">
+        <option ng-repeat="data in totalPages"  value="{{data.index}}">{{data.index}}</option>
+    </select>&#160;&#160;&#160;
+    <b>Total Items:{{total}}</b>
+</div>
+
+<!--<div class="col-xs-12 text-warning text-right">
+    <b>Items/Page:</b>
+    <input type="text" class="custom-control" style="width:40px" id="ItemsPage" name="ItemsPage" ng-blur="pagingBlur(pageSize)" value="{{pageSize}}" ng-model="pageSize">
+    <b>Page:</b>
+    <select class="custom-control " style="width:40px"
+            ng-change="pagingAction(selectedPageIndex)"
+            id="selectedPageIndex"
+            name="selectedPageIndex"
+            ng-model="selectedPageIndex"
+            ng-options="data.index as data.index for data in totalPage">
+        <option></option>
+    </select>
+    <b>Total Items:{{total}}</b>
+</div>-->

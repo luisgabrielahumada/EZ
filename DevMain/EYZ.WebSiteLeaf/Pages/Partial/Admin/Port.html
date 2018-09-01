@@ -1,0 +1,97 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item">Home</li>
+    <li class="breadcrumb-item"><a href="#/Ports">Ports</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+
+<form role="form" name="myForm">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Detail</strong>
+                    <small><b>{{item.name}}</b></small>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Name</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.name.$dirty || !isValid) && !myForm.name.$valid?'is-invalid' : ''" name="name" placeholder="Name" ng-model="item.name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Address</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.address.$dirty || !isValid) && !myForm.address.$valid?'is-invalid' : ''" name="address" placeholder="address" ng-model="item.address">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label>MGO Cost</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.mgo.$dirty || !isValid) && !myForm.mgo.$valid?'is-invalid' : ''" name="mgo" placeholder="mgo" ng-model="item.Mgo" ui-number-mask required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>IFO Cost</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.ifo.$dirty || !isValid) && !myForm.ifo.$valid?'is-invalid' : ''" name="ifo" placeholder="ifo" ng-model="item.Ifo" ui-number-mask required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Country</label> <label class="text-danger">*</label>
+                                <select class="form-control select2 custom-control" ng-options="data.CountryId as data.Country for data in Countryitems" ng-class="(myForm.CountryId.$dirty || !isValid) && !myForm.CountryId.$valid?'is-invalid' : ''" ng-change="City()" style="width: 100%;" id="CountryId" name="CountryId" ng-model="item.countryId" required>
+                                    <option selected value="0">Select one</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>City</label> <label class="text-danger">*</label>
+                                <select class="form-control select2 custom-control" ng-options="data.CityId as data.City for data in Cityitems" ng-class="(myForm.City.$dirty || !isValid) && !myForm.City.$valid?'is-invalid' : ''" style="width: 100%;" id="City" name="City" ng-model="item.city" required>
+                                    <option selected value="0">Select one</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Phone</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.phone.$dirty || !isValid) && !myForm.phone.$valid?'is-invalid' : ''" name="phone" placeholder="phone" ng-model="item.phone">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Terms</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.terms.$dirty || !isValid) && !myForm.terms.$valid?'is-invalid' : ''" name="terms" placeholder="terms" ng-model="item.terms">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="switch switch-lg switch-3d switch-primary">
+                                    <input type="checkbox" class="switch-input" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.IsActive===true" ng-model="item.IsActive">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>  Inactive
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group float-right">
+                                <a class="btn btn-outline-danger" href="#/Ports">Cancel</a>
+                                <button type="submit" class="btn btn-outline-success" ng-click="Save(item.Token)">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,1409 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.1": {
+      "Insight.Database/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Insight.Database.Configuration": "6.2.3",
+          "Insight.Database.Core": "6.2.3",
+          "Insight.Database.Providers.Default": "6.2.3"
+        },
+        "compile": {
+          "lib/net451/Insight.Database.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.dll": {}
+        }
+      },
+      "Insight.Database.Configuration/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Insight.Database.Core": "6.2.3"
+        },
+        "frameworkAssemblies": [
+          "System.Configuration"
+        ],
+        "compile": {
+          "lib/net451/Insight.Database.Configuration.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.Configuration.dll": {}
+        }
+      },
+      "Insight.Database.Core/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.4.0"
+        },
+        "compile": {
+          "lib/net451/Insight.Database.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.Core.dll": {}
+        }
+      },
+      "Insight.Database.Providers.Default/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Insight.Database.Core": "6.2.3"
+        },
+        "compile": {
+          "lib/net451/Insight.Database.Providers.Default.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.Providers.Default.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.WebHost": "[5.2.4, 5.3.0)"
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.WebHost/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Core": "[5.2.4, 5.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        }
+      },
+      "Newtonsoft.Json/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Ninject/3.3.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Ninject.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net47/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/net47/System.ValueTuple.dll": {}
+        }
+      },
+      "Clauses.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Clauses.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Clauses.Services.dll": {}
+        }
+      },
+      "Conditions.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Ports.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Conditions.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Conditions.Services.dll": {}
+        }
+      },
+      "Contract.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Clauses.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Contract.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contract.Services.dll": {}
+        }
+      },
+      "Ports.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Ports.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ports.Services.dll": {}
+        }
+      },
+      "Products.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Products.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Products.Services.dll": {}
+        }
+      },
+      "Quantity.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Quantity.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Quantity.Services.dll": {}
+        }
+      },
+      "Step.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Step.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Step.Services.dll": {}
+        }
+      },
+      "StowageFactors.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StowageFactors.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StowageFactors.Services.dll": {}
+        }
+      },
+      "Terminals.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Terminals.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Terminals.Services.dll": {}
+        }
+      },
+      "Tolerances.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Tolerances.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tolerances.Services.dll": {}
+        }
+      },
+      "Type.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "Insight.Database": "6.2.3"
+        },
+        "compile": {
+          "bin/placeholder/Type.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Type.Services.dll": {}
+        }
+      },
+      "Vessel.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Vessel.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vessel.Services.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.1/win": {
+      "Insight.Database/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Insight.Database.Configuration": "6.2.3",
+          "Insight.Database.Core": "6.2.3",
+          "Insight.Database.Providers.Default": "6.2.3"
+        },
+        "compile": {
+          "lib/net451/Insight.Database.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.dll": {}
+        }
+      },
+      "Insight.Database.Configuration/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Insight.Database.Core": "6.2.3"
+        },
+        "frameworkAssemblies": [
+          "System.Configuration"
+        ],
+        "compile": {
+          "lib/net451/Insight.Database.Configuration.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.Configuration.dll": {}
+        }
+      },
+      "Insight.Database.Core/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.4.0"
+        },
+        "compile": {
+          "lib/net451/Insight.Database.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.Core.dll": {}
+        }
+      },
+      "Insight.Database.Providers.Default/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Insight.Database.Core": "6.2.3"
+        },
+        "compile": {
+          "lib/net451/Insight.Database.Providers.Default.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.Providers.Default.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.WebHost": "[5.2.4, 5.3.0)"
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.WebHost/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Core": "[5.2.4, 5.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        }
+      },
+      "Newtonsoft.Json/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Ninject/3.3.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Ninject.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net47/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/net47/System.ValueTuple.dll": {}
+        }
+      },
+      "Clauses.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Clauses.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Clauses.Services.dll": {}
+        }
+      },
+      "Conditions.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Ports.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Conditions.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Conditions.Services.dll": {}
+        }
+      },
+      "Contract.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Clauses.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Contract.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contract.Services.dll": {}
+        }
+      },
+      "Ports.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Ports.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ports.Services.dll": {}
+        }
+      },
+      "Products.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Products.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Products.Services.dll": {}
+        }
+      },
+      "Quantity.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Quantity.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Quantity.Services.dll": {}
+        }
+      },
+      "Step.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Step.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Step.Services.dll": {}
+        }
+      },
+      "StowageFactors.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StowageFactors.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StowageFactors.Services.dll": {}
+        }
+      },
+      "Terminals.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Terminals.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Terminals.Services.dll": {}
+        }
+      },
+      "Tolerances.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Tolerances.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tolerances.Services.dll": {}
+        }
+      },
+      "Type.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "Insight.Database": "6.2.3"
+        },
+        "compile": {
+          "bin/placeholder/Type.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Type.Services.dll": {}
+        }
+      },
+      "Vessel.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Vessel.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vessel.Services.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.1/win-x64": {
+      "Insight.Database/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Insight.Database.Configuration": "6.2.3",
+          "Insight.Database.Core": "6.2.3",
+          "Insight.Database.Providers.Default": "6.2.3"
+        },
+        "compile": {
+          "lib/net451/Insight.Database.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.dll": {}
+        }
+      },
+      "Insight.Database.Configuration/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Insight.Database.Core": "6.2.3"
+        },
+        "frameworkAssemblies": [
+          "System.Configuration"
+        ],
+        "compile": {
+          "lib/net451/Insight.Database.Configuration.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.Configuration.dll": {}
+        }
+      },
+      "Insight.Database.Core/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.4.0"
+        },
+        "compile": {
+          "lib/net451/Insight.Database.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.Core.dll": {}
+        }
+      },
+      "Insight.Database.Providers.Default/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Insight.Database.Core": "6.2.3"
+        },
+        "compile": {
+          "lib/net451/Insight.Database.Providers.Default.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.Providers.Default.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.WebHost": "[5.2.4, 5.3.0)"
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.WebHost/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Core": "[5.2.4, 5.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        }
+      },
+      "Newtonsoft.Json/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Ninject/3.3.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Ninject.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net47/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/net47/System.ValueTuple.dll": {}
+        }
+      },
+      "Clauses.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Clauses.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Clauses.Services.dll": {}
+        }
+      },
+      "Conditions.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Ports.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Conditions.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Conditions.Services.dll": {}
+        }
+      },
+      "Contract.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Clauses.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Contract.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contract.Services.dll": {}
+        }
+      },
+      "Ports.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Ports.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ports.Services.dll": {}
+        }
+      },
+      "Products.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Products.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Products.Services.dll": {}
+        }
+      },
+      "Quantity.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Quantity.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Quantity.Services.dll": {}
+        }
+      },
+      "Step.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Step.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Step.Services.dll": {}
+        }
+      },
+      "StowageFactors.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StowageFactors.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StowageFactors.Services.dll": {}
+        }
+      },
+      "Terminals.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Terminals.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Terminals.Services.dll": {}
+        }
+      },
+      "Tolerances.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Tolerances.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tolerances.Services.dll": {}
+        }
+      },
+      "Type.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "Insight.Database": "6.2.3"
+        },
+        "compile": {
+          "bin/placeholder/Type.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Type.Services.dll": {}
+        }
+      },
+      "Vessel.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Vessel.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vessel.Services.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.1/win-x86": {
+      "Insight.Database/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Insight.Database.Configuration": "6.2.3",
+          "Insight.Database.Core": "6.2.3",
+          "Insight.Database.Providers.Default": "6.2.3"
+        },
+        "compile": {
+          "lib/net451/Insight.Database.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.dll": {}
+        }
+      },
+      "Insight.Database.Configuration/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Insight.Database.Core": "6.2.3"
+        },
+        "frameworkAssemblies": [
+          "System.Configuration"
+        ],
+        "compile": {
+          "lib/net451/Insight.Database.Configuration.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.Configuration.dll": {}
+        }
+      },
+      "Insight.Database.Core/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.4.0"
+        },
+        "compile": {
+          "lib/net451/Insight.Database.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.Core.dll": {}
+        }
+      },
+      "Insight.Database.Providers.Default/6.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Insight.Database.Core": "6.2.3"
+        },
+        "compile": {
+          "lib/net451/Insight.Database.Providers.Default.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Insight.Database.Providers.Default.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.WebHost": "[5.2.4, 5.3.0)"
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.WebHost/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Core": "[5.2.4, 5.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        }
+      },
+      "Newtonsoft.Json/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Ninject/3.3.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Ninject.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net47/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/net47/System.ValueTuple.dll": {}
+        }
+      },
+      "Clauses.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Clauses.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Clauses.Services.dll": {}
+        }
+      },
+      "Conditions.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Ports.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Conditions.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Conditions.Services.dll": {}
+        }
+      },
+      "Contract.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Clauses.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Contract.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contract.Services.dll": {}
+        }
+      },
+      "Ports.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Ports.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ports.Services.dll": {}
+        }
+      },
+      "Products.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Products.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Products.Services.dll": {}
+        }
+      },
+      "Quantity.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Quantity.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Quantity.Services.dll": {}
+        }
+      },
+      "Step.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Step.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Step.Services.dll": {}
+        }
+      },
+      "StowageFactors.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StowageFactors.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StowageFactors.Services.dll": {}
+        }
+      },
+      "Terminals.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Terminals.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Terminals.Services.dll": {}
+        }
+      },
+      "Tolerances.Services/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Tolerances.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tolerances.Services.dll": {}
+        }
+      },
+      "Type.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "Insight.Database": "6.2.3"
+        },
+        "compile": {
+          "bin/placeholder/Type.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Type.Services.dll": {}
+        }
+      },
+      "Vessel.Services/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Products.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Vessel.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vessel.Services.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Insight.Database/6.2.3": {
+      "sha512": "trqWAC3hdWPt6Rq91wtLEEQeOlIFppiwRqgKxh17hrD/LEttO2D3EcbYOxcxnIgIFTHa3f7gyp6KdwY0wXO/5Q==",
+      "type": "package",
+      "path": "insight.database/6.2.3",
+      "files": [
+        "insight.database.6.2.3.nupkg.sha512",
+        "insight.database.nuspec",
+        "lib/net45/Insight.Database.dll",
+        "lib/net451/Insight.Database.dll",
+        "lib/netstandard1.5/Insight.Database.dll",
+        "lib/netstandard2.0/Insight.Database.dll"
+      ]
+    },
+    "Insight.Database.Configuration/6.2.3": {
+      "sha512": "OTj3a8EKrHC7jNDQw1jn9Ky3iqAC1eNEdN5ra5u3wbd9G7y4ebdNBSBPJEp9JWIRTQ19qkUW/bUrMtMJi0A1fg==",
+      "type": "package",
+      "path": "insight.database.configuration/6.2.3",
+      "files": [
+        "insight.database.configuration.6.2.3.nupkg.sha512",
+        "insight.database.configuration.nuspec",
+        "lib/net45/Insight.Database.Configuration.dll",
+        "lib/net45/Insight.Database.Configuration.xml",
+        "lib/net451/Insight.Database.Configuration.dll",
+        "lib/net451/Insight.Database.Configuration.xml",
+        "lib/netstandard1.5/Insight.Database.Configuration.dll",
+        "lib/netstandard1.5/Insight.Database.Configuration.xml",
+        "lib/netstandard2.0/Insight.Database.Configuration.dll",
+        "lib/netstandard2.0/Insight.Database.Configuration.xml"
+      ]
+    },
+    "Insight.Database.Core/6.2.3": {
+      "sha512": "hnauIjrxB3TwRJV+0GH0W2jS1OEqHvwV6tszo3YNxjwtzKJrvfVJdSJXkDKruLQnvrILWLN3n4jjvftyF497fQ==",
+      "type": "package",
+      "path": "insight.database.core/6.2.3",
+      "files": [
+        "insight.database.core.6.2.3.nupkg.sha512",
+        "insight.database.core.nuspec",
+        "lib/net45/Insight.Database.Core.dll",
+        "lib/net45/Insight.Database.Core.xml",
+        "lib/net451/Insight.Database.Core.dll",
+        "lib/net451/Insight.Database.Core.xml",
+        "lib/netstandard1.5/Insight.Database.Core.dll",
+        "lib/netstandard1.5/Insight.Database.Core.xml",
+        "lib/netstandard2.0/Insight.Database.Core.dll",
+        "lib/netstandard2.0/Insight.Database.Core.xml"
+      ]
+    },
+    "Insight.Database.Providers.Default/6.2.3": {
+      "sha512": "8twCfKvD0frZVv9i9/3snezFqhhr4bkCwKrcTPzsDMgSm8rLOp8ZLBPokyE7VAuoTDY/W4vXt1d0pqs8aNq8RQ==",
+      "type": "package",
+      "path": "insight.database.providers.default/6.2.3",
+      "files": [
+        "insight.database.providers.default.6.2.3.nupkg.sha512",
+        "insight.database.providers.default.nuspec",
+        "lib/net45/Insight.Database.Providers.Default.dll",
+        "lib/net45/Insight.Database.Providers.Default.xml",
+        "lib/net451/Insight.Database.Providers.Default.dll",
+        "lib/net451/Insight.Database.Providers.Default.xml",
+        "lib/netstandard1.5/Insight.Database.Providers.Default.dll",
+        "lib/netstandard1.5/Insight.Database.Providers.Default.xml",
+        "lib/netstandard2.0/Insight.Database.Providers.Default.dll",
+        "lib/netstandard2.0/Insight.Database.Providers.Default.xml"
+      ]
+    },
+    "Microsoft.AspNet.WebApi/5.2.4": {
+      "sha512": "OeDZP5IOt1sWFNpCxGpm6Jw7peP5oIr4j83/t/+31v5xy556zz5h3686pFgv0bMbIBUALP9uEzj8ULcOIEqUkQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi/5.2.4",
+      "files": [
+        "microsoft.aspnet.webapi.5.2.4.nupkg.sha512",
+        "microsoft.aspnet.webapi.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Client/5.2.4": {
+      "sha512": "OdBVC2bQWkf9qDd7Mt07ev4SwIdu6VmLBMTWC0D5cOP/HWSXyv/77otwtXVrAo42duNjvXOjzjP5oOI9m1+DTQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.client/5.2.4",
+      "files": [
+        "lib/net45/System.Net.Http.Formatting.dll",
+        "lib/net45/System.Net.Http.Formatting.xml",
+        "lib/netstandard2.0/System.Net.Http.Formatting.dll",
+        "lib/netstandard2.0/System.Net.Http.Formatting.xml",
+        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll",
+        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml",
+        "microsoft.aspnet.webapi.client.5.2.4.nupkg.sha512",
+        "microsoft.aspnet.webapi.client.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Core/5.2.4": {
+      "sha512": "rbLh178vmOWxhFQgiVkKmZyG53XEdyBZJbCsV36a4VxokIBzSRYUaMkXWEwJTy83PoHhPiDHNQFN3A3BQzwhtg==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.core/5.2.4",
+      "files": [
+        "Content/web.config.transform",
+        "lib/net45/System.Web.Http.dll",
+        "lib/net45/System.Web.Http.xml",
+        "microsoft.aspnet.webapi.core.5.2.4.nupkg.sha512",
+        "microsoft.aspnet.webapi.core.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.WebHost/5.2.4": {
+      "sha512": "lTc0tMsblsm+xYBpJgCyA3uS4IZA7oo+vGkdO69S+QqZZNIv84UXwM4UPJP1MDR0BHYQVlLGZMxeqvo6z9oKOQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.webhost/5.2.4",
+      "files": [
+        "lib/net45/System.Web.Http.WebHost.dll",
+        "lib/net45/System.Web.Http.WebHost.xml",
+        "microsoft.aspnet.webapi.webhost.5.2.4.nupkg.sha512",
+        "microsoft.aspnet.webapi.webhost.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/6.0.4": {
+      "sha512": "FyQLmEpjsCrEP+znauLDGAi+h6i9YnaMkITlfIoiM4RYyX3nki306bTHsr/0okiIvIc7BJhQTbOAIZVocccFUw==",
+      "type": "package",
+      "path": "newtonsoft.json/6.0.4",
+      "files": [
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netcore45/Newtonsoft.Json.dll",
+        "lib/netcore45/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.6.0.4.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "Ninject/3.3.4": {
+      "sha512": "CmbWW97FfJuh4LEOVZM/spqXl4KAulRUjqeMwRd5J9rDMQArmIYaDMU3pyzXXHT062tbF0OPIMwI7tSOtprPfg==",
+      "type": "package",
+      "path": "ninject/3.3.4",
+      "files": [
+        "lib/net45/Ninject.dll",
+        "lib/net45/Ninject.xml",
+        "lib/netstandard2.0/Ninject.dll",
+        "lib/netstandard2.0/Ninject.xml",
+        "ninject.3.3.4.nupkg.sha512",
+        "ninject.nuspec"
+      ]
+    },
+    "System.ValueTuple/4.4.0": {
+      "sha512": "BahUww/+mdP4ARCAh2RQhQTg13wYLVrBb9SYVgW8ZlrwjraGCXHGjo0oIiUfZ34LUZkMMR+RAzR7dEY4S1HeQQ==",
+      "type": "package",
+      "path": "system.valuetuple/4.4.0",
+      "files": [
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.ValueTuple.dll",
+        "lib/net461/System.ValueTuple.xml",
+        "lib/net47/System.ValueTuple.dll",
+        "lib/net47/System.ValueTuple.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.ValueTuple.dll",
+        "lib/netstandard1.0/System.ValueTuple.xml",
+        "lib/netstandard2.0/_._",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.ValueTuple.dll",
+        "ref/net461/System.ValueTuple.xml",
+        "ref/net47/System.ValueTuple.dll",
+        "ref/net47/System.ValueTuple.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/_._",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.valuetuple.4.4.0.nupkg.sha512",
+        "system.valuetuple.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Clauses.Services/1.0.0": {
+      "type": "project",
+      "path": "../EYZ.Services/Clauses.Services/Clauses.Services.csproj",
+      "msbuildProject": "../EYZ.Services/Clauses.Services/Clauses.Services.csproj"
+    },
+    "Conditions.Services/1.0.0": {
+      "type": "project",
+      "path": "../EYZ.Services/Conditions.Services/Conditions.Services.csproj",
+      "msbuildProject": "../EYZ.Services/Conditions.Services/Conditions.Services.csproj"
+    },
+    "Contract.Services/1.0.0": {
+      "type": "project",
+      "path": "../EYZ.Services/Contract.Services/Contract.Services.csproj",
+      "msbuildProject": "../EYZ.Services/Contract.Services/Contract.Services.csproj"
+    },
+    "Ports.Services/1.0.0": {
+      "type": "project",
+      "path": "../EYZ.Services/Ports.Services/Ports.Services.csproj",
+      "msbuildProject": "../EYZ.Services/Ports.Services/Ports.Services.csproj"
+    },
+    "Products.Services/1.0.0": {
+      "type": "project",
+      "path": "../EYZ.Services/Products.Services/Products.Services.csproj",
+      "msbuildProject": "../EYZ.Services/Products.Services/Products.Services.csproj"
+    },
+    "Quantity.Services/1.0.0": {
+      "type": "project",
+      "path": "../EYZ.Services/Quantity.Services/Quantity.Services.csproj",
+      "msbuildProject": "../EYZ.Services/Quantity.Services/Quantity.Services.csproj"
+    },
+    "Step.Services/1.0.0": {
+      "type": "project",
+      "path": "../EYZ.Services/Step.Services/Step.Services.csproj",
+      "msbuildProject": "../EYZ.Services/Step.Services/Step.Services.csproj"
+    },
+    "StowageFactors.Services/1.0.0": {
+      "type": "project",
+      "path": "../EYZ.Services/StowageFactors.Services/StowageFactors.Services.csproj",
+      "msbuildProject": "../EYZ.Services/StowageFactors.Services/StowageFactors.Services.csproj"
+    },
+    "Terminals.Services/1.0.0": {
+      "type": "project",
+      "path": "../EYZ.Services/Terminals.Services/Terminals.Services.csproj",
+      "msbuildProject": "../EYZ.Services/Terminals.Services/Terminals.Services.csproj"
+    },
+    "Tolerances.Services/1.0.0": {
+      "type": "project",
+      "path": "../EYZ.Services/Tolerances.Services/Tolerances.Services.csproj",
+      "msbuildProject": "../EYZ.Services/Tolerances.Services/Tolerances.Services.csproj"
+    },
+    "Type.Services/1.0.0": {
+      "type": "project",
+      "path": "../EYZ.Services/Type.Services/Type.Services.csproj",
+      "msbuildProject": "../EYZ.Services/Type.Services/Type.Services.csproj"
+    },
+    "Vessel.Services/1.0.0": {
+      "type": "project",
+      "path": "../EYZ.Services/Vessel.Services/Vessel.Services.csproj",
+      "msbuildProject": "../EYZ.Services/Vessel.Services/Vessel.Services.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.1": [
+      "Clauses.Services >= 1.0.0",
+      "Conditions.Services >= 1.0.0",
+      "Contract.Services >= 1.0.0",
+      "Microsoft.AspNet.WebApi >= 5.2.4",
+      "Ninject >= 3.3.4",
+      "Ports.Services >= 1.0.0",
+      "Products.Services >= 1.0.0",
+      "Quantity.Services >= 1.0.0",
+      "Step.Services >= 1.0.0",
+      "StowageFactors.Services >= 1.0.0",
+      "Terminals.Services >= 1.0.0",
+      "Tolerances.Services >= 1.0.0",
+      "Type.Services >= 1.0.0",
+      "Vessel.Services >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\MasterDev\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Infrastructure\\EYZ.Infrastructure.csproj",
+      "projectName": "EYZ.Infrastructure",
+      "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Infrastructure\\EYZ.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\MasterDev\\.nuget\\packages\\",
+      "outputPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Infrastructure\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\MasterDev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net471"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net471": {
+          "projectReferences": {
+            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Clauses.Services\\Clauses.Services.csproj": {
+              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Clauses.Services\\Clauses.Services.csproj"
+            },
+            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Conditions.Services\\Conditions.Services.csproj": {
+              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Conditions.Services\\Conditions.Services.csproj"
+            },
+            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Contract.Services\\Contract.Services.csproj": {
+              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Contract.Services\\Contract.Services.csproj"
+            },
+            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Ports.Services\\Ports.Services.csproj": {
+              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Ports.Services\\Ports.Services.csproj"
+            },
+            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Products.Services\\Products.Services.csproj": {
+              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Products.Services\\Products.Services.csproj"
+            },
+            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Quantity.Services\\Quantity.Services.csproj": {
+              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Quantity.Services\\Quantity.Services.csproj"
+            },
+            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Step.Services\\Step.Services.csproj": {
+              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Step.Services\\Step.Services.csproj"
+            },
+            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\StowageFactors.Services\\StowageFactors.Services.csproj": {
+              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\StowageFactors.Services\\StowageFactors.Services.csproj"
+            },
+            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Terminals.Services\\Terminals.Services.csproj": {
+              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Terminals.Services\\Terminals.Services.csproj"
+            },
+            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Tolerances.Services\\Tolerances.Services.csproj": {
+              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Tolerances.Services\\Tolerances.Services.csproj"
+            },
+            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Type.Services\\Type.Services.csproj": {
+              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Type.Services\\Type.Services.csproj"
+            },
+            "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Vessel.Services\\Vessel.Services.csproj": {
+              "projectPath": "D:\\_GESI\\EYZ\\Dev\\DevMain\\EYZ.Services\\Vessel.Services\\Vessel.Services.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net471": {
+        "dependencies": {
+          "Microsoft.AspNet.WebApi": {
+            "target": "Package",
+            "version": "[5.2.4, )"
+          },
+          "Ninject": {
+            "target": "Package",
+            "version": "[3.3.4, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+﻿<div class="modal fade" id="primaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-primary modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detail Vessel {{row.name}}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="card  border-primary">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-12"><h2>Vessel</h2></div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label><b>Quantity:</b> </label> {{row.Quantity|number}}
+                                </div>
+                                <div class="col-md-12">
+                                    <label><b>Capacity:</b> </label> {{row.VesselCapacity|number}}
+                                </div>
+                                <div class="col-md-12">
+                                    <label><b>Loading Rate:</b> </label> {{row.LoadingRate|number}}
+                                </div>
+                                <div class="col-md-12">
+                                    <label><b>Un Loading Rate:</b> </label> {{row.UnLoadingRate|number}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card  border-primary">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-12"><h2>Variable for Modify</h2></div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label><b>Daily hire:</b> </label>
+                                        <input type="text" class="form-control custom-control" id="RateLoading" name="RateLoading" ng-model="row.RateLoading" ui-number-mask required ng-class="(myForm.RateLoading.$dirty || !isValid) && !myForm.RateLoading.$valid?'is-invalid' : ''" />
+                                    </div>
+                                </div>
+                                <!--<div class="col-md-12">
+                                    <div class="form-group">
+                                        <label><b>Rate UnLoading:</b> </label>
+                                        <input type="text" class="form-control custom-control" id="RateUnLoading" name="RateUnLoading" ng-model="row.RateUnLoading" ui-number-mask required ng-class="(myForm.RateUnLoading.$dirty || !isValid) && !myForm.RateUnLoading.$valid?'is-invalid' : ''" />
+                                    </div>
+                                </div>-->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label><b>Value Loading Condition:</b> </label>
+                                        <input type="text" class="form-control custom-control" id="ValueLoadingCondition" name="ValueLoadingCondition" ng-model="row.ValueLoadingCondition" ui-number-mask required ng-class="(myForm.ValueLoadingCondition.$dirty || !isValid) && !myForm.ValueLoadingCondition.$valid?'is-invalid' : ''" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label><b>Value UnLoading Condition:</b> </label>
+                                        <input type="text" class="form-control custom-control" id="ValueUnLoadingCondition" name="ValueUnLoadingCondition" ng-model="row.ValueUnLoadingCondition" ui-number-mask required ng-class="(myForm.ValueUnLoadingCondition.$dirty || !isValid) && !myForm.ValueUnLoadingCondition.$valid?'is-invalid' : ''" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label><b>Vessel Speed:</b> </label>
+                                        <input type="text" class="form-control custom-control" id="VesselSpeed" name="VesselSpeed" ng-model="row.VesselSpeed" ui-number-mask required ng-class="(myForm.VesselSpeed.$dirty || !isValid) && !myForm.VesselSpeed.$valid?'is-invalid' : ''" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label><b>Ifo Load Port:</b> </label>
+                                        <input type="text" class="form-control custom-control" id="IfoLoadPort" name="IfoLoadPort" ng-model="row.IfoLoadPort" ui-number-mask required ng-class="(myForm.IfoLoadPort.$dirty || !isValid) && !myForm.IfoLoadPort.$valid?'is-invalid' : ''" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label><b>Mgo Load Port:</b> </label>
+                                        <input type="text" class="form-control custom-control" id="MgoLoadPort" name="MgoLoadPort" ng-model="row.MgoLoadPort" ui-number-mask required ng-class="(myForm.MgoLoadPort.$dirty || !isValid) && !myForm.MgoLoadPort.$valid?'is-invalid' : ''" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label><b>Ifo Consumed:</b> </label>
+                                        <input type="text" class="form-control custom-control" id="VesselIfoConsumed" name="VesselIfoConsumed" ng-model="row.VesselIfoConsumed" ui-number-mask required ng-class="(myForm.VesselIfoConsumed.$dirty || !isValid) && !myForm.VesselIfoConsumed.$valid?'is-invalid' : ''" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label><b>Mgo Consumed:</b> </label>
+                                        <input type="text" class="form-control custom-control" id="VesselMgoConsumed" name="VesselMgoConsumed" ng-model="row.VesselMgoConsumed" ui-number-mask required ng-class="(myForm.VesselMgoConsumed.$dirty || !isValid) && !myForm.VesselMgoConsumed.$valid?'is-invalid' : ''" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-group float-right">
+                    <button type="button" class="btn btn-warning btn-lg" ng-click="ReCalculate()"><i class="fa fa-calculator"></i> Calculate</button>
+                </div>
+
+                <div class="form-group float-right">
+                    <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

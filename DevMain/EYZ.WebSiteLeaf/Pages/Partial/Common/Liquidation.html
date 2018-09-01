@@ -1,0 +1,297 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="breadcrumb-item active">Request</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+
+<form role="form" name="myForm">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card card-accent-warning">
+                    <div class="card-header">
+                        <h3>
+                            #{{request.Id}}
+                            RATE CALCULATIONS BELOW::::
+                            <span title="{{row.ServiceStatus}}" ng-show="row.ServiceStatus=='ACCEPTUNDER'"><i class="fa fa-battery-2 fa-lg mt-4 text-info"></i></span>
+                            <span title="{{row.ServiceStatus}}" ng-show="row.ServiceStatus=='DECLINE'"><i class="fa fa-bell-slash fa-lg mt-4 text-danger"></i></span>
+                            <span title="{{row.ServiceStatus}}" ng-show="row.ServiceStatus=='ACCEPT'"><i class="fa fa-battery-4 fa-lg mt-4 text-success"></i></span>
+                            <span title="{{row.ServiceStatus}}" ng-show="row.ServiceStatus=='REQUEST'"><i class="fa fa-battery-empty fa-lg mt-4 text-warning"></i></span>
+                            {{row.ServiceStatus}}::::
+                            <a name="vessel" href="" ng-click="GetVessel(request.VesselId)">{{request.VesselName}}</a>
+                        </h3>
+                        <small></small>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label>Product Type</label>
+                                <input type="text" class="form-control" disabled name="Product" ng-model="request.ProductName">
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Quantity</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control  custom-control" disabled name="Quantity" value="{{request.Quantity | number:2}}">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">{{request.MeasureQuantity}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Stowage Factor</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" disabled name="StowageFactor" value="{{request.StowageFactor | number:2}}">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">{{request.Measure}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Tolerance</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" disabled name="ToleranceName" value="{{request.ToleranceName}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label>From</label>
+                                <input type="text" class="form-control" disabled name="LoadPort" ng-model="request.LoadPortName">
+                            </div>
+                            <div class="col-sm-2">
+                                <label>&#160;</label>
+                                <input type="text" class="form-control" disabled name="LoadTerminal" ng-model="request.LoadTerminalName">
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Condition/Loading Rate</label>
+                                <input type="text" class="form-control" disabled name="LoadingConditionName" value="{{request.LoadingConditionName}} {{request.LoadingRate |  number:2}}">
+                            </div>
+                            <div class="col-sm-2">
+                                <label>To</label>
+                                <input type="text" class="form-control" disabled name="UnLoadPort" ng-model="request.DischargePortName">
+                            </div>
+                            <div class="col-sm-2">
+                                <label>&#160;</label>
+                                <input type="text" class="form-control" disabled name="UnLoadTerminal" ng-model="request.DischargeTerminalName">
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Condition/Unloading Rate</label>
+                                <input type="text" class="form-control" disabled name="UnLoadingConditionName" value="{{request.UnLoadingConditionName}} {{request.UnLoadingRate |  number:2}}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label>Laycan</label>
+                                <input type="text" class="form-control" disabled name="StartLaycan" value="{{request.StartLaycan| date:'yyyy-MM-dd'}}">
+                            </div>
+                            <div class="col-sm-3">
+                                <label>&#160;</label>
+                                <input type="text" class="form-control" disabled name="EndLaycan" value="{{request.EndLaycan | date:'yyyy-MM-dd'}}">
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Freight Indication Sent to the Potential Charterer</label>
+                                <input type="text" class="form-control" disabled name="EndLaycan" value="{{row.Price | currency}}">
+                            </div>
+                            <div class="col-sm-2" ng-show="row.ServiceStatus=='ACCEPTUNDER'">
+                                <label>Suggested Freight Indication</label>
+                                <input type="text" class="form-control" disabled name="EndLaycan" value="{{row.PriceMTNew | currency}}">
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="table table-responsive-sm table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th ng-repeat="column in columns" class="text-center">
+                                                <b>
+                                                    Leg #{{column.index}}<br />
+                                                    <span ng-bind-html="column.title"></span>
+                                                </b>
+                                            </th>
+                                            <th class="text-center custom-border-header">Total Voyage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-if="items.length===0">
+                                            <td colspan="20">No Records</td>
+                                        </tr>
+                                        <tr ng-repeat="item in items| filter:Filter" ng-class="(item.IsPrice==1? 'IsColorCurrency' : '')">
+                                            <td class="text-sm-left">
+                                                {{item.Route}}
+                                            </td>
+                                            <td class="text-sm-right" ng-if="item.IsCurrentPort==true">
+                                                <div ng-if="item.CurrentPortAtLoadPort!=0">
+                                                    <div ng-if="item.IsPrice==1  || item.IsPrice==2">
+                                                        {{item.CurrentPortAtLoadPort | currency:"$":2}}
+                                                    </div>
+                                                    <div ng-if="item.IsPrice==0">
+                                                        {{item.CurrentPortAtLoadPort| number:2}}
+                                                    </div>
+                                                </div>
+                                                <div ng-if="item.CurrentPortAtLoadPort==0  || item.CurrentPortAtLoadPort==''">
+                                                    N/A
+                                                </div>
+                                            </td>
+                                            <td class="text-sm-right" ng-if="request.HourCanalPanama!=0">
+                                                <div ng-if="item.CanalPanama!=0">
+                                                    <div ng-if="item.IsPrice==1  || item.IsPrice==2">
+                                                        {{item.CanalPanama | currency:"$":2}}
+                                                    </div>
+                                                    <div ng-if="item.IsPrice==0">
+                                                        {{item.CanalPanama| number:2}}
+                                                    </div>
+                                                </div>
+                                                <div ng-if="item.CanalPanama==0  || item.CanalPanama==''">
+                                                    N/A
+                                                </div>
+                                            </td>
+                                            <td class="text-sm-right">
+                                                <div ng-if="item.LoadingPort!=0">
+                                                    <div ng-if="item.IsPrice==1 || item.IsPrice==2">
+                                                        {{item.LoadingPort | currency:"$":2}}
+                                                    </div>
+                                                    <div ng-if="item.IsPrice==0">
+                                                        {{item.LoadingPort| number:2}}
+                                                    </div>
+                                                </div>
+                                                <div ng-if="item.LoadingPort==0  || item.LoadingPort==''">
+                                                    N/A
+                                                </div>
+                                            </td>
+                                            <td class="text-sm-right">
+                                                <div ng-if="item.LoadPortAtUnloadingPort!=0">
+                                                    <div ng-if="item.IsPrice==1 || item.IsPrice==2">
+                                                        {{item.LoadPortAtUnloadingPort | currency:"$":2}}
+                                                    </div>
+                                                    <div ng-if="item.IsPrice==0">
+                                                        {{item.LoadPortAtUnloadingPort| number:2}}
+                                                    </div>
+                                                </div>
+                                                <div ng-if="item.LoadPortAtUnloadingPort==0  || item.LoadPortAtUnloadingPort==''">
+                                                    N/A
+                                                </div>
+                                            </td>
+                                            <td class="text-sm-right" ng-if="request.HourCanalPanamaDischarge!=0">
+                                                <div ng-if="item.CanalPanamaDischarge!=0">
+                                                    <div ng-if="item.IsPrice==1  || item.IsPrice==2">
+                                                        {{item.CanalPanamaDischarge | currency:"$":2}}
+                                                    </div>
+                                                    <div ng-if="item.IsPrice==0">
+                                                        {{item.CanalPanamaDischarge| number:2}}
+                                                    </div>
+                                                </div>
+                                                <div ng-if="item.CanalPanamaDischarge==0  || item.CanalPanamaDischarge==''">
+                                                    N/A
+                                                </div>
+                                            </td>
+                                            <td class="text-sm-right">
+                                                <div ng-if="item.UnLoadPort!=0">
+                                                    <div ng-if="item.IsPrice==1 || item.IsPrice==2">
+                                                        {{item.UnLoadPort | currency:"$":2}}
+                                                    </div>
+                                                    <div ng-if="item.IsPrice==0">
+                                                        {{item.UnLoadPort| number:2}}
+                                                    </div>
+                                                </div>
+                                                <div ng-if="item.UnLoadPort==0  || item.UnLoadPort==''">
+                                                    N/A
+                                                </div>
+                                            </td>
+                                            <td class="text-sm-right custom-border-item">
+                                                <div ng-switch on="item.Type">
+                                                    <div ng-switch-when="TOTAL">
+                                                        <div ng-switch on="item.IsPrice">
+                                                            <div ng-switch-when="0">
+                                                                {{item.ItemTotal| number:2}}
+                                                            </div>
+                                                            <div ng-switch-default>
+                                                                {{item.ItemTotal| currency:"$":2}}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <span ng-switch-default>N/A</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="IsColorCurrencyTotal">
+                                            <td>13- Total Cost Per Leg(USD)</td>
+                                            <td class="text-sm-right" ng-if="request.IsCurrentPort==true">{{row.TotalCurrentPort | currency:"$":2}}</td>
+                                            <td class="text-sm-right" ng-if="request.HourCanalPanama!=0">{{row.TotalCanalPanama | currency:"$":2}}</td>
+                                            <td class="text-sm-right">{{row.TotalLoadingPort | currency:"$":2}}</td>
+                                            <td class="text-sm-right">{{row.TotalLoadPortAtUnloadingPort | currency:"$":2}}</td>
+                                            <td ng-if="request.HourCanalPanamaDischarge!=0" class="text-sm-right">{{row.TotalCanalPanamaDischarge | currency:"$":2}}</td>
+                                            <td class="text-sm-right">{{row.TotalUnLoadPort | currency:"$":2}}</td>
+                                            <td class="text-sm-right custom-border-item">
+                                                {{row.SumTotal | currency:"$":2}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14- Total Cost(USD)</td>
+                                            <td ng-if="request.IsCurrentPort==true"></td>
+                                            <td ng-if="request.HourCanalPanama!=0"></td>
+                                            <td></td>
+                                            <td ng-if="request.HourCanalPanamaDischarge!=0"></td>
+                                            <td></td>
+                                            <td class="text-sm-right"></td>
+                                            <td class="text-sm-right custom-border-item">
+                                                {{row.Total | currency:"$":2}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>15- Total Tons</td>
+                                            <td ng-if="request.IsCurrentPort==true"></td>
+                                            <td ng-if="request.HourCanalPanama!=0"></td>
+                                            <td></td>
+                                            <td ng-if="request.HourCanalPanamaDischarge!=0"></td>
+                                            <td></td>
+                                            <td class="text-sm-right"></td>
+                                            <td class="text-sm-right custom-border-item">
+                                                {{row.Quantity | number:2}}
+                                            </td>
+                                        </tr>
+                                        <tr class="IsColorCurrencyTotal">
+                                            <td>16- Freight Per Ton</td>
+                                            <td ng-if="request.IsCurrentPort==true"></td>
+                                            <td ng-if="request.HourCanalPanama!=0"></td>
+                                            <td></td>
+                                            <td ng-if="request.HourCanalPanamaDischarge!=0"></td>
+                                            <td></td>
+                                            <td class="text-sm-right"></td>
+                                            <td class="text-sm-right custom-border-footer">
+                                                {{row.PriceMT | currency:"$":2}}
+                                            </td>
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <button type="button" ng-click="Back()" class="btn btn-secondary btn-lg"> <i class="fa fa-backward"></i>  Back</button>
+                        <div class="row" ng-show="row.ServiceStatus=='REQUEST'">
+                            <div class="col-sm-12">
+                                <div class="form-group float-right">
+                                    <div class="input-group input-group-lg" ng-show="isNewPriceMT">
+                                        <input type="text" class="form-control" name="newPriceMT" ng-model="newPriceMT" ui-number-mask required>
+                                        <span class="input-group-append">
+                                            <button type="button" ng-click="ChangeStatus('ACCEPTUNDER')" class="btn btn-info btn-flat btn-lg"><i class="fa fa-money"></i> Accept Change</button>
+                                        </span>&#160;&#160;&#160;
+                                        <button type="button" ng-click="isNewPriceMT=false" class="btn btn-danger btn-flat btn-lg"><i class="fa fa-backward"></i> Cancel</button>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    <button type="button" ng-click="ReCalculate()" class="btn btn-danger btn-lg"><i class="fa fa-calculator"></i> Recalculate Freight Indication changing one or more variables</button>
+                                    <button type="button" ng-click="ChangeNewPriceMT()" class="btn btn-primary btn-lg"><i class="fa fa-money"></i> Accept Under Different Conditions</button>
+                                    <button type="button" ng-click="ChangeStatus('ACCEPT')" class="btn btn-warning btn-lg"><i class="fa fa-wrench"></i> Accept</button>
+                                    <button type="button" ng-click="ChangeStatus('DECLINE')" class="btn btn-lg"><i class="fa fa-remove"></i> Decline</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

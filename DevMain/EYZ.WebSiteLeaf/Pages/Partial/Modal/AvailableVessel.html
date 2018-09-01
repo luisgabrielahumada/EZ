@@ -1,0 +1,67 @@
+﻿<md-dialog aria-label="Vessel Next Opening">
+    <form ng-cloak role="form" name="myForm">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Vessel Next Opening</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="Cancel()">
+                    <i class="fa fa-remove"></i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <h2>Change Next opening port, terminal and Next Opening date</h2>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Next opening date</label>
+                            <br />
+                            <br />
+                            <input type="text" class="form-control custom-control datepicker" ng-class="(myForm.NextOpeningPort.$dirty || !isValid) && !myForm.NextOpeningPort.$valid?'is-invalid' : ''" id="NextOpeningPort" name="NextOpeningPort" date="yyyy-MMMM-dd" ng-model="NextOpeningPort">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Next opening port</label>
+                            <md-select name="CurrentPortId" ng-model="CurrentPortId" placeholder="Select one" ng-class="(myForm.CurrentPortId.$dirty || !isValid) && !myForm.CurrentPortId.$valid?'ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched' : ''" style="width:70%" ng-change="GetTerminal()" required>
+                                <md-select-header layout="column" class="demo-select-header">
+                                    <section flex>
+                                        <span></span>
+                                    </section>
+                                    <md-input-container>
+                                        <input ng-model="searchCurrentPort" style="width:80%" ng-keydown="$event.stopPropagation()" type="search" placeholder="Search..." class="demo-header-searchbox md-text" />
+                                    </md-input-container>
+                                </md-select-header>
+                                <md-optgroup>
+                                    <md-option ng-value="data" ng-selected="data.id == CurrentPortId.id" ng-repeat="data in itemsPort | filter:searchCurrentPort">
+                                        {{data.name}}
+                                </md-optgroup>
+                            </md-select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Terminal</label>
+                            <md-select name="CurrentTerminalId" ng-model="CurrentTerminalId" placeholder="Select one" ng-class="(myForm.CurrentTerminalId.$dirty || !isValid) && !myForm.CurrentTerminalId.$valid?'ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched' : ''" style="width:100%" required>
+                                <md-optgroup>
+                                    <md-option ng-value="data" ng-selected="data.id == CurrentTerminalId.id" ng-repeat="data in itemsTerminal | filter:search">
+                                        {{data.name}}
+                                </md-optgroup>
+                            </md-select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <div class="form-group float-right">
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="SaveAvailable()"><i class="fa fa-save"></i> Save</button>
+                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal" ng-click="Cancel()"><i class="fa fa-remove"></i> Close</button>
+            </div>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

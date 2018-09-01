@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>EYZ.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{4a0890c9-676b-4a8f-a4cc-107ab7adf2fc}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>EYZ.Database</RootNamespace>
+    <AssemblyName>EYZ.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>$/EYZ/Dev/DevMain/EYZ.Database</SccProjectName>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <SccAuxPath>https://gesicode.visualstudio.com</SccAuxPath>
+    <SccLocalPath>.</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Functions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Vessel.sql" />
+    <Build Include="dbo\Tables\Tolerance.sql" />
+    <Build Include="dbo\Tables\Terminals.sql" />
+    <Build Include="dbo\Tables\StowageFactors.sql" />
+    <Build Include="dbo\Tables\QuantityMT.sql" />
+    <Build Include="dbo\Tables\PropertyVessel.sql" />
+    <Build Include="dbo\Tables\PropertyValueVessel.sql" />
+    <Build Include="dbo\Tables\PropertyValueTerminals.sql" />
+    <Build Include="dbo\Tables\PropertyTerminal.sql" />
+    <Build Include="dbo\Tables\Ports.sql" />
+    <Build Include="dbo\Tables\Countries.sql" />
+    <Build Include="dbo\Tables\Conditions.sql" />
+    <Build Include="dbo\Tables\Cities.sql" />
+    <Build Include="dbo\Tables\AppUsers.sql" />
+    <Build Include="dbo\Tables\AppUploads.sql" />
+    <Build Include="dbo\Tables\AppSessions.sql" />
+    <Build Include="dbo\Tables\AppSendEmail.sql" />
+    <Build Include="dbo\Tables\AppProfilesMenus.sql" />
+    <Build Include="dbo\Tables\AppProfiles.sql" />
+    <Build Include="dbo\Tables\AppParameters.sql" />
+    <Build Include="dbo\Tables\AppMessageLog.sql" />
+    <Build Include="dbo\Tables\AppMenus.sql" />
+    <Build Include="dbo\Tables\AppHistoryTimeline.sql" />
+    <Build Include="dbo\Tables\AppEmailBody.sql" />
+    <Build Include="dbo\Tables\AppConfigurationSmtp.sql" />
+    <Build Include="dbo\Tables\AppAccessUsers.sql" />
+    <Build Include="dbo\Stored Procedures\SS_Users_Change_Password.sql" />
+    <Build Include="dbo\Stored Procedures\SS_MessageLog_Save.sql" />
+    <Build Include="dbo\Stored Procedures\SS_MessageLog_List.sql" />
+    <Build Include="dbo\Stored Procedures\SS_MessageLog_Get.sql" />
+    <Build Include="dbo\Stored Procedures\SS_MessageLog_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Smtp_EmailSend_List.sql" />
+    <Build Include="dbo\Stored Procedures\Smtp_Email_Updated.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Countries_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Countries_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Countries_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Countries_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Countries_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Cities_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Cities_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Cities_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Cities_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Cities_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\BG_EmailQueue_Save.sql" />
+    <Build Include="dbo\Stored Procedures\App_Users_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\App_Users_Save.sql" />
+    <Build Include="dbo\Stored Procedures\App_Users_List.sql" />
+    <Build Include="dbo\Stored Procedures\App_Users_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\App_Users_Autorizaton.sql" />
+    <Build Include="dbo\Stored Procedures\App_Upload_Save.sql" />
+    <Build Include="dbo\Stored Procedures\App_Upload_Get.sql" />
+    <Build Include="dbo\Stored Procedures\App_Upload_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\App_Profiles_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\App_Profiles_Save.sql" />
+    <Build Include="dbo\Stored Procedures\App_Profiles_List.sql" />
+    <Build Include="dbo\Stored Procedures\App_Profiles_Get.sql" />
+    <Build Include="dbo\Stored Procedures\App_Profiles_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\App_Parameters_Save.sql" />
+    <Build Include="dbo\Stored Procedures\App_Parameters_List.sql" />
+    <Build Include="dbo\Stored Procedures\App_MenusCheckPermissionsApplyProfile_Save.sql" />
+    <Build Include="dbo\Stored Procedures\App_MenusCheckPermissionsApply_Save.sql" />
+    <Build Include="dbo\Stored Procedures\App_Menus_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\App_Menus_Get.sql" />
+    <Build Include="dbo\Stored Procedures\App_History_Timeline_Save.sql" />
+    <Build Include="dbo\Stored Procedures\App_History_Timeline_Get.sql" />
+    <Build Include="dbo\Stored Procedures\App_DropDownGeneral_List.sql" />
+    <Build Include="dbo\Stored Procedures\App_CheckRemoveUsersPermissionsApply_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\App_CheckRemoveProfilesPermissionsApply_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\App_CheckPermissionsApplyUsers_Save.sql" />
+    <Build Include="dbo\Stored Procedures\App_CheckPermissionsApplyProfile_Save.sql" />
+    <Build Include="dbo\Stored Procedures\App_CheckPermissionsApply_Save.sql" />
+    <Build Include="dbo\Stored Procedures\App_CheckNewUsersPermissionsApply_Save.sql" />
+    <Build Include="dbo\Tables\Types.sql" />
+    <Build Include="dbo\Tables\TerminalByProducts.sql" />
+    <Build Include="dbo\Tables\StowageFactorByProducts.sql" />
+    <Build Include="dbo\Tables\ServiceLiquidations.sql" />
+    <Build Include="dbo\Tables\RequestForServices.sql" />
+    <Build Include="dbo\Tables\RankRateTerminals.sql" />
+    <Build Include="dbo\Tables\RankConceptRate.sql" />
+    <Build Include="dbo\Tables\QuantityMTByProducts.sql" />
+    <Build Include="dbo\Tables\Products.sql" />
+    <Build Include="dbo\Tables\ProductByVessels.sql" />
+    <Build Include="dbo\Tables\ItemsLiquidation.sql" />
+    <Build Include="dbo\Tables\ConditionByPorts.sql" />
+    <Build Include="dbo\Tables\AvailableOpenVessels.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Tolerance_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Terminal_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_StowageFactor_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_SearchVessel_Step1.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Quantity_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Product_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Port_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Condition_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_SearchVessel_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_SearchVessel_Step2.sql" />
+    <Build Include="dbo\Tables\DistanceBetweenPorts.sql" />
+    <Build Include="dbo\Functions\GetTotalVessel.sql" />
+    <Build Include="dbo\Functions\GetTotalDayVessel.sql" />
+    <Build Include="dbo\Functions\TableSplit.sql" />
+    <Build Include="dbo\Stored Procedures\DB_ServiceLiquidationsForRquest_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_RequesForServices_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_ItemsLiquidationForServices_List.sql" />
+    <Build Include="dbo\Functions\GetTotalUnLoadPort.sql" />
+    <Build Include="dbo\Functions\GetTotalLoadPortAtUnloadingPort.sql" />
+    <Build Include="dbo\Functions\GetTotalLoadingPort.sql" />
+    <Build Include="dbo\Functions\GetTotalCurrentPort.sql" />
+    <Build Include="dbo\Functions\GetTotalCanalPanama.sql" />
+    <Build Include="dbo\Stored Procedures\DB_InboxVessel_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_InboxCustomer_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_ChangeStatusRequestVessel_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_ChangeStatusRequest_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Vessel_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_PropertyToVessel_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Vessel_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_AvailableOpenVessels_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_AvailableOpenVessels_Delete.sql" />
+    <Build Include="dbo\Functions\GetStatusRequest.sql" />
+    <Build Include="dbo\Stored Procedures\DB_SearchVessel_Continue.sql" />
+    <Build Include="dbo\Stored Procedures\DB_SearchVessel_Continue.sql" />
+    <Build Include="dbo\Functions\GetProfile.sql" />
+    <Build Include="dbo\Stored Procedures\DB_SearchVessel_Apply_1.sql" />
+    <Build Include="dbo\Stored Procedures\DB_SearchVessel_Apply_1.sql" />
+    <Build Include="dbo\Stored Procedures\DB_VesselChange_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Vessel_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_AvailableOpenVessels_Get.sql" />
+    <Build Include="dbo\Stored Procedures\SS_Users_Session_Validate.sql" />
+    <Build Include="dbo\Stored Procedures\SS_Users_Session_Save.sql" />
+    <Build Include="dbo\Stored Procedures\SS_Users_Session_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\SS_Users_RecoveryPassword.sql" />
+    <Build Include="dbo\Stored Procedures\SS_Users_Password_Reset.sql" />
+    <Build Include="dbo\Stored Procedures\SS_Users_Login_Validate.sql" />
+    <Build Include="dbo\Stored Procedures\SS_ProfileUsers_Get.sql" />
+    <Build Include="dbo\Stored Procedures\SS_Access_Permissions_App.sql" />
+    <Build Include="dbo\Stored Procedures\C_Parameter_Get.sql" />
+    <Build Include="dbo\Stored Procedures\App_UsersCheckPermissions_Get.sql" />
+    <Build Include="dbo\Stored Procedures\App_Users_Get.sql" />
+    <Build Include="dbo\Stored Procedures\App_ProfilesCheckPermissions_Get.sql" />
+    <Build Include="dbo\Stored Procedures\App_MenusAssignCheckPermissions_List.sql" />
+    <Build Include="dbo\Stored Procedures\App_Menus_Save.sql" />
+    <Build Include="dbo\Stored Procedures\App_Menus_List.sql" />
+    <Build Include="dbo\Stored Procedures\App_Menus_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\App_Menus_Autorizaton.sql" />
+    <Build Include="dbo\Stored Procedures\App_Home_DashBoard_List.sql" />
+    <Build Include="dbo\Stored Procedures\App_EmailSend_DashBoard_List.sql" />
+    <Build Include="dbo\Stored Procedures\App_DefaultMenus_List.sql" />
+    <Build Include="dbo\Stored Procedures\App_AssignCheckPermissions_List.sql" />
+    <Build Include="dbo\Functions\GetTotalCanalPanamaDischarge.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Type_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_VesselProduct_Assigned.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Tolerance_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Tolerance_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Tolerance_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Tolerance_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\DB_TerminalProduct_Assigned.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Terminal_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Terminal_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Terminal_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Terminal_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\DB_StowageFactorProduct_Assigned.sql" />
+    <Build Include="dbo\Stored Procedures\DB_StowageFactor_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_StowageFactor_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_StowageFactor_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_StowageFactor_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\DB_QuantityProduct_Assigned.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Quantity_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Quantity_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Quantity_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Quantity_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Product_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Product_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Product_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Product_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Port_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Port_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Port_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Port_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\DB_ConditionPort_Assigned.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Condition_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Condition_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Condition_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Condition_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\DB_TerminalByProducts_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_DistanceBetweenPorts_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_DistanceBetweenPorts_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Vessel_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_PropertyVessel_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_PropertyVessel_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_PropertyVessel_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_PropertyVessel_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_PropertyVessel_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\DB_RankRateTerminals_Get.sql" />
+    <Build Include="dbo\Tables\ContractClauses.sql" />
+    <Build Include="dbo\Tables\Contract.sql" />
+    <Build Include="dbo\Tables\Clauses.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Contract_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Contract_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Contract_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Contract_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Contract_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Clauses_StatusUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Clauses_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Clauses_List.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Clauses_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Clauses_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\DB_VariableLiquidation_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_UpdateVariableLiquidation.sql" />
+    <Build Include="dbo\Stored Procedures\DB_UpdateRequestForThisVessel.sql" />
+    <Build Include="dbo\Tables\NegotiationsOfRequests.sql" />
+    <Build Include="dbo\Tables\DetailNegotiationsOfRequests.sql" />
+    <Build Include="dbo\Functions\GetNegotiationsOfRequestsForInbox.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Negotiation_Save.sql" />
+    <Build Include="dbo\Stored Procedures\DB_Negotiation_Get.sql" />
+    <Build Include="dbo\Stored Procedures\DB_DetailNegotiation_Save.sql" />
+    <Build Include="dbo\Tables\HistoryNegotiationsOfRequests.sql" />
+    <Build Include="dbo\Stored Procedures\DB_NegotiationHistory_Get.sql" />
+    <Build Include="dbo\Tables\SchedulerRequestByVesselForRecalculate.sql" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,77 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="breadcrumb-item active">Inbox Customer</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+
+<h3>List Of Request for Freight Indications</h3>
+<hr class="card card-accent-warning" />
+<div class="email-app mb-4">
+    <nav>
+        <a href="#/Step" class="btn btn-danger btn-block">New Search</a>
+        <ul class="nav">
+            <li class="divider m-2"></li>
+            <li class="nav-title">
+                <b>Status</b>
+            </li>
+            <li class="nav-item px-3 hidden-cn d-down-none">
+                <div class="mb-1">
+                    <i class="fa fa-comment-o fa-lg mt-4  text-warning"></i> Requests <span class="badge badge-danger">{{ (items | filter : { NewStatus: 'REQUEST' } : true).length }} New</span>
+                </div>
+                <hr />
+                <div class="nav-label mb-1">
+                    <i class="fa fa-check-square-o fa-lg mt-4  text-info"></i>  Partial Acceptance
+                </div>
+                <hr />
+                <div class="mb-1">
+                    <i class="fa fa-cogs fa-lg mt-4  text-success"></i>   Full Acceptance
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <main class="inbox">
+
+        <div class="toolbar">
+            <div class="btn-group">
+                <button type="button" class="btn btn-light" ng-click="List(pagination.pageIndex)">
+                    <span class="fa fa-refresh"></span>
+                </button>
+            </div>
+            <div class="btn-group float-right">
+                <button type="button" class="btn btn-light" ng-click="Last(pagination.pageIndex)">
+                    <span class="fa fa-chevron-left"></span>
+                </button>
+                <button type="button" class="btn btn-light" ng-click="Next(pagination.pageIndex)">
+                    <span class="fa fa-chevron-right"></span>
+                </button>
+            </div>
+        </div>
+        <ul class="messages">
+            <li class="message" ng-repeat="item in items | filter:Filter" ng-class="item.NewStatus=='REQUEST' ? 'unread' : ''">
+                <a href="" ng-click="GetServiceLiquidation(item.Token)">
+                    <div class="actions">
+                        <span title="{{item.NewStatus}}" ng-show="item.NewStatus=='REQUEST'"><i class="fa fa-comment-o fa-lg mt-4  text-warning"></i></span>
+                        <span title="{{item.NewStatus}}" ng-show="item.NewStatus=='PARTIAL_ACCEPT'"><i class="fa fa-check-square-o fa-lg mt-4  text-info"></i></span>
+                        <span title="{{item.NewStatus}}" ng-show="item.NewStatus=='FULL_ACCEPT'"><i class="fa fa-cogs fa-lg mt-4  text-success"></i></span>
+                    </div>
+                    <div class="header">
+                        <span class="from">Reference {{item.Id}} - TBN </span>
+                        <span class="date">
+                            <span class="fa fa-paper-clip"></span> {{item.Creation | date : 'yyyy/MM/dd'}}
+                        </span>
+                    </div>
+                    <div class="title">
+                        {{item.Quantity |  number}} {{item.MeasureQuantity}} - {{item.Product}} from {{item.LoadPort}} to {{item.UnLoadPort}}
+                    </div>
+                    <div class="title">
+                        Date Lycan: {{item.StartLaycan | date : 'yyyy/MM/dd' }} - {{item.EndLaycan | date : 'yyyy/MM/dd'}} Number Vessel Send Request  <b>{{item.CountReponseVessel}}</b>/<b>{{item.CountVessel}}</b>
+                        <span ng-if="item.NewStatus=='REQUEST'" class="badge badge-danger">New</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>

@@ -1,0 +1,50 @@
+﻿<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i>
+            </div>
+            <div class="card-body">
+                <div class="row center-block">
+                    <div class="form-group">
+                        <div class="card card-accent-warning">
+                            <div class="card-header">
+                                <i class="fa fa-align-justify"></i> By Assigned
+                            </div>
+                            <div class="card-body">
+                                <div class="col-md-6">
+                                    <select style="height:250px;width:250px" multiple="multiple"
+                                            ng-options="data.id as data.name for data in byAssigned"
+                                            ng-model="$parent.byAssignedNow"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 center-block">
+                        <a ng-click="SelectOne(1)" ng-disabled="byAssigned==null" name="SelectOne1" href=""><i class="fa fa-chevron-right fa-lg mt-4"></i></a>
+                        <br />
+                        <a ng-click="SelectAll(1)" ng-disabled="byAssigned==null" name="SelectOne2" href=""><i class="fa fa-backward fa-lg mt-4"></i></a>
+                        <br />
+                        <a ng-click="SelectAll(0)" ng-disabled="assigned==null" name="SelectOne3" href=""><i class="fa fa-forward fa-lg mt-4"></i></a>
+                        <br />
+                        <a ng-click="SelectOne(0)" ng-disabled="assigned==null" name="SelectOne4" href=""><i class="fa fa-chevron-left fa-lg mt-4"></i></a>
+                    </div>
+                    <div class="form-group">
+                        <div class="card card-accent-success">
+                            <div class="card-header">
+                                <i class="fa fa-align-justify"></i> Assigned
+                            </div>
+                            <div class="card-body">
+                                <div class="col-md-3">
+                                    <select style="height:250px;width:250px" multiple="multiple" ng-model="$parent.assignedNow"
+                                            ng-options="data.id as data.name for data in assigned"
+                                            ng-disabled="$parent.assigned == null"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

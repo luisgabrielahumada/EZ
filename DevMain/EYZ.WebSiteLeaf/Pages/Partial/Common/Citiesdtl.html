@@ -1,0 +1,56 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item">Home</li>
+    <li class="breadcrumb-item"><a href="#/Cities">Cities</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<form role="form" name="myForm">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Detail</strong>
+                    <small><b>{{item.City}}</b></small>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Country</label> <label class="text-danger">*</label>
+                                <select class="form-control select2 custom-control" ng-class="(myForm.Country.$dirty || !isValid) && !myForm.Country.$valid?'is-invalid' : ''" style="width: 100%;" id="Country" name="Country" ng-model="item.CountryId" ng-options="data.CountryId as data.Country for data in countryitems" required>
+                                    <option value="" selected>Select one</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>City</label> <label class="text-danger">*</label>
+                                <input type="text" ng-class="(myForm.City.$dirty || !isValid) && !myForm.City.$valid?'is-invalid' : ''" class="form-control custom-control" name="City" placeholder="City" ng-model="item.City" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="switch switch-lg switch-3d switch-primary">
+                                    <input type="checkbox" class="switch-input" name="IsActive" ng-true-value="true" ng-false-value="false" ng-checked="item.IsActive===true" ng-model="item.IsActive">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>  Inactive
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group float-right">
+                                <a class="btn btn-outline-danger" href="#/Cities">Cancel</a>
+                                <button type="submit" class="btn btn-outline-success" ng-click="Save()">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

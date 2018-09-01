@@ -1,0 +1,177 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item">Home</li>
+    <li class="breadcrumb-item active">User Profile</li>
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<div class="container-fluid">
+    <div class="animated fadeIn">
+        <div class="email-app mb-4">
+            <nav>
+                <img class="profile-user-img img-responsive img-circle" src="../Includes/dist/img/avatar00.png" alt="User profile picture">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Name: {{item.Name}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login: {{item.Login}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">{{item.Email}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile: {{item.Profile}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-bookmark"></i> <b>Estado</b>
+                            <span class="pull-right" ng-if="item.IsActive===true">Activo </span>
+                            <span class="pull-right" ng-if="item.IsActive===false">Inactivo </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        Session ID :  <small>{{item.SessionId}}</small>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> Updated :   {{item.Updated| date : 'yyyy/MM/dd'}} </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> Creation :   {{item.Creation | date : 'yyyy/MM/dd'}} </a>
+                    </li>
+                    <li class="nav-item">
+                        <br />
+                        <br />
+                        <span class="pull-right">
+                            <button type="submit" class="btn btn-warning" ng-click="ClearCache()">Clear Cache</button>
+                        </span>
+                    </li>
+                </ul>
+            </nav>
+            <main class="inbox">
+                <div class="col-md-12 mb-4">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="" ng-click="setTab(1)" role="tab" aria-controls="profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="" ng-click="setTab(2)" role="tab" aria-controls="configuration">Configuration</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="profile" role="tabpanel" ng-class="selectedTab==1 ? 'active' : ''">
+                            <form class="form-horizontal" name="myForm">
+                                <div class="form-group" ng-class="(myForm.Login.$dirty || !isValid) && !myForm.Login.$valid?'has-error' : ''">
+                                    <label for="Login" class="col-sm-2 control-label">Login</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control custom-control" id="UserName" readonly="readonly" name="Login" ng-model="item.Login" placeholder="Name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-class="(myForm.Email.$dirty || !isValid) && !myForm.Email.$valid?'has-error' : ''">
+                                    <label for="Email" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control custom-control" id="Email" name="Email" ng-model="item.Email" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-class="(myForm.Name.$dirty || !isValid) && !myForm.Name.$valid?'has-error' : ''">
+                                    <label for="Name" class="col-sm-2 control-label">Nombre</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control custom-control" id="Name" name="Name" ng-model="item.Name" placeholder="Nombres" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" id="IsActive" name="IsActive" ng-true-value="true" ng-false-value="false" ng-checked="item.IsActive===true" ng-model="item.IsActive">Estado
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" id="IsSysAdmin" ng-true-value="true" ng-false-value="false" name="IsSysAdmin" ng-checked="item.IsSysAdmin===true" ng-model="item.IsSysAdmin">Super Administrador
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" id="IsBlock" name="IsBlock" ng-true-value="true" ng-false-value="false" ng-checked="item.IsBlock===true" ng-model="item.IsBlock">Bloquear
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-class="(myForm.Profile.$dirty || !isValid) && !myForm.Profile.$valid?'has-error' : ''">
+                                    <label for="inputSkills" class="col-sm-2 control-label">Perfil</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control select2 custom-control" style="width: 100%;" id="Profile" name="Profile" ng-model="item.ProfileId" ng-options="data.ProfileId as data.Profile for data in items" required>
+                                            <option value="">Seleccione uno</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group float-right">
+                                        <button type="submit" class="btn btn-danger" ng-click="Save()">Save</button>
+                                        <button type="submit" class="btn btn-info" ng-click="ResetPassword()">Reset Password</button>
+                                        <button type="submit" class="btn btn-warning" ng-click="RefreshToken()">Refresh Token</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="configuration" role="tabpanel" ng-class="selectedTab==2 ? 'active' : ''">
+                            <form class="form-horizontal" name="myPasswordForm">
+                                <div class="post">
+                                    <div class="user-block">
+                                        <div class="form-group" ng-class="(myPasswordForm.PasswordOld.$dirty || !isValid) && !myPasswordForm.PasswordOld.$valid?'has-error' : ''">
+                                            <label for="Password" class="control-label">Clave Actual</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control custom-control" id="PasswordOld" name="PasswordOld" ng-maxlength="15" ng-minlength="6" ng-model="PasswordOld" placeholder="Clave" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" ng-class="(myPasswordForm.NewPassword.$dirty || !isValid) && !myPasswordForm.NewPassword.$valid?'has-error' : ''">
+                                            <label for="ds_newpassword" class="control-label">Nueva Clave</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control custom-control" id="NewPassword" name="NewPassword" ng-maxlength="15" ng-minlength="6" ng-model="NewPassword" placeholder="Nueva Clave" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" ng-class="(myPasswordForm.ConfirmPassword.$dirty || !isValid) && !myPasswordForm.ConfirmPassword.$valid?'has-error' : ''">
+                                            <label for="ds_confirmpassword" class="control-label">Confirmar Clave</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control custom-control" id="ConfirmPassword" name="ConfirmPassword" ng-maxlength="15" ng-minlength="6" ng-model="ConfirmPassword" placeholder="Confirma Clave" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="Comments" class="control-label">Comentarios</label>
+                                            <div class="col-sm-10">
+                                                <input class="form-control custom-control" name="Comments" ng-model="Comments" type="text" placeholder="Type a comment">
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="form-group margin-bottom-none">
+                                            <div class="col-sm-12 col-sm-offset-10">
+                                                <div class="form-group float-right">
+                                                    <button type="submit" class="btn btn-danger" ng-click="ChangePassword()">Cambiar Clave</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>

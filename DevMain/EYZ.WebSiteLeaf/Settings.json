@@ -1,0 +1,15 @@
+﻿{
+  "Settings": {
+    "appUriLocal": {
+      "key": "Gesi.Url.ApiServiceBaseUriLocal",
+      "value": "http://localhost/EYZ.WebAPI/Api"
+    },
+    "appUriRemote": {
+      "key": "Gesi.Url.ApiServiceBaseUriLocal",
+      "value": "https://webapieyz.azurewebsites.net/Api"
+    },
+    "appSettings": {
+      "active": "LOCAL"
+    }
+  }
+}

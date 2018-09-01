@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F6FF6A1-342D-4FF2-938C-DF750633CA32}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EYZ.Infrastructure</RootNamespace>
+    <AssemblyName>EYZ.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Auth">
+      <HintPath>..\..\Lib\Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Configurations">
+      <HintPath>..\..\Lib\Configurations.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ninject\LoadNinjectResolver.cs" />
+    <Compile Include="Ninject\NinjectBindingsConfigurator.cs" />
+    <Compile Include="Ninject\NinjectKActivator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi">
+      <Version>5.2.4</Version>
+    </PackageReference>
+    <PackageReference Include="Ninject">
+      <Version>3.3.4</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EYZ.Services\Clauses.Services\Clauses.Services.csproj">
+      <Project>{362B7C1F-F1F0-49E6-87D9-2DB25C093538}</Project>
+      <Name>Clauses.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EYZ.Services\Conditions.Services\Conditions.Services.csproj">
+      <Project>{0E7B0690-CEA9-4F4A-BE1B-D0ACFB179A2B}</Project>
+      <Name>Conditions.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EYZ.Services\Contract.Services\Contract.Services.csproj">
+      <Project>{17D50F62-6981-4173-88E1-1F34411051F3}</Project>
+      <Name>Contract.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EYZ.Services\Ports.Services\Ports.Services.csproj">
+      <Project>{8945E875-2573-45D8-A72C-1504B63B672A}</Project>
+      <Name>Ports.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EYZ.Services\Products.Services\Products.Services.csproj">
+      <Project>{DF80AEFD-B5C2-474D-A3C0-4C7E8237BDE7}</Project>
+      <Name>Products.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EYZ.Services\Quantity.Services\Quantity.Services.csproj">
+      <Project>{A5D22D82-F817-45FA-9F96-01FD7FAE4E66}</Project>
+      <Name>Quantity.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EYZ.Services\Step.Services\Step.Services.csproj">
+      <Project>{5C4324E8-FFBC-4D08-854F-F5AC7C8DCB3B}</Project>
+      <Name>Step.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EYZ.Services\StowageFactors.Services\StowageFactors.Services.csproj">
+      <Project>{93FFF825-DA53-4017-B490-F5A52A795906}</Project>
+      <Name>StowageFactors.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EYZ.Services\Terminals.Services\Terminals.Services.csproj">
+      <Project>{8BCDB517-5CA9-4876-B5EB-8AE8286E8A42}</Project>
+      <Name>Terminals.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EYZ.Services\Tolerances.Services\Tolerances.Services.csproj">
+      <Project>{B610BF1A-5B9E-4253-9CCC-C2C531E9F5CE}</Project>
+      <Name>Tolerances.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EYZ.Services\Type.Services\Type.Services.csproj">
+      <Project>{ED8A272E-B22E-4555-800B-DA621C4655FB}</Project>
+      <Name>Type.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EYZ.Services\Vessel.Services\Vessel.Services.csproj">
+      <Project>{02038F44-137E-401C-9F21-00D248BE25B9}</Project>
+      <Name>Vessel.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

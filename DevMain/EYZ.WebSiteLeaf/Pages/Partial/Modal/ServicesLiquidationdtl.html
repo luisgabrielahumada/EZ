@@ -1,0 +1,68 @@
+﻿<div class="modal fade" id="primaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-primary modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Sent Requests  #{{Id}}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card border-warning" ng-repeat="data in items">
+                    <div class="card-header text-sm-right">
+                        <span title="{{data.Status}}" ng-show="data.Status=='PARTIAL_ACCEPT'" class="text-primary"><i class="fa fa-check-square-o fa-1x text-red"></i> <b>Partial Accept</b></span>
+                        <span title="{{data.Status}}" ng-show="data.Status=='DECLINE'" class="text-primary"><i class="fa fa-exclamation fa-1x text-red"></i> <b>Decline</b></span>
+                        <span title="{{data.Status}}" ng-show="data.Status=='CANCEL'" class="text-primary"><i class="fa fa-close fa-1x text-red"></i> Cancel</b></span>
+                        <span title="{{data.Status}}" ng-show="data.Status=='FULL_ACCEPT'" class="text-primary"><i class="fa fa-cogs fa-1x text-red"></i> <b>Full Accept</b></span>
+                        <span title="{{data.Status}}" ng-show="data.Status=='ACCEPT'" class="text-primary"><i class="fa fa-cogs fa-1x text-red"></i> <b> Accept</b></span>
+                        <span title="{{data.Status}}" ng-show="data.Status=='ACCEPTUNDER'" class="text-primary"><i class="fa fa-gear fa-1x text-red"></i> <b>Accept: Diff. Conditions</b></span>
+                        <span title="{{data.Status}}" ng-show="data.Status=='REQUEST'" class="text-primary"><i class="fa fa-comment-o fa-1x text-red"></i> <b>Request</b></span>
+                        <span title="{{data.Status}}" ng-show="data.Status=='PENDING'" class="text-primary"><i class="fa fa-vcard fa-1x text-red"></i> <b>Pending</b></span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3 text-center" style="top: 40px !important;">
+                                <div class="text-center">
+                                    <div class="text-primary">
+                                        <h2 class="left">
+                                            <strike ng-show="data.Status=='ACCEPTUNDER'">{{data.TotalQuantityMT | currency}}</strike>
+                                            <span class="text-warning" ng-show="data.Status=='ACCEPTUNDER'">{{data.PriceMTNew | currency}}</span>
+                                            <span class="text-warning" ng-show="data.Status!='ACCEPTUNDER'">{{data.TotalQuantityMT | currency}}</span>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <dl class="row">
+                                    <dd class="col-sm-4">Vessel:</dd>
+                                    <dd class="col-sm-8"><b>{{data.Vessel}}</b>  <a href="" ng-click="GoDetailVessel(data.VesselToken)">View Details</a></dd>
+                                    <dd class="col-sm-4">Laycan:</dd>
+                                    <dt class="col-sm-8">{{data.StartLaycan | date: 'dd/MM/yyyy'}} to {{data.EndLaycan| date: 'dd/MM/yyyy'}}</dt>
+                                    <dd class="col-sm-4">ETA to Load Port:</dd>
+                                    <dt class="col-sm-8">{{data.StartLaycan | date: 'dd/MM/yyyy'}}</dt>
+                                    <dd class="col-sm-4">Transit Time:</dd>
+                                    <dt class="col-sm-8">{{data.TotalDay | number :2}} Days</dt>
+                                    <dd class="col-sm-4">Demurrage:</dd>
+                                    <dt class="col-sm-8">USD {{data.Demurrage | currency :2}}/Day</dt>
+                                </dl>
+                            </div>
+                            <div class="col-sm-3 text-center" style="top: 40px !important;">
+                                <div class="fa fa-check-circle info fa-5x text-success text-center"></div>
+                            </div>
+                        </div>
+                        <div class="row" ng-if="data.Status=='ACCEPT' || data.Status=='FULL_ACCEPT' || data.Status=='ACCEPTUNDER'">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-danger btn-lg pull-right" ng-click="GoConfirmation(data,Id)"><i class="fa fa-check-circle"></i> Accept Firm Bid</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group float-right">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

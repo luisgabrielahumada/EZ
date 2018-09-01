@@ -1,0 +1,118 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item">Home</li>
+    <li class="breadcrumb-item"><a href="#/Menus">Menus</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<form role="form" name="myForm">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Detail</strong>
+                    <small><b>{{item.Menu}}</b></small>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Alias</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" name="Alias" placeholder="Opcion" ng-class="(myForm.Alias.$dirty || !isValid) && !myForm.Alias.$valid?'is-invalid' : ''" ng-model="item.Alias" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Option</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.Menu.$dirty || !isValid) && !myForm.Menu.$valid?'is-invalid' : ''" name="Menu" placeholder="Opcion" ng-model="item.Menu" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Action</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.FilePage.$dirty || !isValid) && !myForm.FilePage.$valid?'is-invalid' : ''" name="FilePage" placeholder="File Page" ng-model="item.FilePage" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Vertical</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.IsVertical.$dirty || !isValid) && !myForm.IsVertical.$valid?'is-invalid' : ''" name="IsVertical" placeholder="" ng-model="item.IsVertical" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Horizontal</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-class="(myForm.IsHorizontal.$dirty || !isValid) && !myForm.IsHorizontal.$valid?'is-invalid' : ''" name="IsHorizontal" placeholder="" ng-model="item.IsHorizontal" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Icono</label>
+                                <input type="text" class="form-control custom-control" name="Icon" placeholder="" ng-model="item.Icon">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- select -->
+                            <div class="form-group">
+                                <label>Padre</label><label class="text-danger">*</label>
+                                <select class="form-control select2 custom-control" ng-class="(myForm.Parent.$dirty || !isValid) && !myForm.Parent.$valid?'is-invalid' : ''" style="width: 100%;" id="ParentId" name="ParentId" ng-model="item.ParentId" required>
+                                    <option value="">Select one</option>
+                                    <option value="-1" selected>None</option>
+                                    <option ng-repeat="data in itemsParent" ng-selected="item.ParentId===data.MenuId" value="{{data.MenuId}}">{{data.MenuId}}-{{data.Menu}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="switch switch-lg switch-3d switch-primary">
+                                    <input type="checkbox" class="switch-input" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.IsActive===true" ng-model="item.IsActive">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label> Inactive
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="switch switch-lg switch-3d switch-primary">
+                                    <input type="checkbox" class="switch-input" name="IsParent" ng-true-value="true" ng-false-value="false" ng-checked="item.IsParent===true" ng-model="item.IsParent">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>  Convertir Menu Padre
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="switch switch-lg switch-3d switch-primary">
+                                    <input type="checkbox" class="switch-input" name="IsParentMenu" ng-true-value="true" ng-false-value="false" ng-checked="item.IsParentMenu===true" ng-model="item.IsParentMenu">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>  Convertir Menu Visible
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="switch switch-lg switch-3d switch-primary">
+                                    <input type="checkbox" class="switch-input" name="IsAutorization" ng-true-value="true" ng-false-value="false" ng-checked="item.IsAutorization===true" ng-model="item.IsAutorization">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label> Requiere Autorization
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group float-right">
+                                <a class="btn btn-outline-danger" href="#/Menus">Cancel</a>
+                                <button type="submit" class="btn btn-outline-success" ng-click="Save(item.Token)">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

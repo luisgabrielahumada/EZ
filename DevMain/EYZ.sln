@@ -1,0 +1,262 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EYZ.WebAPI", "EYZ.WebAPI", "{02260840-592D-4A3C-BBDD-17EE73D55FEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EYZ.Services", "EYZ.Services", "{581B5358-88AD-44C2-A3E7-64286E976B72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EYZ.Database", "EYZ.Database", "{9EFB2BC5-83C8-45A8-B153-4D46F1C9B019}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EYZ.Database", "EYZ.Database\EYZ.Database.sqlproj", "{4A0890C9-676B-4A8F-A4CC-107AB7ADF2FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{0592A8BD-8524-436C-8C7F-5234635FA8AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Parametrization", "Parametrization", "{01DBE19D-B0F7-4437-8F3C-14648F1CFE52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Products", "Products", "{B40EB58C-00FA-495F-8034-F2F94D7AB7A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ports", "Ports", "{09A256B0-8087-434A-AA23-0A380FD16094}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Terminals", "Terminals", "{76C826F4-D973-43C4-BDE5-DA3E5211FFA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Condition", "Condition", "{8D21B95A-8CC2-4D1E-9F7A-F59D44BBBA48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Terms", "Terms", "{5903ED33-6758-44C2-9275-192F0300C3F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products.Services", "EYZ.Services\Products.Services\Products.Services.csproj", "{DF80AEFD-B5C2-474D-A3C0-4C7E8237BDE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conditions.Services", "EYZ.Services\Conditions.Services\Conditions.Services.csproj", "{0E7B0690-CEA9-4F4A-BE1B-D0ACFB179A2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ports.Services", "EYZ.Services\Ports.Services\Ports.Services.csproj", "{8945E875-2573-45D8-A72C-1504B63B672A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tolerance", "Tolerance", "{DFF51FA0-1C43-4B2E-A327-3E20F9E3AC1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StowageFactor", "StowageFactor", "{DDBADE63-3B64-42B1-9BF1-BE058621DEC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StowageFactors.Services", "EYZ.Services\StowageFactors.Services\StowageFactors.Services.csproj", "{93FFF825-DA53-4017-B490-F5A52A795906}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminals.Services", "EYZ.Services\Terminals.Services\Terminals.Services.csproj", "{8BCDB517-5CA9-4876-B5EB-8AE8286E8A42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tolerances.Services", "EYZ.Services\Tolerances.Services\Tolerances.Services.csproj", "{B610BF1A-5B9E-4253-9CCC-C2C531E9F5CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Quantity", "Quantity", "{86474962-552D-4BEC-A965-D5E4F6BAB461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quantity.Services", "EYZ.Services\Quantity.Services\Quantity.Services.csproj", "{A5D22D82-F817-45FA-9F96-01FD7FAE4E66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Step", "Step", "{BDDDDF43-D59D-4188-B67D-ED1966381335}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Step.Services", "EYZ.Services\Step.Services\Step.Services.csproj", "{5C4324E8-FFBC-4D08-854F-F5AC7C8DCB3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EYZ.WebSiteLeaf", "EYZ.WebSiteLeaf", "{5FE71B21-99A7-4CFF-9694-EBC645BBD829}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EYZ.WebSiteLeaf", "EYZ.WebSiteLeaf\EYZ.WebSiteLeaf.csproj", "{B387850F-796C-4340-86BB-C74FBCF22ED9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EYZ.API", "EYZ.API\EYZ.API.csproj", "{2F7DADF8-4222-4E2E-AB31-0539BB56FBBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vessel", "Vessel", "{B23A745F-67BA-4CD8-9F82-28F291481BDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EYZ.Infrastructure", "EYZ.Infrastructure", "{1C35C093-A173-4FA8-BAC4-96007A351E91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EYZ.Infrastructure", "EYZ.Infrastructure\EYZ.Infrastructure.csproj", "{8F6FF6A1-342D-4FF2-938C-DF750633CA32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vessel.Services", "EYZ.Services\Vessel.Services\Vessel.Services.csproj", "{02038F44-137E-401C-9F21-00D248BE25B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Type", "Type", "{D0EC4586-0263-48A4-964F-2B785796A6F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clauses", "Clauses", "{3C5F273C-4824-49C5-98D2-ECEF5A5C643C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clauses.Services", "EYZ.Services\Clauses.Services\Clauses.Services.csproj", "{362B7C1F-F1F0-49E6-87D9-2DB25C093538}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contract", "Contract", "{59D3B5EF-3437-45F5-8862-340FF17C833E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contract.Services", "EYZ.Services\Contract.Services\Contract.Services.csproj", "{17D50F62-6981-4173-88E1-1F34411051F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Type.Services", "EYZ.Services\Type.Services\Type.Services.csproj", "{ED8A272E-B22E-4555-800B-DA621C4655FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EYZ.WebJobs", "EYZ.WebJobs", "{7314A20A-A859-45B1-9578-ACA123522BF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A0890C9-676B-4A8F-A4CC-107AB7ADF2FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A0890C9-676B-4A8F-A4CC-107AB7ADF2FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A0890C9-676B-4A8F-A4CC-107AB7ADF2FC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4A0890C9-676B-4A8F-A4CC-107AB7ADF2FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A0890C9-676B-4A8F-A4CC-107AB7ADF2FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A0890C9-676B-4A8F-A4CC-107AB7ADF2FC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DF80AEFD-B5C2-474D-A3C0-4C7E8237BDE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF80AEFD-B5C2-474D-A3C0-4C7E8237BDE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF80AEFD-B5C2-474D-A3C0-4C7E8237BDE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF80AEFD-B5C2-474D-A3C0-4C7E8237BDE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7B0690-CEA9-4F4A-BE1B-D0ACFB179A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7B0690-CEA9-4F4A-BE1B-D0ACFB179A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7B0690-CEA9-4F4A-BE1B-D0ACFB179A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7B0690-CEA9-4F4A-BE1B-D0ACFB179A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8945E875-2573-45D8-A72C-1504B63B672A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8945E875-2573-45D8-A72C-1504B63B672A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8945E875-2573-45D8-A72C-1504B63B672A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8945E875-2573-45D8-A72C-1504B63B672A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93FFF825-DA53-4017-B490-F5A52A795906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93FFF825-DA53-4017-B490-F5A52A795906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93FFF825-DA53-4017-B490-F5A52A795906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93FFF825-DA53-4017-B490-F5A52A795906}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BCDB517-5CA9-4876-B5EB-8AE8286E8A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BCDB517-5CA9-4876-B5EB-8AE8286E8A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BCDB517-5CA9-4876-B5EB-8AE8286E8A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BCDB517-5CA9-4876-B5EB-8AE8286E8A42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B610BF1A-5B9E-4253-9CCC-C2C531E9F5CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B610BF1A-5B9E-4253-9CCC-C2C531E9F5CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B610BF1A-5B9E-4253-9CCC-C2C531E9F5CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B610BF1A-5B9E-4253-9CCC-C2C531E9F5CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D22D82-F817-45FA-9F96-01FD7FAE4E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D22D82-F817-45FA-9F96-01FD7FAE4E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D22D82-F817-45FA-9F96-01FD7FAE4E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D22D82-F817-45FA-9F96-01FD7FAE4E66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C4324E8-FFBC-4D08-854F-F5AC7C8DCB3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C4324E8-FFBC-4D08-854F-F5AC7C8DCB3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C4324E8-FFBC-4D08-854F-F5AC7C8DCB3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C4324E8-FFBC-4D08-854F-F5AC7C8DCB3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B387850F-796C-4340-86BB-C74FBCF22ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B387850F-796C-4340-86BB-C74FBCF22ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B387850F-796C-4340-86BB-C74FBCF22ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B387850F-796C-4340-86BB-C74FBCF22ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F7DADF8-4222-4E2E-AB31-0539BB56FBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F7DADF8-4222-4E2E-AB31-0539BB56FBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F7DADF8-4222-4E2E-AB31-0539BB56FBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F7DADF8-4222-4E2E-AB31-0539BB56FBBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F6FF6A1-342D-4FF2-938C-DF750633CA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F6FF6A1-342D-4FF2-938C-DF750633CA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F6FF6A1-342D-4FF2-938C-DF750633CA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F6FF6A1-342D-4FF2-938C-DF750633CA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02038F44-137E-401C-9F21-00D248BE25B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02038F44-137E-401C-9F21-00D248BE25B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02038F44-137E-401C-9F21-00D248BE25B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02038F44-137E-401C-9F21-00D248BE25B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{362B7C1F-F1F0-49E6-87D9-2DB25C093538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{362B7C1F-F1F0-49E6-87D9-2DB25C093538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{362B7C1F-F1F0-49E6-87D9-2DB25C093538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{362B7C1F-F1F0-49E6-87D9-2DB25C093538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17D50F62-6981-4173-88E1-1F34411051F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17D50F62-6981-4173-88E1-1F34411051F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17D50F62-6981-4173-88E1-1F34411051F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17D50F62-6981-4173-88E1-1F34411051F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED8A272E-B22E-4555-800B-DA621C4655FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED8A272E-B22E-4555-800B-DA621C4655FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED8A272E-B22E-4555-800B-DA621C4655FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED8A272E-B22E-4555-800B-DA621C4655FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4A0890C9-676B-4A8F-A4CC-107AB7ADF2FC} = {9EFB2BC5-83C8-45A8-B153-4D46F1C9B019}
+		{0592A8BD-8524-436C-8C7F-5234635FA8AF} = {581B5358-88AD-44C2-A3E7-64286E976B72}
+		{01DBE19D-B0F7-4437-8F3C-14648F1CFE52} = {581B5358-88AD-44C2-A3E7-64286E976B72}
+		{B40EB58C-00FA-495F-8034-F2F94D7AB7A9} = {01DBE19D-B0F7-4437-8F3C-14648F1CFE52}
+		{09A256B0-8087-434A-AA23-0A380FD16094} = {01DBE19D-B0F7-4437-8F3C-14648F1CFE52}
+		{76C826F4-D973-43C4-BDE5-DA3E5211FFA8} = {01DBE19D-B0F7-4437-8F3C-14648F1CFE52}
+		{8D21B95A-8CC2-4D1E-9F7A-F59D44BBBA48} = {01DBE19D-B0F7-4437-8F3C-14648F1CFE52}
+		{5903ED33-6758-44C2-9275-192F0300C3F2} = {01DBE19D-B0F7-4437-8F3C-14648F1CFE52}
+		{DF80AEFD-B5C2-474D-A3C0-4C7E8237BDE7} = {B40EB58C-00FA-495F-8034-F2F94D7AB7A9}
+		{0E7B0690-CEA9-4F4A-BE1B-D0ACFB179A2B} = {8D21B95A-8CC2-4D1E-9F7A-F59D44BBBA48}
+		{8945E875-2573-45D8-A72C-1504B63B672A} = {09A256B0-8087-434A-AA23-0A380FD16094}
+		{DFF51FA0-1C43-4B2E-A327-3E20F9E3AC1B} = {01DBE19D-B0F7-4437-8F3C-14648F1CFE52}
+		{DDBADE63-3B64-42B1-9BF1-BE058621DEC5} = {01DBE19D-B0F7-4437-8F3C-14648F1CFE52}
+		{93FFF825-DA53-4017-B490-F5A52A795906} = {DDBADE63-3B64-42B1-9BF1-BE058621DEC5}
+		{8BCDB517-5CA9-4876-B5EB-8AE8286E8A42} = {76C826F4-D973-43C4-BDE5-DA3E5211FFA8}
+		{B610BF1A-5B9E-4253-9CCC-C2C531E9F5CE} = {DFF51FA0-1C43-4B2E-A327-3E20F9E3AC1B}
+		{86474962-552D-4BEC-A965-D5E4F6BAB461} = {01DBE19D-B0F7-4437-8F3C-14648F1CFE52}
+		{A5D22D82-F817-45FA-9F96-01FD7FAE4E66} = {86474962-552D-4BEC-A965-D5E4F6BAB461}
+		{BDDDDF43-D59D-4188-B67D-ED1966381335} = {0592A8BD-8524-436C-8C7F-5234635FA8AF}
+		{5C4324E8-FFBC-4D08-854F-F5AC7C8DCB3B} = {BDDDDF43-D59D-4188-B67D-ED1966381335}
+		{B387850F-796C-4340-86BB-C74FBCF22ED9} = {5FE71B21-99A7-4CFF-9694-EBC645BBD829}
+		{2F7DADF8-4222-4E2E-AB31-0539BB56FBBD} = {02260840-592D-4A3C-BBDD-17EE73D55FEA}
+		{B23A745F-67BA-4CD8-9F82-28F291481BDB} = {01DBE19D-B0F7-4437-8F3C-14648F1CFE52}
+		{8F6FF6A1-342D-4FF2-938C-DF750633CA32} = {1C35C093-A173-4FA8-BAC4-96007A351E91}
+		{02038F44-137E-401C-9F21-00D248BE25B9} = {B23A745F-67BA-4CD8-9F82-28F291481BDB}
+		{D0EC4586-0263-48A4-964F-2B785796A6F7} = {01DBE19D-B0F7-4437-8F3C-14648F1CFE52}
+		{3C5F273C-4824-49C5-98D2-ECEF5A5C643C} = {01DBE19D-B0F7-4437-8F3C-14648F1CFE52}
+		{362B7C1F-F1F0-49E6-87D9-2DB25C093538} = {3C5F273C-4824-49C5-98D2-ECEF5A5C643C}
+		{59D3B5EF-3437-45F5-8862-340FF17C833E} = {01DBE19D-B0F7-4437-8F3C-14648F1CFE52}
+		{17D50F62-6981-4173-88E1-1F34411051F3} = {59D3B5EF-3437-45F5-8862-340FF17C833E}
+		{ED8A272E-B22E-4555-800B-DA621C4655FB} = {D0EC4586-0263-48A4-964F-2B785796A6F7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91CB5CAC-A9C9-4FA4-AD3F-725316E3E036}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 17
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gesicode.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EYZ.Database\\EYZ.Database.sqlproj
+		SccProjectTopLevelParentUniqueName1 = EYZ.sln
+		SccProjectName1 = EYZ.Database
+		SccLocalPath1 = EYZ.Database
+		SccProjectUniqueName2 = EYZ.Services\\Products.Services\\Products.Services.csproj
+		SccProjectTopLevelParentUniqueName2 = EYZ.sln
+		SccProjectName2 = EYZ.Services/Products.Services
+		SccLocalPath2 = EYZ.Services\\Products.Services
+		SccProjectUniqueName3 = EYZ.Services\\Conditions.Services\\Conditions.Services.csproj
+		SccProjectTopLevelParentUniqueName3 = EYZ.sln
+		SccProjectName3 = EYZ.Services/Conditions.Services
+		SccLocalPath3 = EYZ.Services\\Conditions.Services
+		SccProjectUniqueName4 = EYZ.Services\\Ports.Services\\Ports.Services.csproj
+		SccProjectTopLevelParentUniqueName4 = EYZ.sln
+		SccProjectName4 = EYZ.Services/Ports.Services
+		SccLocalPath4 = EYZ.Services\\Ports.Services
+		SccProjectUniqueName5 = EYZ.Services\\StowageFactors.Services\\StowageFactors.Services.csproj
+		SccProjectTopLevelParentUniqueName5 = EYZ.sln
+		SccProjectName5 = EYZ.Services/StowageFactors.Services
+		SccLocalPath5 = EYZ.Services\\StowageFactors.Services
+		SccProjectUniqueName6 = EYZ.Services\\Terminals.Services\\Terminals.Services.csproj
+		SccProjectTopLevelParentUniqueName6 = EYZ.sln
+		SccProjectName6 = EYZ.Services/Terminals.Services
+		SccLocalPath6 = EYZ.Services\\Terminals.Services
+		SccProjectUniqueName7 = EYZ.Services\\Tolerances.Services\\Tolerances.Services.csproj
+		SccProjectTopLevelParentUniqueName7 = EYZ.sln
+		SccProjectName7 = EYZ.Services/Tolerances.Services
+		SccLocalPath7 = EYZ.Services\\Tolerances.Services
+		SccProjectUniqueName8 = EYZ.Services\\Quantity.Services\\Quantity.Services.csproj
+		SccProjectTopLevelParentUniqueName8 = EYZ.sln
+		SccProjectName8 = EYZ.Services/Quantity.Services
+		SccLocalPath8 = EYZ.Services\\Quantity.Services
+		SccProjectUniqueName9 = EYZ.Services\\Step.Services\\Step.Services.csproj
+		SccProjectTopLevelParentUniqueName9 = EYZ.sln
+		SccProjectName9 = EYZ.Services/Step.Services
+		SccLocalPath9 = EYZ.Services\\Step.Services
+		SccProjectUniqueName10 = EYZ.WebSiteLeaf\\EYZ.WebSiteLeaf.csproj
+		SccProjectTopLevelParentUniqueName10 = EYZ.sln
+		SccProjectName10 = EYZ.WebSiteLeaf
+		SccLocalPath10 = EYZ.WebSiteLeaf
+		SccProjectUniqueName11 = EYZ.API\\EYZ.API.csproj
+		SccProjectTopLevelParentUniqueName11 = EYZ.sln
+		SccProjectName11 = EYZ.API
+		SccLocalPath11 = EYZ.API
+		SccProjectUniqueName12 = EYZ.Services\\Clauses.Services\\Clauses.Services.csproj
+		SccProjectTopLevelParentUniqueName12 = EYZ.sln
+		SccProjectName12 = EYZ.Services/Clauses.Services
+		SccLocalPath12 = EYZ.Services\\Clauses.Services
+		SccProjectUniqueName13 = EYZ.Services\\Contract.Services\\Contract.Services.csproj
+		SccProjectTopLevelParentUniqueName13 = EYZ.sln
+		SccProjectName13 = EYZ.Services/Contract.Services
+		SccLocalPath13 = EYZ.Services\\Contract.Services
+		SccProjectUniqueName14 = EYZ.Infrastructure\\EYZ.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName14 = EYZ.sln
+		SccProjectName14 = EYZ.Infrastructure
+		SccLocalPath14 = EYZ.Infrastructure
+		SccProjectUniqueName15 = EYZ.Services\\Vessel.Services\\Vessel.Services.csproj
+		SccProjectTopLevelParentUniqueName15 = EYZ.sln
+		SccProjectName15 = EYZ.Services/Vessel.Services
+		SccLocalPath15 = EYZ.Services\\Vessel.Services
+		SccProjectUniqueName16 = EYZ.Services\\Type.Services\\Type.Services.csproj
+		SccProjectTopLevelParentUniqueName16 = EYZ.sln
+		SccProjectName16 = EYZ.Services/Type.Services
+		SccLocalPath16 = EYZ.Services\\Type.Services
+	EndGlobalSection
+EndGlobal

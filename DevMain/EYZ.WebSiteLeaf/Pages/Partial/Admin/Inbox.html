@@ -1,0 +1,227 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="breadcrumb-item active">Inbox Admin</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> Inbox Admin <small></small>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Products</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="product" name="product" ng-model="productId" ng-change="GetProducts()">
+                                <option value="">Selected One</option>
+                                <option ng-repeat="data in itemsProduct" ng-selected="productId===data.id" value="{{data.id}}">{{data.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Stowage Factors</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="stowageFactorId" name="stowageFactorId" ng-model="stowageFactorId" ng-change="GetSelectedStowageFactors()" required>
+                                <option value="">Selected One</option>
+                                <option ng-repeat="data in itemsStowageFactor" ng-selected="stowageFactorId===data.id" value="{{data.id}}">{{data.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="quantityId" name="quantityId" ng-model="quantityId" ng-change="GetSelectedQuantity()">
+                                <option value="">Selected One</option>
+                                <option ng-repeat="data in itemsQuantity" ng-selected="quantityId===data.id" value="{{data.id}}">{{data.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Condition</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="conditionId" name="conditionId" ng-model="conditionId">
+                                <option value="">Selected One</option>
+                                <option ng-repeat="data in itemsCondition" ng-selected="conditionId===data.id" value="{{data.id}}">{{data.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Loading Port</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="loadPortId" name="loadPortId" ng-model="loadPortId" ng-change="GetLoadPort()">
+                                <option value="">Selected One</option>
+                                <option ng-repeat="data in itemsPort" ng-selected="loadPortId===data.id" value="{{data.id}}">{{data.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Loading Terminal</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="loadTerminalId" name="loadTerminalId" ng-model="loadTerminalId" ng-change="GetLoadingRate()">
+                                <option value="">Selected One</option>
+                                <option ng-repeat="data in itemsLoadTerminal" ng-selected="loadTerminalId===data.id" value="{{data}}">{{data.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Discharge Port</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="dischargePortId" name="dischargePortId" ng-model="dischargePortId" ng-change="GetDischargePort()" required>
+                                <option value="">Selected One</option>
+                                <option ng-repeat="data in itemsPort" ng-selected="dischargePortId===data.id" value="{{data.id}}">{{data.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Discharge Terminal</label>
+                            <select class="form-control select2 custom-control" style="width: 100%;" id="dischargeTerminalId" name="dischargeTerminalId" ng-model="dischargeTerminalId" ng-change="GetUnLoadingRate()" required>
+                                <option value="">Selected One</option>
+                                <option ng-repeat="data in itemsDischargeTerminal" ng-selected="dischargeTerminalId===data.id" value="{{data}}">{{data.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Start Laycan</label>
+                            <input type="date" class="form-control custom-control" name="startLaycan" ng-model="startLaycan" placeholder="dd-MM-yyyy" value="{{ startLaycan | date:'yyyy-MM-dd' }}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>End Laycan</label>
+                            <input type="date" class="form-control custom-control" name="endLaycan" ng-model="endLaycan" placeholder="dd-MM-yyyy" value="{{ endLaycan | date:'yyyy-MM-dd' }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group float-right">
+                            <button type="submit" class="btn btn-danger" ng-click="List()">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- TABLE: LATEST ORDERS -->
+                        <table class="table table-responsive-sm table-sm">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>#</th>
+                                    <th style="text-align:center">Product</th>
+                                    <th style="text-align:center">Condition</th>
+                                    <th style="text-align:center">Tolerance</th>
+                                    <th style="text-align:center">Load Terminal</th>
+                                    <th style="text-align:center">Load Port</th>
+                                    <th style="text-align:center">Loading Rate</th>
+                                    <th style="text-align:center">UnLoad Terminal</th>
+                                    <th style="text-align:center">UnLoad Port</th>
+                                    <th style="text-align:center">UnLoading Rate</th>
+                                    <th style="text-align:center">Start Laycan</th>
+                                    <th style="text-align:center">End Laycan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat-start="item in items| filter:Filter">
+                                    <td>
+                                        <a href="" ng-click="GetDetail(item.Token,$index,item)">
+                                            <span ng-class="index!=$index?  'fa fa-plus':'fa fa-minus'" />
+                                        </a>
+                                    </td>
+                                    <td>
+                                        {{item.Product}}
+                                    </td>
+                                    <td>
+                                        {{item.Condition}}
+                                    </td>
+                                    <td>
+                                        {{item.Tolerance}}
+                                    </td>
+                                    <td>
+                                        {{item.LoadTerminal}}
+                                    </td>
+                                    <td>
+                                        {{item.LoadPort}}
+                                    </td>
+                                    <td>
+                                        {{item.LoadingRate | currency}}
+                                    </td>
+                                    <td>
+                                        {{item.UnLoadTerminal}}
+                                    </td>
+                                    <td>
+                                        {{item.UnLoadPort}}
+                                    </td>
+                                    <td>
+                                        {{item.UnLoadingRate | currency}}
+                                    </td>
+                                    <td>
+                                        {{item.StartLaycan | date:'yyyy-MM-dd'}}
+                                    </td>
+                                    <td>
+                                        {{item.EndLaycan| date:'yyyy-MM-dd'}}
+                                    </td>
+                                </tr>
+                                <tr ng-repeat-end ng-show="index===$index && item.Token==key">
+                                    <td></td>
+                                    <td colspan="12">
+                                        <div class="container-fluid">
+                                            <table class="table table-responsive-sm table-sm">
+                                                <thead class="thead-inverse">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Vessel</th>
+                                                        <th>Status</th>
+                                                        <th>Creation</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="d in detail | filter:Filter">
+                                                        <td><a href="" ng-click="GetLiquidation(d.Token)"><span class="fa fa-eye"></span></a></td>
+                                                        <td>
+                                                            {{d.Vessel}}
+                                                        </td>
+                                                        <td>
+                                                            {{d.Status}}
+                                                        </td>
+                                                        <td>
+                                                            {{d.Creation | date:'yyyy-MM-dd'}}
+                                                        </td>
+                                                    </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr ng-if="items.length===0">
+                                    <td colspan="20">No Records</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav>
+                            <paging class="small"
+                                    ul-class="pagination"
+                                    active-class="active"
+                                    disabled-class="disabled"
+                                    page="pagination.pageIndex"
+                                    page-size="pagination.pageSize"
+                                    total="pagination.totalItemCount"
+                                    paging-action="List(page)"
+                                    show-prev-next="true"
+                                    show-first-last="true">
+                            </paging>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

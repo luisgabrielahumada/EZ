@@ -1,0 +1,133 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i>:: Permissions
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-3">
+                        <div class="card card-accent-warning" ng-repeat="parent in parents">
+                            <div class="card-header">
+                                <a href="#/Permissions/{{parent.Token}}/{{parent.MenuId}}">{{parent.name}}</a>
+                            </div>
+                            <div class="card-body" ng-hide="parent.Relationship=0">
+                                <a href="#/Permissions/{{item.Token}}/{{item.id}}" class="list-group-item list-group-item-action flex-column align-items-start" ng-repeat="item in parent.items">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        {{item.name}}
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card card-accent-warning">
+                            <div class="card-header">
+                                Others
+                            </div>
+                            <div class="card-body">
+                                <a href="#/Permissions/{{item.Token}}/{{item.MenuId}}" class="list-group-item list-group-item-action flex-column align-items-start" ng-repeat="item in parentItems">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        {{item.name}}
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>&#160;&#160;</div>
+                    <div>&#160;&#160;</div>
+                    <div>&#160;&#160;</div>
+                    <div>&#160;&#160;</div>
+                    <div class="col-xs-10" ng-show="viewprofile===true">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3 class="box-title">
+                                    Configuración Accesos a Perfiles
+                                </h3>
+                                <br />
+                                <small>Access To ::{{item.Menu}}-{{item.FilePage}}::</small>
+                                <h6>
+                                    <b>Create by:</b> {{item.Creation}}::
+                                </h6>
+                                <h6>
+                                    <b>Last Update:</b> {{item.Updated}}::
+                                </h6>
+                                <h6>
+                                    Description:: {{item.Help}}::
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                </div>
+                                <div class="form-group">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table class="table table-responsive-sm table-sm">
+                                    <thead>
+                                        <tr>
+                                            <td>
+                                                <label>Profile</label>
+                                            </td>
+                                            <td>
+                                                <select class="form-control select2" id="id_profile" name="id_profile" ng-model="ProfileId" ng-options="data.ValueId as data.Value for data in assignsProfile">
+                                                    <option value="0" selected>Select uno</option>
+                                                </select>
+                                            </td>
+                                            <td colspan="8">
+                                                <label>&#160;</label>
+                                                <button type="submit" class="btn btn-outline-warning" ng-click="AssingnProfile()">Assigned</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Profile</th>
+                                            <th>View</th>
+                                            <th>New</th>
+                                            <th>Edit</th>
+                                            <th>Update</th>
+                                            <th>Status</th>
+                                            <th>Delete</th>
+                                            <th colspan="2">Other</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-if="Usersitems.length===0">
+                                            <td colspan="20">No Records</td>
+                                        </tr>
+                                        <tr ng-repeat="item in items">
+                                            <td>{{item.Profile}}</td>
+                                            <td><input type="checkbox" class="minimal" name="in_view" ng-true-value="true" ng-false-value="false" ng-checked="item.IsView===true" ng-model="item.IsView"></td>
+                                            <td><input type="checkbox" class="minimal" name="in_new" ng-true-value="true" ng-false-value="false" ng-checked="item.IsNew===true" ng-model="item.IsNew"></td>
+                                            <td><input type="checkbox" class="minimal" name="in_edit" ng-true-value="true" ng-false-value="false" ng-checked="item.IsEdit===true" ng-model="item.IsEdit"></td>
+                                            <td><input type="checkbox" class="minimal" name="in_modify" ng-true-value="true" ng-false-value="false" ng-checked="item.IsModify===true" ng-model="item.IsModify"></td>
+                                            <td><input type="checkbox" class="minimal" name="in_status" ng-true-value="true" ng-false-value="false" ng-checked="item.IsStatus===true" ng-model="item.IsStatus"></td>
+                                            <td><input type="checkbox" class="minimal" name="in_delete" ng-true-value="true" ng-false-value="false" ng-checked="item.IsDelete===true" ng-model="item.IsDelete"></td>
+                                            <td><input type="checkbox" class="minimal" name="in_special" ng-true-value="true" ng-false-value="false" ng-checked="item.IsSpecial===true" ng-model="item.IsSpecial"></td>
+                                            <td><a ng-click="RemoveProfile(item.ProfileMenuId)" title="remover" href="" confirm-click="Seguro que desea eliminar este registro?"><span class="fa fa-remove"></span></a></td>
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group float-right">
+                                    <button type="submit" class="btn btn-outline-success" ng-click="Save(parentId)">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

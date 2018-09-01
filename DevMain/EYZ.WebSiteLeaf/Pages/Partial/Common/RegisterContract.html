@@ -1,0 +1,225 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="breadcrumb-item active">Request</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+
+<form role="form" name="myForm">
+    <div class="row">
+        <div class="col-lg-12">
+                <div class="card card-accent-warning">
+                    <div class="card-header">
+                        <h3>
+                            #{{request.Id}}
+                            Request Form Firm Freight Indication::::
+                            <span title="{{row.ServiceStatus}}" ng-show="row.ServiceStatus=='ACCEPTUNDER'"><i class="fa fa-battery-2 fa-lg mt-4 text-info"></i></span>
+                            <span title="{{row.ServiceStatus}}" ng-show="row.ServiceStatus=='DECLINE'"><i class="fa fa-bell-slash fa-lg mt-4 text-danger"></i></span>
+                            <span title="{{row.ServiceStatus}}" ng-show="row.ServiceStatus=='ACCEPT'"><i class="fa fa-battery-4 fa-lg mt-4 text-success"></i></span>
+                            <span title="{{row.ServiceStatus}}" ng-show="row.ServiceStatus=='REQUEST'"><i class="fa fa-battery-empty fa-lg mt-4 text-warning"></i></span>
+                            {{row.ServiceStatus}}::::
+                            <a name="vessel" href="" ng-click="GetVessel(request.VesselId)">{{vessel.name}}</a>
+                        </h3>
+                        <small></small>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label>Product Type</label>
+                                <input type="text" class="form-control" disabled name="Product" ng-model="request.ProductName">
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Quantity</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control  custom-control" disabled name="Quantity" value="{{request.Quantity | number:2}}">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">{{request.MeasureQuantity}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Stowage Factor</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" disabled name="StowageFactor" value="{{request.StowageFactor | number:2}}">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">{{request.Measure}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Tolerance</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" disabled name="ToleranceName" value="{{request.ToleranceName}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label>From</label>
+                                <input type="text" class="form-control" disabled name="LoadPort" ng-model="request.LoadPortName">
+                            </div>
+                            <div class="col-sm-2">
+                                <label>&#160;</label>
+                                <input type="text" class="form-control" disabled name="LoadTerminal" ng-model="request.LoadTerminalName">
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Condition/Loading Rate</label>
+                                <input type="text" class="form-control" disabled name="LoadingConditionName" value="{{request.LoadingConditionName}} {{request.LoadingRate |  number:2}}">
+                            </div>
+                            <div class="col-sm-2">
+                                <label>To</label>
+                                <input type="text" class="form-control" disabled name="UnLoadPort" ng-model="request.DischargePortName">
+                            </div>
+                            <div class="col-sm-2">
+                                <label>&#160;</label>
+                                <input type="text" class="form-control" disabled name="UnLoadTerminal" ng-model="request.DischargeTerminalName">
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Condition/Unloading Rate</label>
+                                <input type="text" class="form-control" disabled name="UnLoadingConditionName" value="{{request.UnLoadingConditionName}} {{request.UnLoadingRate |  number:2}}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label>Laycan</label>
+                                <input type="text" class="form-control" disabled name="StartLaycan" value="{{request.StartLaycan| date:'yyyy-MM-dd'}}">
+                            </div>
+                            <div class="col-sm-3">
+                                <label>&#160;</label>
+                                <input type="text" class="form-control" disabled name="EndLaycan" value="{{request.EndLaycan | date:'yyyy-MM-dd'}}">
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Freight Indication Sent to the Potential Charterer</label>
+                                <input type="text" class="form-control" disabled name="EndLaycan" value="{{row.Price | currency}}">
+                            </div>
+                            <div class="col-sm-2" ng-show="row.ServiceStatus=='ACCEPTUNDER'">
+                                <label>Suggested Freight Indication</label>
+                                <input type="text" class="form-control" disabled name="EndLaycan" value="{{row.PriceMTNew | currency}}">
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" ng-class="{ active: isSet(1) }">
+                                        <a class="nav-link" ng-class="{ active: isSet(1) }" data-toggle="tab" href="" ng-click="setTab(1)" role="tab" aria-controls="tab1"> <i class="icon-calculator"></i>  Configuration Contract</a>
+                                    </li>
+                                    <li class="nav-item" ng-class="{ active: isSet(2) }">
+                                        <a class="nav-link" ng-class="{ active: isSet(2) }" data-toggle="tab" href="" ng-click="setTab(2)" role="tab" aria-controls="tab2"> <i class="icon-calculator"></i>  Change of Clauses</a>
+                                    </li>
+                                    <li class="nav-item" ng-class="{ active: isSet(3) }">
+                                        <a class="nav-link" ng-class="{ active: isSet(3) }" data-toggle="tab" href="" ng-click="setTab(3)" role="tab" aria-controls="tab3"> <i class="icon-basket-loaded"></i>  History</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-12 mb-4">
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="tab1" ng-class="{ active: isSet(1) }" role="tabpanel" ng-show="isSet(1)">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group" ng-if="!hasNegotiation">
+                                                            <label><b>Contract Type:</b></label> <label class="text-danger">*</label>
+                                                            <select class="form-control select2 custom-control" ng-class="(myForm.contract.$dirty || !isValid) && !myForm.contract.$valid?'is-invalid' : ''" style="width: 100%;" id="contract" ng-change="GetClauses()" name="contract" ng-model="item.contractId" ng-options="data.Token as data.name for data in contracts">
+                                                                <option value="" selected>Select one</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <b>Terms and Conditions</b>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-10">
+                                                        <div class="row" ng-repeat="item in rows">
+                                                            <div class="col-sm-11">
+                                                                <textarea id="condition" ng-readonly="item.isModify" name="condition" rows="4" class="form-control" placeholder="Content.." ng-model="item.observation"></textarea>
+                                                                <br />
+                                                            </div>
+                                                            <div class="col-sm-1">
+                                                                <button type="button" ng-if="!item.isModify" ng-click="Delete(item.id)"><i class="fa fa-trash"></i></button>
+                                                            </div>
+                                                        </div>
+                                                        <br />
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <button type="button" class="btn btn-default pull-right" ng-click="AddContitions()"><i class="fa fa-commenting"></i> </button>
+                                                                <br />
+                                                                <br />
+                                                                <div class="input-group">
+                                                                    <textarea type="text" id="conditionAdd" name="conditionAdd" rows="4" class="form-control" ng-model="observation" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="row">
+                                                            <div class="col-sm-2">
+                                                                <button type="button" ng-click="Continue()" class="btn btn-warning btn-lg" ng-if="!hasNegotiation"> <i class="fa fa-play"></i> Continue</button>
+                                                                <button type="button" ng-click="Continue()" class="btn btn-warning btn-lg" ng-if="hasNegotiation && negotiation.status=='TOCUSTOMER'"> <i class="fa fa-play"></i> Update </button>
+                                                            </div>
+                                                        </div>
+                                                        <br />
+                                                        <div class="row">
+                                                            <div class="col-sm-2">
+                                                                <button type="button" ng-click="Cancel()" class="btn btn-danger btn-lg" ng-if="!hasNegotiation"> <i class="fa fa-backward"></i>  Cancel&#160;&#160;&#160;</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" ng-class="{ active: isSet(2) }" id="tab2" role="tabpanel" ng-show="isSet(2)">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row" ng-repeat="item in rows">
+                                                    <div class="col-md-12">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                Change  <sub><b>{{$index+1}}</b></sub>
+                                                                <span class="badge badge-success float-right">Check</span>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <p><div ng-bind-html="item.oldobservation|diff:item.observation"></div></p>
+                                                            </div>
+                                                            <div class="card-footer"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" ng-class="{ active: isSet(3) }" id="tab3" role="tabpanel" ng-show="isSet(3)">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row" ng-repeat="item in history">
+                                                    <div class="col-md-12">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                History  <sub><b>{{$index+1}}</b></sub>
+                                                                <span class="badge badge-success float-right">Check</span>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                {{item.oldobservation}}
+                                                            </div>
+                                                            <div class="card-footer"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</form>

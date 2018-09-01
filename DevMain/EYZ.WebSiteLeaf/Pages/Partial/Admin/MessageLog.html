@@ -1,0 +1,90 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item">Home</li>
+    <li class="breadcrumb-item"><a href="#/MessagesLog">Messages Log</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>Detail Log</strong>
+                <small></small>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <b>Message error:</b>
+                        <p> {{item.Message}}</p>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="" ng-click="setTab(1)" role="tab" aria-controls="home">Description</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="" ng-click="setTab(4)" role="tab" aria-controls="profile">Error</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane" id="Description" role="tabpanel" ng-class="selectedTab==1 ? 'active' : ''">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Property</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td>ResponseStatus</td>
+                                        <td>
+                                            {{item.ResponseStatus}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>HResult</td>
+                                        <td>
+                                            {{item.ResponseStatusCode}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>StartDate</td>
+                                        <td>
+                                            {{item.StartDate | date:"MM/dd/yyyy 'at' h:mma"}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>EndDate</td>
+                                        <td>
+                                            {{item.EndDate| date:"MM/dd/yyyy 'at' h:mma"}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="Error" ng-class="selectedTab==4 ? 'active' : ''" role="tabpanel">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td>Exception</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <textarea class="form-control" rows="15" cols="10">{{ex}}</textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <b>{{item.Code}}</b>::{{description.HelpURL}}::{{item.Source}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

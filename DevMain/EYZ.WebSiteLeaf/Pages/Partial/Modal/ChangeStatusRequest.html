@@ -1,0 +1,27 @@
+﻿<div class="modal fade" id="primaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-primary modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        Firm Freight Indication will be sent to Potential Charterer for <b>{{datainfo.priceMT | currency }}</b> USD /MT. Click OK if you accept
+                    </div>
+                    <div class="col-sm-12">
+                        <br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-secondary btn-lg  pull-right" data-dismiss="modal"><i class="fa fa-remove"></i> Cancel</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <span>&#160;</span>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-warning btn-lg pull-right" ng-click="ApplyChangeStatus()"><i class="fa fa-play"></i> Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

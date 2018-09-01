@@ -1,0 +1,225 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<form role="form" name="myForm">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card card-accent-warning">
+                <div class="card-header">
+                    <h3>{{titleSearch}}</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card border-warning">
+                                <div class="card-header bg-warning">
+                                    <h3>Search</h3>
+                                </div>
+                                <div class="card-body">
+                                    <nav class="nav flex-column">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <b>Product</b>
+                                                    <input type="text" class="form-control custom-control" disabled value="{{item.ProductName}}" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <b>
+                                                    Stowage Factor
+                                                </b>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control custom-control" disabled value="{{item.StowageFactorName}}" ng-if="item.StowageFactorId!='9999999'" />
+                                                    <input type="text" class="form-control custom-control" disabled value="{{item.StowageFactor  | number:2 }}" ng-if="item.StowageFactorId=='9999999'" />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">{{item.Measure}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <b>
+                                                    Quantity
+                                                </b>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control custom-control" disabled value="{{item.QuantityMTName}}" ng-if="item.QuantityId!='9999999'" />
+                                                    <input type="text" class="form-control custom-control" disabled value="{{item.Quantity  | number:2 }}" ng-if="item.QuantityId=='9999999'" />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">{{item.MeasureQuantity}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <b>From</b>
+                                                <input type="text" class="form-control custom-control" disabled value="{{item.LoadPortName}}" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label> </label>
+                                                <input type="text" class="form-control custom-control" disabled value="{{item.LoadTerminalName}}" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <b>To</b>
+                                                <input type="text" class="form-control custom-control" disabled value="{{item.DischargePortName}}" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label> </label>
+                                                <input type="text" class="form-control custom-control" disabled value="{{item.DischargeTerminalName}}" />
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <b>Loading Rate</b>
+                                                <input type="text" class="form-control custom-control" disabled value="{{item.LoadingRate | number:2 }}" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <b>UnLoading Rate</b>
+                                                <input type="text" class="form-control custom-control" disabled value="{{item.UnLoadingRate | number:2 }}" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <b>Laycan</b>
+                                                <input type="text" class="form-control custom-control" disabled value="{{item.StartLaycan | date: 'yyyy-MMMM-dd'}}" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label> </label>
+                                                <input type="text" class="form-control custom-control" disabled value="{{item.EndLaycan | date: 'yyyy-MMMM-dd'}}" />
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div ng-switch="isSelected">
+                                <h3 ng-switch-when="false">Results ({{items.length}} vessels found)</h3>
+                                <h3 ng-switch-when="true">Confirm</h3>
+                            </div>
+                            <div class="card border-warning" ng-show="items.length==0">
+                                <div class="card-header">
+                                    No Results Were Found
+                                </div>
+                            </div>
+                            <div class="card border-warning" ng-repeat="data in items" ng-if="!isSelected">
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col-sm-1">
+                                            <sub><b>{{$index+1}}</b></sub>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <div class="text-right">
+                                                <h3 class=" text-warning">{{data.TotalQuantityMT | currency}}</h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 text-right">
+                                            <b>USD/MT</b>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-3 text-center" style="top: 40px !important;">
+                                            <div class="text-center">
+                                                <div class="fa fa-lightbulb-o info fa-5x text-info text-right"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <dl class="row">
+                                                <dd class="col-sm-4">Vessel:</dd>
+                                                <dd class="col-sm-8"><b>{{data.Vessel}}</b>  <a href="" ng-click="GoDetailVessel(data.VesselToken)">View Details</a></dd>
+                                                <dd class="col-sm-4">Laycan:</dd>
+                                                <dt class="col-sm-8">{{data.StartLaycan | date: 'dd/MM/yyyy'}} to {{data.EndLaycan| date: 'dd/MM/yyyy'}}</dt>
+                                                <dd class="col-sm-4">ETA to Load Port:</dd>
+                                                <dt class="col-sm-8">{{data.StartLaycan | date: 'dd/MM/yyyy'}}</dt>
+                                                <dd class="col-sm-4">Transit Time:</dd>
+                                                <dt class="col-sm-8">{{data.TotalDay | number :2}} Days</dt>
+                                                <dd class="col-sm-4">Demurrage:</dd>
+                                                <dt class="col-sm-8">USD {{data.Demurrage | number}}/Day</dt>
+                                            </dl>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <dl class="row">
+                                                <dd class="col-sm-10">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <b>Click below to select this vessel and Continue below to send request to Vessel Operator</b>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <label class="switch switch-lg switch-3d switch-primary text-center">
+                                                                <input type="checkbox" class="switch-input" ng-checked="data.Status=='REQUEST'" name="vessel" id="vessel" ng-model="data.Id" ng-click="UnCheck(data)">
+                                                                <span class="switch-label" data-on="On" data-off="Off"></span>
+                                                                <span class="switch-handle"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-warning" ng-repeat="data in items | filter: { Status: 'REQUEST' }" ng-if="isSelected">
+                                <div class="card-body">
+                                    <div class="row">
+
+                                        <div class="col-sm-3 text-center" style="top: 40px !important;">
+                                            <div class="text-center">
+                                                <div class="text-primary"><h2>{{data.TotalQuantityMT | currency}}</h2></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <dl class="row">
+                                                <dd class="col-sm-4">Vessel:</dd>
+                                                <dd class="col-sm-8"><b>{{data.Vessel}}</b>  <a href="" ng-click="GoDetailVessel(data.VesselToken)">View Details</a></dd>
+                                                <dd class="col-sm-4">Laycan:</dd>
+                                                <dt class="col-sm-8">{{data.StartLaycan | date: 'dd/MM/yyyy'}} to {{data.EndLaycan| date: 'dd/MM/yyyy'}}</dt>
+                                                <dd class="col-sm-4">ETA to Load Port:</dd>
+                                                <dt class="col-sm-8">{{data.StartLaycan | date: 'dd/MM/yyyy'}}</dt>
+                                                <dd class="col-sm-4">Transit Time:</dd>
+                                                <dt class="col-sm-8">{{data.TotalDay | number :2}} Days</dt>
+                                                <dd class="col-sm-4">Demurrage:</dd>
+                                                <dt class="col-sm-8">USD {{data.Demurrage | currency:2}}/Day</dt>
+                                            </dl>
+                                        </div>
+                                        <div class="col-sm-3 text-center" style="top: 40px !important;">
+                                            <div class="fa fa-check-circle info fa-5x text-success text-center"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="!isSelected">
+                                <div class="col-sm-12">
+                                    <div class="form-group float-right">
+                                        <button type="submit" class="btn btn-secondary   btn-lg" ng-click="Back()"><i class="fa fa-backward"></i> Back   </button>
+                                        <button type="submit" class="btn btn-primary   btn-lg" ng-click="NewSearch()"><i class="fa fa-eject"></i>  New Search    </button>
+                                        <button type="submit" class="btn btn-warning   btn-lg" ng-click="Continue()"><i class="fa fa-play"></i>    Continue     </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="isSelected">
+                                <div class="col-sm-12">
+                                    <div class="form-group float-right">
+                                        <button type="submit" class="btn btn-secondary  btn-lg" ng-click="Back2()"><i class="fa fa-backward"></i> Back</button>
+                                        <button type="submit" class="btn btn-primary  btn-lg" ng-click="Back()"><i class="fa fa-eject"></i> Cancel</button>
+                                        <button type="submit" class="btn btn-warning  btn-lg" ng-click="ChangeStatusRequest()"><i class="fa fa-play"></i> Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

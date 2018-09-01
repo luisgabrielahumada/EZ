@@ -1,0 +1,29 @@
+﻿<div class="modal fade" id="primaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-primary modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detail Vessel Property</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card border-primary">
+                    <div class="card-header">
+                    </div>
+                    <div class="card-body">
+                        <dl class="row" ng-repeat="item in items">
+                            <dt class="col-sm-9"> <b>{{item.name}}</b></dt>
+                            <dd class="col-sm-3">  {{item.value}}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group float-right">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

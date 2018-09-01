@@ -1,0 +1,65 @@
+﻿<div class="modal fade" id="primaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-primary modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detail Vessel {{row.name}}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card border-primary">
+                    <div class="card-header">
+                        <div class="col-md-12">
+                            <strong>{{row.ownerName}}-{{row.city}}</strong>    {{row.Token}}
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label><b>Speed:</b> </label> {{row.speed|number}}
+                            </div>
+                            <div class="col-md-6">
+                                <label><b>Capacity:</b> </label> {{row.capacity|number}}
+                            </div>
+                            <div class="col-md-6">
+                                <label><b>Demurrage:</b> </label> {{row.demurrage|number}}
+                            </div>
+                            <div class="col-md-6">
+                                <label><b>Ifo Consumed:</b> </label> {{row.ifoConsumed|number}}
+                            </div>
+                            <div class="col-md-6">
+                                <label><b>Mgo Consumed:</b> </label> {{row.mgoConsumed|number}}
+                            </div>
+                            <div class="col-md-6">
+                                <label><b>DailyHire:</b></label> {{row.rateLoading|number}}
+                            </div>
+                            <div class="col-md-6">
+                                <label><b>Next opening port:</b></label> {{row.portName}} ,{{row.code}} {{row.terminalName}}
+                            </div>
+                            <div class="col-md-6">
+                                <label><b> Next opening date:</b></label> {{row.nextOpeningPort|date: 'yyyy-MMMM-dd'}}
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                Property
+                            </div>
+                            <div class="card-body">
+                                <dl class="row" ng-repeat="item in items">
+                                    <dt class="col-sm-9"> <b>{{item.name}}</b></dt>
+                                    <dd class="col-sm-3">  {{item.value}}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group float-right">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

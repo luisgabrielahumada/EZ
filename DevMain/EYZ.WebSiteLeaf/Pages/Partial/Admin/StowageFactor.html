@@ -1,0 +1,59 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item">Home</li>
+    <li class="breadcrumb-item"><a href="#/StowageFactors">Stowage Factors</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+
+<form role="form" name="myForm">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Detail</strong>
+                    <small><b>{{item.name}}</b></small>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Value</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" ng-change="item.name=item.value" ng-class="(myForm.value.$dirty || !isValid) && !myForm.value.$valid?'is-invalid' : ''" name="value" placeholder="Value" ui-number-mask ng-model="item.value" required>
+                                <input type="hidden" class="form-control custom-control" disabled name="name" placeholder="Name" ng-model="item.name" ui-number-mask>
+                            </div>
+                        </div>
+                        <!--<div class="col-md-6">
+                            <div class="form-group">
+                                <label>Name</label> <label class="text-danger">*</label>
+                                <input type="text" class="form-control custom-control" disabled name="name" placeholder="Name" ng-model="item.name" ui-number-mask>
+                            </div>
+                        </div>-->
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="switch switch-lg switch-3d switch-primary">
+                                    <input type="checkbox" class="switch-input" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.IsActive===true" ng-model="item.IsActive">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>  Inactive
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div ng-include="'Partial/Common/ByAssignedProduct.html'"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group float-right">
+                                <a class="btn btn-outline-danger" href="#/StowageFactors">Cancel</a>
+                                <button type="submit" class="btn btn-outline-success" ng-click="Save(item.Token)">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

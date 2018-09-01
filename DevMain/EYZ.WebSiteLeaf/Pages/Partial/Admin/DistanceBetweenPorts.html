@@ -1,0 +1,55 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i>
+            </div>
+            <div class="card-body">
+                <table class="table table-responsive-sm table-sm">
+                    <thead>
+                        <tr>
+                            <td colspan="20">
+                                <button type="submit" class="btn btn-outline-success pull-right" ng-click="Save()">Save</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Loading Port</th>
+                            <th>Unloading Port</th>
+                            <th>Interval</th>
+                            <th>Time Canal</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in items| filter:Filter">
+                            <td>{{item.inputName}}</td>
+                            <td>{{item.outPutName}}</td>
+                            <td><input type="text" class="form-control custom-control" name="interval" placeholder="Interval" ng-model="item.interval" ui-number-mask></td>
+                            <td><input type="text" class="form-control custom-control" name="hourCanalPanama" placeholder="Hour Canal Panama" ng-model="item.hourCanalPanama" ui-number-mask></td>
+                            <td>
+                                <label class="switch switch-lg switch-3d switch-primary">
+                                    <input type="checkbox" class="switch-input" name="Status" ng-true-value="true" ng-false-value="false" ng-checked="item.IsActive===true" ng-model="item.IsActive">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="20">
+                                <button type="submit" class="btn btn-outline-success pull-right" ng-click="Save()">Save</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#/Home"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="breadcrumb-item active">{{pageCurrent}}</li>
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu d-md-down-none">
+        <div ng-include="'Partial/Common/AccessDirectToPage.html'"></div>
+    </li>
+</ol>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> StowageFactors <small><a href="#/StowageFactors/0" title="New"><span class="fa fa-plus"></span></a></small>
+            </div>
+            <div class="card-body">
+                <table class="table table-responsive-sm table-sm">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Value</th>
+                            <th colspan="2">Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-if="items.length===0">
+                            <td colspan="20">No Records</td>
+                        </tr>
+                        <tr ng-repeat="item in items| filter:Filter">
+                            <td><a href="#/StowageFactors/{{item.Token}}"><span class="fa fa-pencil"></span></a></td>
+                            <td>{{item.name}}</td>
+                            <td>
+                                {{item.value |number}}
+                            </td>
+                            <td ng-switch="item.IsActive">
+                                <div ng-switch-when="true">
+                                    <a title="Inactive" href="" confirm-click="You sure you want to change this record?" ng-click="Remove(item.Token,false)"><span class="fa fa-remove"></span></a>
+                                </div>
+                                <div ng-switch-when="false">
+                                    <a title="Active" href="" confirm-click="You sure you want to change this record?" ng-click="Remove(item.Token,true)"><span class="fa fa-check"></span></a>
+                                </div>
+                            </td>
+                            <td>
+                                <a title="Delete" href="" confirm-click="Seguro que desea eliminar este registro?" ng-click="Delete(item.Token)"><span class="fa fa-trash"></span></a>
+                            </td>
+                        </tr>
+                </table>
+                <nav>
+                    <paging class="small"
+                            ul-class="pagination"
+                            active-class="active"
+                            disabled-class="disabled"
+                            page="pagination.pageIndex"
+                            page-size="pagination.pageSize"
+                            total="pagination.totalItemCount"
+                            paging-action="List(page)"
+                            show-prev-next="true"
+                            show-first-last="true">
+                    </paging>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
