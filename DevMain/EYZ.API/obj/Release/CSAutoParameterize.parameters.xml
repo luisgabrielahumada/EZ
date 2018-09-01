@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ConnectionString.Business.Web-Web.config Connection String" description="ConnectionString.Business.Web Connection String used in web.config by the application to access the database." defaultValue="Data Source=dbdevsql.database.windows.net;Initial Catalog=EZ;User ID=AdminV2; Password=abc123$$;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\_GESI\\GitHub\\EZ\\DevMain\\EYZ\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ConnectionString.Business.Web']/@connectionString" />
+  </parameter>
+</parameters>

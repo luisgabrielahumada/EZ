@@ -1,0 +1,14 @@
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\bin\Release\Type.Services.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\bin\Release\Type.Services.pdb
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\bin\Release\Insight.Database.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\bin\Release\Insight.Database.Configuration.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\bin\Release\Insight.Database.Core.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\bin\Release\Insight.Database.Providers.Default.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\bin\Release\System.ValueTuple.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\bin\Release\Gesi.Access.Database.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\bin\Release\Gesi.Access.Database.pdb
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\obj\Release\Type.Services.csprojAssemblyReference.cache
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\obj\Release\Type.Services.csproj.CoreCompileInputs.cache
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\obj\Release\Type.Services.csproj.CopyComplete
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\obj\Release\Type.Services.dll
+D:\_GESI\GitHub\EZ\DevMain\EYZ.Services\Type.Services\obj\Release\Type.Services.pdb

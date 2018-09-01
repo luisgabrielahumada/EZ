@@ -1282,8 +1282,8 @@
     <Content Include="vendors\js\popper.min.js.map" />
     <Content Include="vendors\js\quill.min.js.map" />
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\WebSiteEYZ - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\WebSiteEYZ - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\WebEZ - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\WebEZ - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -171,7 +171,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Connected Services\Application Insights\ConnectedService.json" />
-    <None Include="Properties\PublishProfiles\WebAPIEYZ - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\APIEZ - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\APIEZ - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
