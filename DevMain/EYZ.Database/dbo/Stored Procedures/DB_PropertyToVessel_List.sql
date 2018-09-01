@@ -17,7 +17,7 @@ AS
 		Where Vessel.Token=@Token
 		/*-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
-		Select  PropertyVessel.Code,PropertyVessel.Name, Convert(varchar(250),PropertyValueVessel.Value,1) as Value,PropertyVessel.PropertyVesselId
+		Select  PropertyVessel.Code,PropertyVessel.Name, Convert(varchar(250),PropertyValueVessel.Value,1) as Value,PropertyVessel.PropertyVesselId, PropertyValueVessel.Unity
 		From PropertyVessel
 					Left Join PropertyValueVessel On PropertyVessel.PropertyVesselId=PropertyValueVessel.PropertyVesselId and (PropertyValueVessel.VesselId=@Id or @Id=0)
 		Where PropertyVessel.IsActive=1
