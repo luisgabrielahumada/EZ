@@ -75,8 +75,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contract.Services", "EYZ.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Type.Services", "EYZ.Services\Type.Services\Type.Services.csproj", "{ED8A272E-B22E-4555-800B-DA621C4655FB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EYZ.WebJobs", "EYZ.WebJobs", "{7314A20A-A859-45B1-9578-ACA123522BF2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -188,75 +186,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91CB5CAC-A9C9-4FA4-AD3F-725316E3E036}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 17
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://gesicode.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = EYZ.Database\\EYZ.Database.sqlproj
-		SccProjectTopLevelParentUniqueName1 = EYZ.sln
-		SccProjectName1 = EYZ.Database
-		SccLocalPath1 = EYZ.Database
-		SccProjectUniqueName2 = EYZ.Services\\Products.Services\\Products.Services.csproj
-		SccProjectTopLevelParentUniqueName2 = EYZ.sln
-		SccProjectName2 = EYZ.Services/Products.Services
-		SccLocalPath2 = EYZ.Services\\Products.Services
-		SccProjectUniqueName3 = EYZ.Services\\Conditions.Services\\Conditions.Services.csproj
-		SccProjectTopLevelParentUniqueName3 = EYZ.sln
-		SccProjectName3 = EYZ.Services/Conditions.Services
-		SccLocalPath3 = EYZ.Services\\Conditions.Services
-		SccProjectUniqueName4 = EYZ.Services\\Ports.Services\\Ports.Services.csproj
-		SccProjectTopLevelParentUniqueName4 = EYZ.sln
-		SccProjectName4 = EYZ.Services/Ports.Services
-		SccLocalPath4 = EYZ.Services\\Ports.Services
-		SccProjectUniqueName5 = EYZ.Services\\StowageFactors.Services\\StowageFactors.Services.csproj
-		SccProjectTopLevelParentUniqueName5 = EYZ.sln
-		SccProjectName5 = EYZ.Services/StowageFactors.Services
-		SccLocalPath5 = EYZ.Services\\StowageFactors.Services
-		SccProjectUniqueName6 = EYZ.Services\\Terminals.Services\\Terminals.Services.csproj
-		SccProjectTopLevelParentUniqueName6 = EYZ.sln
-		SccProjectName6 = EYZ.Services/Terminals.Services
-		SccLocalPath6 = EYZ.Services\\Terminals.Services
-		SccProjectUniqueName7 = EYZ.Services\\Tolerances.Services\\Tolerances.Services.csproj
-		SccProjectTopLevelParentUniqueName7 = EYZ.sln
-		SccProjectName7 = EYZ.Services/Tolerances.Services
-		SccLocalPath7 = EYZ.Services\\Tolerances.Services
-		SccProjectUniqueName8 = EYZ.Services\\Quantity.Services\\Quantity.Services.csproj
-		SccProjectTopLevelParentUniqueName8 = EYZ.sln
-		SccProjectName8 = EYZ.Services/Quantity.Services
-		SccLocalPath8 = EYZ.Services\\Quantity.Services
-		SccProjectUniqueName9 = EYZ.Services\\Step.Services\\Step.Services.csproj
-		SccProjectTopLevelParentUniqueName9 = EYZ.sln
-		SccProjectName9 = EYZ.Services/Step.Services
-		SccLocalPath9 = EYZ.Services\\Step.Services
-		SccProjectUniqueName10 = EYZ.WebSiteLeaf\\EYZ.WebSiteLeaf.csproj
-		SccProjectTopLevelParentUniqueName10 = EYZ.sln
-		SccProjectName10 = EYZ.WebSiteLeaf
-		SccLocalPath10 = EYZ.WebSiteLeaf
-		SccProjectUniqueName11 = EYZ.API\\EYZ.API.csproj
-		SccProjectTopLevelParentUniqueName11 = EYZ.sln
-		SccProjectName11 = EYZ.API
-		SccLocalPath11 = EYZ.API
-		SccProjectUniqueName12 = EYZ.Services\\Clauses.Services\\Clauses.Services.csproj
-		SccProjectTopLevelParentUniqueName12 = EYZ.sln
-		SccProjectName12 = EYZ.Services/Clauses.Services
-		SccLocalPath12 = EYZ.Services\\Clauses.Services
-		SccProjectUniqueName13 = EYZ.Services\\Contract.Services\\Contract.Services.csproj
-		SccProjectTopLevelParentUniqueName13 = EYZ.sln
-		SccProjectName13 = EYZ.Services/Contract.Services
-		SccLocalPath13 = EYZ.Services\\Contract.Services
-		SccProjectUniqueName14 = EYZ.Infrastructure\\EYZ.Infrastructure.csproj
-		SccProjectTopLevelParentUniqueName14 = EYZ.sln
-		SccProjectName14 = EYZ.Infrastructure
-		SccLocalPath14 = EYZ.Infrastructure
-		SccProjectUniqueName15 = EYZ.Services\\Vessel.Services\\Vessel.Services.csproj
-		SccProjectTopLevelParentUniqueName15 = EYZ.sln
-		SccProjectName15 = EYZ.Services/Vessel.Services
-		SccLocalPath15 = EYZ.Services\\Vessel.Services
-		SccProjectUniqueName16 = EYZ.Services\\Type.Services\\Type.Services.csproj
-		SccProjectTopLevelParentUniqueName16 = EYZ.sln
-		SccProjectName16 = EYZ.Services/Type.Services
-		SccLocalPath16 = EYZ.Services\\Type.Services
 	EndGlobalSection
 EndGlobal
