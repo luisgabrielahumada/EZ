@@ -285,4 +285,7 @@
     <Build Include="dbo\Tables\SchedulerRequestByVesselForRecalculate.sql" />
     <Build Include="dbo\Functions\GetPropertyValueVessel.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="EYZ.Database.jfm" />
+  </ItemGroup>
 </Project>
