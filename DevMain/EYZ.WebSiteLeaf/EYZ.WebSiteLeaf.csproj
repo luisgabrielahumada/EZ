@@ -1158,10 +1158,10 @@
     <Content Include="Pages\Partial\Common\Unauthorized.html" />
     <Content Include="Pages\Partial\Admin\Userdtl.html" />
     <Content Include="Pages\Partial\Admin\Users.html" />
-    <Content Include="Pages\Partial\Customer\Finish.html" />
     <Content Include="Pages\Partial\Customer\Inbox.html" />
     <Content Include="Pages\Partial\Customer\Step.html" />
     <Content Include="Pages\Partial\Customer\Step1.html" />
+    <Content Include="Pages\Partial\Customer\SummaryRequest.html" />
     <Content Include="Pages\Partial\Modal\ReCalculateAllTypeRequest.html" />
     <Content Include="Pages\Partial\Modal\ReCalculate.html" />
     <Content Include="Pages\Partial\Modal\AvailableVessel.html" />
