@@ -16,6 +16,11 @@
             controller: "FinishCtrl",
             templateUrl: "Partial/Customer/Finish.html"
         });
+        $routeProvider.when("/SummaryRequest/:Id", {
+            controller: "SummaryRequestCtrl",
+            templateUrl: "Partial/Customer/SummaryRequest.html"
+        });
+
     }])
 
     .controller('StepCtrl', ['$scope', 'serviceRest', 'breaDcrumb', 'serviceLocalized', 'authService', '$location', '$routeParams', function ($scope, serviceRest, breaDcrumb, serviceLocalized, authService, $location, $routeParams, ModalService, $element) {
@@ -389,125 +394,124 @@
                     $location.path("/Step/" + response.id);
                 }, $scope.error);
         };
-    }]);
-
-App.controller('Step1Ctrl', ['$scope', 'serviceRest', 'breaDcrumb', '$routeParams', '$location', 'authService', 'ModalService', function ($scope, serviceRest, breaDcrumb, $routeParams, $location, authService, ModalService) {
-    breaDcrumb.breadcrumb();
-    $scope.pageCurrent = breaDcrumb.pages.pageCurrent;
-    $scope.isValid = true;
-    $scope.Id = 0;
-    $scope.isSelected = false;
-    $scope.titleSearch = "Freight Ideas";
-    //Manejador de Errores
-    $scope.error = function (data) { $scope.toastr.error(data.Message, 'Error'); };
-
-    //Detalle de la pagina
-    $scope.Get = function () {
-        $scope.Id = $routeParams.Id;
-        if ($routeParams.Id !== 0) {
-            $scope.Rest.Get($scope.Settings.Uri, 'Request/Get/' + $routeParams.Id, function (response) {
-                $scope.item = response.data;
-            }, $scope.error);
-        }
-    };
-
-    $scope.Step2 = function (s, c) {
-        var data = {
-            Status: s === undefined ? 'PENDING' : s,
-            Continue: c === undefined ? 0 : c
-        };
-        $scope.Rest.Post($scope.Settings.Uri, 'Request/Step2/' + $routeParams.Id, data,
-            function (response) {
-                $scope.items = response.data;
-            }, $scope.error);
-    };
-
-    $scope.ChangeStatusRequest = function () {
-        var data = {
-            Status: 'REQUEST'
-        };
-        $scope.Rest.Post($scope.Settings.Uri, 'Request/ChangeStatusRequest/' + $routeParams.Id, data,
-            function (response) {
-                $scope.toastr.info("The request has been sent,notification", 'Information!');
-                $location.path("/Step");
-            }, $scope.error);
-    };
-
-    $scope.NewSearch = function () {
-        $scope.token.item = [];
-        $location.path("/Step");
-    };
-
-    $scope.Back = function () {
-        $scope.token.item = [];
-        $scope.Rest.Post($scope.Settings.Uri, 'Request/Continue?token=' + $routeParams.Id, $scope.token.item,
-            function (response) {
-                $scope.Step2();
-            }, $scope.error);
-        $location.path("/StepBack/" + $routeParams.Id + '/1');
-    };
-
-    $scope.Back2 = function () {
-        $scope.token.item = [];
-        if ($scope.items.filter(item => item.Status === 'REQUEST').length > 0) {
-            angular.forEach($scope.items.filter(item => item.Status === 'REQUEST'), function (data, key) {
-                $scope.token.item.push(data.Token);
-            });
-        }
+    }])
+    .controller('Step1Ctrl', ['$scope', 'serviceRest', 'breaDcrumb', '$routeParams', '$location', 'authService', 'ModalService', function ($scope, serviceRest, breaDcrumb, $routeParams, $location, authService, ModalService) {
+        breaDcrumb.breadcrumb();
+        $scope.pageCurrent = breaDcrumb.pages.pageCurrent;
+        $scope.isValid = true;
+        $scope.Id = 0;
         $scope.isSelected = false;
-        $scope.Rest.Post($scope.Settings.Uri, 'Request/Continue?token=' + $routeParams.Id, $scope.token.item,
-            function (response) {
-                $scope.Step2('REQUEST', 1);
-            }, $scope.error);
-    };
+        $scope.titleSearch = "Freight Ideas";
+        //Manejador de Errores
+        $scope.error = function (data) { $scope.toastr.error(data.Message, 'Error'); };
 
-    $scope.Continue = function () {
-        $scope.titleSearch = "Request Proposal For Freight Indication";
-
-        if ($scope.token.item.length === 0) {
-            $scope.toastr.error("Selected Vessel", 'Selected');
-            return
-        }
-        $scope.Rest.Post($scope.Settings.Uri, 'Request/Continue?token=' + $routeParams.Id, $scope.token.item,
-            function (response) {
-                $scope.isSelected = true;
-                $scope.Step2('REQUEST', 1);
-            }, $scope.error);
-    };
-
-    $scope.token = { "item": [] };
-
-    $scope.Check = function (data) {
-        var arraySelected = $scope.token.item;
-        return arraySelected.indexOf(data.Token) > -1;
-    }
-
-    $scope.UnCheck = function (data) {
-        var arraySelected = $scope.token.item;
-        var index = arraySelected.indexOf(data.Token);
-        if (index > -1) {
-            arraySelected.splice(index, 1);
-        } else {
-            $scope.token.item.push(data.Token);
-        }
-    }
-    $scope.GoDetailVessel = function (data) {
-        ModalService.showModal({
-            templateUrl: "Partial/Modal/PropertyVessel.html",
-            controller: "PropertyVesselCtrl",
-            inputs: {
-                Id: data
+        //Detalle de la pagina
+        $scope.Get = function () {
+            $scope.Id = $routeParams.Id;
+            if ($routeParams.Id !== 0) {
+                $scope.Rest.Get($scope.Settings.Uri, 'Request/Get/' + $routeParams.Id, function (response) {
+                    $scope.item = response.data;
+                }, $scope.error);
             }
-        }).then(function (modal) {
-            modal.element.modal();
-            modal.close.then(function (result) {
-            });
-        });
-    };
+        };
 
-    $scope.Get();
-    $scope.Step2();
-}])
+        $scope.Step2 = function (s, c) {
+            var data = {
+                Status: s === undefined ? 'PENDING' : s,
+                Continue: c === undefined ? 0 : c
+            };
+            $scope.Rest.Post($scope.Settings.Uri, 'Request/Step2/' + $routeParams.Id, data,
+                function (response) {
+                    $scope.items = response.data;
+                }, $scope.error);
+        };
+
+        $scope.ChangeStatusRequest = function () {
+            var data = {
+                Status: 'REQUEST'
+            };
+            $scope.Rest.Post($scope.Settings.Uri, 'Request/ChangeStatusRequest/' + $routeParams.Id, data,
+                function (response) {
+                    $scope.toastr.info("The request has been sent,notification", 'Information!');
+                    $location.path("/SummaryRequest/" + $routeParams.Id);
+                }, $scope.error);
+        };
+
+        $scope.NewSearch = function () {
+            $scope.token.item = [];
+            $location.path("/Step");
+        };
+
+        $scope.Back = function () {
+            $scope.token.item = [];
+            $scope.Rest.Post($scope.Settings.Uri, 'Request/Continue?token=' + $routeParams.Id, $scope.token.item,
+                function (response) {
+                    $scope.Step2();
+                }, $scope.error);
+            $location.path("/StepBack/" + $routeParams.Id + '/1');
+        };
+
+        $scope.Back2 = function () {
+            $scope.token.item = [];
+            if ($scope.items.filter(item => item.Status === 'REQUEST').length > 0) {
+                angular.forEach($scope.items.filter(item => item.Status === 'REQUEST'), function (data, key) {
+                    $scope.token.item.push(data.Token);
+                });
+            }
+            $scope.isSelected = false;
+            $scope.Rest.Post($scope.Settings.Uri, 'Request/Continue?token=' + $routeParams.Id, $scope.token.item,
+                function (response) {
+                    $scope.Step2('REQUEST', 1);
+                }, $scope.error);
+        };
+
+        $scope.Continue = function () {
+            $scope.titleSearch = "Request Proposal For Freight Indication";
+
+            if ($scope.token.item.length === 0) {
+                $scope.toastr.error("Selected Vessel", 'Selected');
+                return
+            }
+            $scope.Rest.Post($scope.Settings.Uri, 'Request/Continue?token=' + $routeParams.Id, $scope.token.item,
+                function (response) {
+                    $scope.isSelected = true;
+                    $scope.Step2('REQUEST', 1);
+                }, $scope.error);
+        };
+
+        $scope.token = { "item": [] };
+
+        $scope.Check = function (data) {
+            var arraySelected = $scope.token.item;
+            return arraySelected.indexOf(data.Token) > -1;
+        }
+
+        $scope.UnCheck = function (data) {
+            var arraySelected = $scope.token.item;
+            var index = arraySelected.indexOf(data.Token);
+            if (index > -1) {
+                arraySelected.splice(index, 1);
+            } else {
+                $scope.token.item.push(data.Token);
+            }
+        }
+        $scope.GoDetailVessel = function (data) {
+            ModalService.showModal({
+                templateUrl: "Partial/Modal/PropertyVessel.html",
+                controller: "PropertyVesselCtrl",
+                inputs: {
+                    Id: data
+                }
+            }).then(function (modal) {
+                modal.element.modal();
+                modal.close.then(function (result) {
+                });
+            });
+        };
+
+        $scope.Get();
+        $scope.Step2();
+    }])
     .controller('PropertyVesselCtrl', ['$scope', 'serviceRest', 'breaDcrumb', '$routeParams', '$location', 'authService', 'Id', function ($scope, serviceRest, breaDcrumb, $routeParams, $location, authService, Id) {
         $scope.error = function (data) { $scope.toastr.error(data.Message, 'Error'); }
         //Datos para paginacion
@@ -519,13 +523,35 @@ App.controller('Step1Ctrl', ['$scope', 'serviceRest', 'breaDcrumb', '$routeParam
 
         $scope.Get();
     }])
-
-    .controller('FinishCtrl', ['$scope', 'serviceRest', 'breaDcrumb', '$routeParams', '$location', 'authService', function ($scope, serviceRest, breaDcrumb, $routeParams, $location, authService) {
+    .controller('SummaryRequestCtrl', ['$scope', 'serviceRest', 'breaDcrumb', '$routeParams', '$location', 'authService', function ($scope, serviceRest, breaDcrumb, $routeParams, $location, authService) {
         breaDcrumb.breadcrumb();
         $scope.pageCurrent = breaDcrumb.pages.pageCurrent;
-        $scope.isValid = true;
+        $scope.pagination = {
+            pageIndex: 1,
+            pageSize: 10
+        };
         //Manejador de Errores
         $scope.error = function (data) {
             $scope.toastr.error(data.ExceptionMessage, 'Error');
-        }
+        };
+
+        $scope.Get = function () {
+            $scope.Id = $routeParams.Id;
+            if ($routeParams.Id !== 0) {
+                $scope.Rest.Get($scope.Settings.Uri, 'Request/Get/' + $routeParams.Id, function (response) {
+                    $scope.request = response.data;
+                }, $scope.error);
+            }
+        };
+        $scope.Get();
+        
+
+        $scope.List = function () {
+            $scope.pagination.pageIndex = 1;
+            $scope.Rest.Get($scope.Settings.Uri, 'Inbox/ServiceLiquidationsForRquest?pageIndex=' + $scope.pagination.pageIndex + '&pageSize=' + $scope.pagination.pageSize + '&token=' + $routeParams.Id, function (response) {
+                $scope.items = response.data.items;
+                $scope.Id = $scope.items[0].Id;
+            }, $scope.error);
+        };
+        $scope.List();
     }]);
